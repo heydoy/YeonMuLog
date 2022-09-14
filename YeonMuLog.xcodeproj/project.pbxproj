@@ -56,15 +56,55 @@
 		A21EDDCA28D0B652006573A4 /* YeonMuLog */ = {
 			isa = PBXGroup;
 			children = (
-				A21EDDCB28D0B652006573A4 /* AppDelegate.swift */,
-				A21EDDCD28D0B652006573A4 /* SceneDelegate.swift */,
-				A21EDDCF28D0B652006573A4 /* ViewController.swift */,
-				A21EDDD128D0B652006573A4 /* Main.storyboard */,
-				A21EDDD428D0B655006573A4 /* Assets.xcassets */,
-				A21EDDD628D0B655006573A4 /* LaunchScreen.storyboard */,
+				A21EDDE128D24A13006573A4 /* App */,
+				A21EDDE228D24A2A006573A4 /* Global */,
+				A21EDDE528D24A7F006573A4 /* Presentations */,
 				A21EDDD928D0B655006573A4 /* Info.plist */,
 			);
 			path = YeonMuLog;
+			sourceTree = "<group>";
+		};
+		A21EDDE128D24A13006573A4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A21EDDCB28D0B652006573A4 /* AppDelegate.swift */,
+				A21EDDCD28D0B652006573A4 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A21EDDE228D24A2A006573A4 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				A21EDDE328D24A3D006573A4 /* Resources */,
+				A21EDDE428D24A52006573A4 /* Supports */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		A21EDDE328D24A3D006573A4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A21EDDD428D0B655006573A4 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A21EDDE428D24A52006573A4 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				A21EDDD628D0B655006573A4 /* LaunchScreen.storyboard */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
+		A21EDDE528D24A7F006573A4 /* Presentations */ = {
+			isa = PBXGroup;
+			children = (
+				A21EDDCF28D0B652006573A4 /* ViewController.swift */,
+				A21EDDD128D0B652006573A4 /* Main.storyboard */,
+			);
+			path = Presentations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,7 +344,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -332,7 +372,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

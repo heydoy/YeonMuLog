@@ -11,5 +11,6 @@
 | 2022.09.14(수) | [Link](https://github.com/heydoy/YeonMuLog/blob/main/.log/2022-09-14.md) |
 | 2022.09.15(목) | [Link](https://github.com/heydoy/YeonMuLog/blob/main/.log/2022-09-15.md)|
 | 2022.09.16(금) | [Link](https://github.com/heydoy/YeonMuLog/blob/main/.log/2022-09-16.md) |
-| 2022.09.17(토) |  |
-| 2022.09.18(일) |  |
+| 2022.09.17(토) | [Link](https://github.com/heydoy/YeonMuLog/blob/main/.log/2022-09-17.md) |
+| 2022.09.18(일) | [Link](https://github.com/heydoy/YeonMuLog/blob/main/.log/2022-09-18.md) |
+| 2022.09.19(월) |   |

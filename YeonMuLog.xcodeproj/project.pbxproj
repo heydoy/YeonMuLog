@@ -20,6 +20,8 @@
 		A28A5F7A28D3F6BC00D270E9 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A28A5F7928D3F6BC00D270E9 /* FSCalendar */; };
 		A28A5F7E28D3F94D00D270E9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A28A5F7D28D3F94D00D270E9 /* .gitignore */; };
 		A2B0343528D6FA410066AE2D /* KOPISAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0343428D6FA410066AE2D /* KOPISAPIManager.swift */; };
+		A2B0343728D6FBDA0066AE2D /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0343628D6FBDA0066AE2D /* Keys.swift */; };
+		A2B0343928D6FC1E0066AE2D /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0343828D6FC1E0066AE2D /* EndPoints.swift */; };
 		D80C0742B1505AB363E00A17 /* Pods_YeonMuLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,8 @@
 		A28A5F7028D2ED1900D270E9 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A28A5F7D28D3F94D00D270E9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A2B0343428D6FA410066AE2D /* KOPISAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KOPISAPIManager.swift; sourceTree = "<group>"; };
+		A2B0343628D6FBDA0066AE2D /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		A2B0343828D6FC1E0066AE2D /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YeonMuLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -154,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				A2B0343428D6FA410066AE2D /* KOPISAPIManager.swift */,
+				A2B0343628D6FBDA0066AE2D /* Keys.swift */,
+				A2B0343828D6FC1E0066AE2D /* EndPoints.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -308,6 +314,8 @@
 				A21EDDCC28D0B652006573A4 /* AppDelegate.swift in Sources */,
 				A21EDDCE28D0B652006573A4 /* SceneDelegate.swift in Sources */,
 				A2B0343528D6FA410066AE2D /* KOPISAPIManager.swift in Sources */,
+				A2B0343928D6FC1E0066AE2D /* EndPoints.swift in Sources */,
+				A2B0343728D6FBDA0066AE2D /* Keys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

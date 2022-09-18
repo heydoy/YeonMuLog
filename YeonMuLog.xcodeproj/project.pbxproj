@@ -19,6 +19,7 @@
 		A28A5F7728D3F6AC00D270E9 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = A28A5F7628D3F6AC00D270E9 /* Then */; };
 		A28A5F7A28D3F6BC00D270E9 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A28A5F7928D3F6BC00D270E9 /* FSCalendar */; };
 		A28A5F7E28D3F94D00D270E9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A28A5F7D28D3F94D00D270E9 /* .gitignore */; };
+		A2B0343528D6FA410066AE2D /* KOPISAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0343428D6FA410066AE2D /* KOPISAPIManager.swift */; };
 		D80C0742B1505AB363E00A17 /* Pods_YeonMuLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		A28A5F6B28D2ECEC00D270E9 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A28A5F7028D2ED1900D270E9 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A28A5F7D28D3F94D00D270E9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A2B0343428D6FA410066AE2D /* KOPISAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KOPISAPIManager.swift; sourceTree = "<group>"; };
 		C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YeonMuLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 			children = (
 				A21EDDE128D24A13006573A4 /* App */,
 				A21EDDE228D24A2A006573A4 /* Global */,
+				A2B0343228D6F97A0066AE2D /* Data */,
 				A21EDDE528D24A7F006573A4 /* Presentations */,
 				A21EDDD928D0B655006573A4 /* Info.plist */,
 			);
@@ -137,6 +140,22 @@
 				A28A5F7128D2ED1900D270E9 /* InfoPlist.strings */,
 			);
 			path = Literal;
+			sourceTree = "<group>";
+		};
+		A2B0343228D6F97A0066AE2D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A2B0343328D6F9910066AE2D /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A2B0343328D6F9910066AE2D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A2B0343428D6FA410066AE2D /* KOPISAPIManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		E0FE80BA029746BB9C2FAA39 /* Frameworks */ = {
@@ -288,6 +307,7 @@
 				A21EDDD028D0B652006573A4 /* ViewController.swift in Sources */,
 				A21EDDCC28D0B652006573A4 /* AppDelegate.swift in Sources */,
 				A21EDDCE28D0B652006573A4 /* SceneDelegate.swift in Sources */,
+				A2B0343528D6FA410066AE2D /* KOPISAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

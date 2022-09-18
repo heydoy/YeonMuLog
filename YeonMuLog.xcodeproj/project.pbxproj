@@ -25,6 +25,8 @@
 		A2B0343C28D7051F0066AE2D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A2B0343B28D7051F0066AE2D /* Alamofire */; };
 		A2B0343F28D7059E0066AE2D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A2B0343E28D7059E0066AE2D /* Realm */; };
 		A2B0344128D7059E0066AE2D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A2B0344028D7059E0066AE2D /* RealmSwift */; };
+		A2B0344428D73BD60066AE2D /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = A2B0344328D73BD60066AE2D /* SWXMLHash */; };
+		A2B0344628D77DC90066AE2D /* PlayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0344528D77DC90066AE2D /* PlayModel.swift */; };
 		D80C0742B1505AB363E00A17 /* Pods_YeonMuLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,7 @@
 		A2B0343428D6FA410066AE2D /* KOPISAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KOPISAPIManager.swift; sourceTree = "<group>"; };
 		A2B0343628D6FBDA0066AE2D /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		A2B0343828D6FC1E0066AE2D /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		A2B0344528D77DC90066AE2D /* PlayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayModel.swift; sourceTree = "<group>"; };
 		C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YeonMuLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -55,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2B0344428D73BD60066AE2D /* SWXMLHash in Frameworks */,
 				A2B0343F28D7059E0066AE2D /* Realm in Frameworks */,
 				A2B0343C28D7051F0066AE2D /* Alamofire in Frameworks */,
 				A2B0344128D7059E0066AE2D /* RealmSwift in Frameworks */,
@@ -166,6 +170,7 @@
 				A2B0343428D6FA410066AE2D /* KOPISAPIManager.swift */,
 				A2B0343628D6FBDA0066AE2D /* Keys.swift */,
 				A2B0343828D6FC1E0066AE2D /* EndPoints.swift */,
+				A2B0344528D77DC90066AE2D /* PlayModel.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 				A2B0343B28D7051F0066AE2D /* Alamofire */,
 				A2B0343E28D7059E0066AE2D /* Realm */,
 				A2B0344028D7059E0066AE2D /* RealmSwift */,
+				A2B0344328D73BD60066AE2D /* SWXMLHash */,
 			);
 			productName = YeonMuLog;
 			productReference = A21EDDC828D0B652006573A4 /* YeonMuLog.app */;
@@ -248,6 +254,7 @@
 				A28A5F7828D3F6BC00D270E9 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				A2B0343A28D7051F0066AE2D /* XCRemoteSwiftPackageReference "Alamofire" */,
 				A2B0343D28D7059E0066AE2D /* XCRemoteSwiftPackageReference "realm-swift" */,
+				A2B0344228D73BD60066AE2D /* XCRemoteSwiftPackageReference "SWXMLHash" */,
 			);
 			productRefGroup = A21EDDC928D0B652006573A4 /* Products */;
 			projectDirPath = "";
@@ -322,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A21EDDD028D0B652006573A4 /* ViewController.swift in Sources */,
+				A2B0344628D77DC90066AE2D /* PlayModel.swift in Sources */,
 				A21EDDCC28D0B652006573A4 /* AppDelegate.swift in Sources */,
 				A21EDDCE28D0B652006573A4 /* SceneDelegate.swift in Sources */,
 				A2B0343528D6FA410066AE2D /* KOPISAPIManager.swift in Sources */,
@@ -608,6 +616,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		A2B0344228D73BD60066AE2D /* XCRemoteSwiftPackageReference "SWXMLHash" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/drmohundro/SWXMLHash";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -640,6 +656,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A2B0343D28D7059E0066AE2D /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		A2B0344328D73BD60066AE2D /* SWXMLHash */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2B0344228D73BD60066AE2D /* XCRemoteSwiftPackageReference "SWXMLHash" */;
+			productName = SWXMLHash;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

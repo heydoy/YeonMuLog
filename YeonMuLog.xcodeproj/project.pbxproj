@@ -27,6 +27,7 @@
 		A2B0344128D7059E0066AE2D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A2B0344028D7059E0066AE2D /* RealmSwift */; };
 		A2B0344428D73BD60066AE2D /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = A2B0344328D73BD60066AE2D /* SWXMLHash */; };
 		A2B0344628D77DC90066AE2D /* PlayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0344528D77DC90066AE2D /* PlayModel.swift */; };
+		A2B0344928D796840066AE2D /* UserPlayInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0344828D796840066AE2D /* UserPlayInfoModel.swift */; };
 		D80C0742B1505AB363E00A17 /* Pods_YeonMuLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		A2B0343628D6FBDA0066AE2D /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		A2B0343828D6FC1E0066AE2D /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		A2B0344528D77DC90066AE2D /* PlayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayModel.swift; sourceTree = "<group>"; };
+		A2B0344828D796840066AE2D /* UserPlayInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlayInfoModel.swift; sourceTree = "<group>"; };
 		C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YeonMuLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				A2B0343328D6F9910066AE2D /* Network */,
+				A2B0344728D795CC0066AE2D /* Repository */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -173,6 +176,14 @@
 				A2B0344528D77DC90066AE2D /* PlayModel.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		A2B0344728D795CC0066AE2D /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				A2B0344828D796840066AE2D /* UserPlayInfoModel.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		E0FE80BA029746BB9C2FAA39 /* Frameworks */ = {
@@ -332,6 +343,7 @@
 				A2B0344628D77DC90066AE2D /* PlayModel.swift in Sources */,
 				A21EDDCC28D0B652006573A4 /* AppDelegate.swift in Sources */,
 				A21EDDCE28D0B652006573A4 /* SceneDelegate.swift in Sources */,
+				A2B0344928D796840066AE2D /* UserPlayInfoModel.swift in Sources */,
 				A2B0343528D6FA410066AE2D /* KOPISAPIManager.swift in Sources */,
 				A2B0343928D6FC1E0066AE2D /* EndPoints.swift in Sources */,
 				A2B0343728D6FBDA0066AE2D /* Keys.swift in Sources */,

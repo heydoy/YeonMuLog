@@ -33,8 +33,5 @@ class ViewController: UIViewController {
             }
         }
   
-//        KOPISAPIManager.shared.callDetail(id: "PF137090")
-//        KOPISAPIManager.shared.callDetail(id: "PF149989")
-//        KOPISAPIManager.shared.callDetail(id: "PF132236")
     }
 }

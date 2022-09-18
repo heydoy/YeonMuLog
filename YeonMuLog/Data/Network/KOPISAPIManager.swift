@@ -13,7 +13,7 @@ class KOPISAPIManager {
     private init() {}
     static let shared = KOPISAPIManager()
     // 공연목록 조회
-    func callList(query: String) {
+    func callList (query: String, completionHandler: @escaping (Result<[Play], Error>) -> Void ) {
         let url = EndPoints.KOPISList
         let param: Parameters = [
             "service": APIKeys.KOPIS, // 서비스키
@@ -21,31 +21,40 @@ class KOPISAPIManager {
             "rows": 100, // 받아오는 개수
             "cpage": 1 // 시작하는 숫자
         ]
+        var playList: [Play] = []
+        let group = DispatchGroup()
+        
         AF.request(url,
                    method: .get,
                    parameters: param).validate().responseData { response in
             switch response.result {
             case .success(let value):
-                print(value)
                 let xml = XMLHash.parse(value)
-                print(xml)
                 for elem in xml["dbs"]["db"].all {
-                    print(elem["mt20id"].element!.text) // 공연 ID로 상세정보 조회
-                    print(elem["genrenm"].element!.text) // 장르
-                    print(elem["poster"].element!.text) // 포스터이미지
-                    print(elem["openrun"].element!.text) // 오픈런 여부
-                    print(elem["fcltynm"].element!.text) // 공연장소
-                    print(elem["prfnm"].element!.text) // 극 이름
-                    print(elem["prfpdfrom"].element!.text) // 시작날짜
-                    print(elem["prfpdto"].element!.text) // 종료날짜
+                    if let id = elem["mt20id"].element?.text {
+                        group.enter()
+                        self.callDetail(id: id) { result in
+                            switch result {
+                            case let .success(result):
+                                playList.append(result)
+                            case let .failure(error):
+                                print(error)
+                            }
+                            group.leave()
+                        }
+                    }
+                }
+                group.notify(queue: .main) {
+                    
+                    completionHandler(.success(playList))
                 }
             case .failure(let error):
-                print(error.localizedDescription)
+                completionHandler(.failure(error))
             }
         }
     }
     // 공연 상세 조회
-    func callDetail(id: String) {
+    func callDetail(id: String, completionHandler: @escaping (Result<Play, Error>) -> Void) {
         let url = EndPoints.KOPISDetail + id
         let param: Parameters = [
             "service": APIKeys.KOPIS // 서비스키
@@ -55,28 +64,23 @@ class KOPISAPIManager {
                    parameters: param).validate().responseData { response in
             switch response.result {
             case .success(let value):
-                print(value)
                 let xml = XMLHash.parse(value)
-                print(xml)
-                print("--detail--")
                 let elem = xml["dbs"]["db"]
-                print(elem["prfnm"].element!.text) // 극 이름
-                print(elem["prfcast"].element!.text) // 출연진 (난타같은 건 없을수도)
-                print(elem["sty"].element!.text) // 줄거리 (거의 없는 것과 마찬가지)
-                print(elem["genrenm"].element!.text) // 장르
-                print(elem["prfstate"].element!.text) // 공연상태
-                print(elem["openrun"].element!.text) // 오픈런(Y/N)
-                print(elem["prfpdfrom"].element!.text) // 시작날짜
-                print(elem["prfpdto"].element!.text) // 종료날짜
-                print(elem["fcltynm"].element!.text) // 공연장소
-                print(elem["prfruntime"].element!.text) // 공연런타임
-                print(elem["pcseguidance"].element!.text) // 티켓가격
-                print(elem["dtguidance"].element!.text) // 공연시간
-                print(elem["poster"].element!.text) // 포스터
-                print(elem["styurls"].element!.text) // 소개이미지
-                
+                let playDetail = Play(
+                    id: elem["mt10id"].element!.text,
+                    title: elem["prfnm"].element!.text,
+                    cast: elem["prfcast"].element!.text,
+                    genre: elem["genrenm"].element!.text,
+                    poster: elem["poster"].element!.text,
+                    place: elem["fcltynm"].element!.text,
+                    startDate: elem["prfpdfrom"].element!.text,
+                    endDate: elem["prfpdto"].element!.text,
+                    runtime: elem["prfruntime"].element!.text,
+                    ticket: elem["pcseguidance"].element!.text,
+                    time: elem["dtguidance"].element!.text)
+                completionHandler(.success(playDetail))
             case .failure(let error):
-                print(error.localizedDescription)
+                completionHandler(.failure(error))
             }
         }
     }

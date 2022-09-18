@@ -22,6 +22,9 @@
 		A2B0343528D6FA410066AE2D /* KOPISAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0343428D6FA410066AE2D /* KOPISAPIManager.swift */; };
 		A2B0343728D6FBDA0066AE2D /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0343628D6FBDA0066AE2D /* Keys.swift */; };
 		A2B0343928D6FC1E0066AE2D /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0343828D6FC1E0066AE2D /* EndPoints.swift */; };
+		A2B0343C28D7051F0066AE2D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A2B0343B28D7051F0066AE2D /* Alamofire */; };
+		A2B0343F28D7059E0066AE2D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A2B0343E28D7059E0066AE2D /* Realm */; };
+		A2B0344128D7059E0066AE2D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A2B0344028D7059E0066AE2D /* RealmSwift */; };
 		D80C0742B1505AB363E00A17 /* Pods_YeonMuLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2B0343F28D7059E0066AE2D /* Realm in Frameworks */,
+				A2B0343C28D7051F0066AE2D /* Alamofire in Frameworks */,
+				A2B0344128D7059E0066AE2D /* RealmSwift in Frameworks */,
 				A28A5F7428D3F6A000D270E9 /* SnapKit in Frameworks */,
 				A28A5F7A28D3F6BC00D270E9 /* FSCalendar in Frameworks */,
 				A28A5F7728D3F6AC00D270E9 /* Then in Frameworks */,
@@ -203,6 +209,9 @@
 				A28A5F7328D3F6A000D270E9 /* SnapKit */,
 				A28A5F7628D3F6AC00D270E9 /* Then */,
 				A28A5F7928D3F6BC00D270E9 /* FSCalendar */,
+				A2B0343B28D7051F0066AE2D /* Alamofire */,
+				A2B0343E28D7059E0066AE2D /* Realm */,
+				A2B0344028D7059E0066AE2D /* RealmSwift */,
 			);
 			productName = YeonMuLog;
 			productReference = A21EDDC828D0B652006573A4 /* YeonMuLog.app */;
@@ -237,6 +246,8 @@
 				A28A5F7228D3F6A000D270E9 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				A28A5F7528D3F6AC00D270E9 /* XCRemoteSwiftPackageReference "Then" */,
 				A28A5F7828D3F6BC00D270E9 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				A2B0343A28D7051F0066AE2D /* XCRemoteSwiftPackageReference "Alamofire" */,
+				A2B0343D28D7059E0066AE2D /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = A21EDDC928D0B652006573A4 /* Products */;
 			projectDirPath = "";
@@ -581,6 +592,22 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		A2B0343A28D7051F0066AE2D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		A2B0343D28D7059E0066AE2D /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -598,6 +625,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A28A5F7828D3F6BC00D270E9 /* XCRemoteSwiftPackageReference "FSCalendar" */;
 			productName = FSCalendar;
+		};
+		A2B0343B28D7051F0066AE2D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2B0343A28D7051F0066AE2D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		A2B0343E28D7059E0066AE2D /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2B0343D28D7059E0066AE2D /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		A2B0344028D7059E0066AE2D /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2B0343D28D7059E0066AE2D /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

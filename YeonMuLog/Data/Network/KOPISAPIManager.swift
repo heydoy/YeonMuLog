@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import SWXMLHash
 
 class KOPISAPIManager {
     private init() {}
@@ -28,6 +29,8 @@ class KOPISAPIManager {
             switch response.result {
             case .success(let value):
                 print(value)
+                let xml = XMLHash.parse(value)
+                print(xml)
             case .failure(let error):
                 print(error.localizedDescription)
             }

@@ -12,10 +12,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        KOPISAPIManager.shared.callList(query: "키다리")
+        // KOPISAPIManager.shared.callList(query: "키다리")
+        print("------------")
+        KOPISAPIManager.shared.callDetail(id: "PF137090")
+        KOPISAPIManager.shared.callDetail(id: "PF149989")
+        KOPISAPIManager.shared.callDetail(id: "PF132236")
     }
-
-
 }
-

@@ -1,0 +1,7 @@
+excluded: # 린트 과정에서 무시할 파일 경로.
+
+- Pods
+- YeonMuLog/App/AppDelegate.swift
+- YeonMuLog/App/SceneDelegate.swift
+
+- YeonMuLog/Data/Repository

@@ -1,3 +1,9 @@
+disabled_rules:
+- leading_whitespace
+- trailing_whitespace
+- line_length
+
+
 excluded: # 린트 과정에서 무시할 파일 경로.
 
 - Pods

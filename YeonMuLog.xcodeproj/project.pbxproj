@@ -21,6 +21,8 @@
 		A289FCB428DAD689008046D1 /* SCDream9.otf in Resources */ = {isa = PBXBuildFile; fileRef = A289FCAF28DAD689008046D1 /* SCDream9.otf */; };
 		A289FCB528DAD689008046D1 /* SCDream7.otf in Resources */ = {isa = PBXBuildFile; fileRef = A289FCB028DAD689008046D1 /* SCDream7.otf */; };
 		A289FCB628DAD689008046D1 /* SCDream4.otf in Resources */ = {isa = PBXBuildFile; fileRef = A289FCB128DAD689008046D1 /* SCDream4.otf */; };
+		A289FCB928DB5E7E008046D1 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289FCB828DB5E7E008046D1 /* BaseView.swift */; };
+		A289FCBB28DB5EC5008046D1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289FCBA28DB5EC5008046D1 /* BaseViewController.swift */; };
 		A28A5F6A28D2ECEC00D270E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A28A5F6C28D2ECEC00D270E9 /* Localizable.strings */; };
 		A28A5F6F28D2ED1900D270E9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A28A5F7128D2ED1900D270E9 /* InfoPlist.strings */; };
 		A28A5F7428D3F6A000D270E9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A28A5F7328D3F6A000D270E9 /* SnapKit */; };
@@ -58,6 +60,8 @@
 		A289FCAF28DAD689008046D1 /* SCDream9.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream9.otf; sourceTree = "<group>"; };
 		A289FCB028DAD689008046D1 /* SCDream7.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream7.otf; sourceTree = "<group>"; };
 		A289FCB128DAD689008046D1 /* SCDream4.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream4.otf; sourceTree = "<group>"; };
+		A289FCB828DB5E7E008046D1 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		A289FCBA28DB5EC5008046D1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A28A5F6628D2ECCB00D270E9 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A28A5F6728D2ECCB00D270E9 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		A28A5F6B28D2ECEC00D270E9 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 		A21EDDE528D24A7F006573A4 /* Presentations */ = {
 			isa = PBXGroup;
 			children = (
+				A289FCB728DB5E64008046D1 /* Base */,
 				A21EDDCF28D0B652006573A4 /* ViewController.swift */,
 				A21EDDD128D0B652006573A4 /* Main.storyboard */,
 			);
@@ -186,6 +191,15 @@
 				A289FCAF28DAD689008046D1 /* SCDream9.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A289FCB728DB5E64008046D1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A289FCB828DB5E7E008046D1 /* BaseView.swift */,
+				A289FCBA28DB5EC5008046D1 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		A28A5F5F28D2E9F200D270E9 /* Literal */ = {
@@ -390,10 +404,12 @@
 				A21EDDCC28D0B652006573A4 /* AppDelegate.swift in Sources */,
 				A21EDDCE28D0B652006573A4 /* SceneDelegate.swift in Sources */,
 				A2B0344928D796840066AE2D /* UserPlayModel.swift in Sources */,
+				A289FCBB28DB5EC5008046D1 /* BaseViewController.swift in Sources */,
 				A2B0343528D6FA410066AE2D /* KOPISAPIManager.swift in Sources */,
 				A2B0343928D6FC1E0066AE2D /* EndPoints.swift in Sources */,
 				A289FCA628D8CE26008046D1 /* UserPlayRepository.swift in Sources */,
 				A2B0343728D6FBDA0066AE2D /* Keys.swift in Sources */,
+				A289FCB928DB5E7E008046D1 /* BaseView.swift in Sources */,
 				A289FCAB28DACCEF008046D1 /* setFonts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

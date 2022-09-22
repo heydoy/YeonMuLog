@@ -42,18 +42,28 @@ class SearchPlayViewController: BaseViewController {
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
         mainView.tableView.register(SearchPlayResultTableViewCell.self, forCellReuseIdentifier: String(describing: SearchPlayResultTableViewCell.self))
+        mainView.tableView.register(AddPlayInfoTableViewCell.self, forCellReuseIdentifier: String(describing: AddPlayInfoTableViewCell.self))
     }
 }
 
 // MARK: - TableView
 extension SearchPlayViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return section == 0 ? list.count : 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SearchPlayResultTableViewCell.self)) as? SearchPlayResultTableViewCell else { return UITableViewCell() }
-        cell.setData(data: list[indexPath.row])
-        return cell
+        if indexPath.section == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SearchPlayResultTableViewCell.self)) as? SearchPlayResultTableViewCell else { return UITableViewCell() }
+            cell.setData(data: list[indexPath.row])
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AddPlayInfoTableViewCell.self)) as? AddPlayInfoTableViewCell else { return UITableViewCell() }
+
+            return cell
+        }
     }
 }

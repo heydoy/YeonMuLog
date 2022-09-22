@@ -43,6 +43,7 @@
 		A2C2635528DBBCFC00DCF778 /* SearchPlayResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2635428DBBCFC00DCF778 /* SearchPlayResultTableViewCell.swift */; };
 		A2C2635B28DBC9AD00DCF778 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A2C2635A28DBC9AD00DCF778 /* Kingfisher */; };
 		A2C2635D28DBD22700DCF778 /* AddPlayInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2635C28DBD22700DCF778 /* AddPlayInfoTableViewCell.swift */; };
+		A2C2636328DBECDC00DCF778 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2636228DBECDC00DCF778 /* String+Extension.swift */; };
 		D80C0742B1505AB363E00A17 /* Pods_YeonMuLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		A2B0344828D796840066AE2D /* UserPlayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlayModel.swift; sourceTree = "<group>"; };
 		A2C2635428DBBCFC00DCF778 /* SearchPlayResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlayResultTableViewCell.swift; sourceTree = "<group>"; };
 		A2C2635C28DBD22700DCF778 /* AddPlayInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayInfoTableViewCell.swift; sourceTree = "<group>"; };
+		A2C2636228DBECDC00DCF778 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YeonMuLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -149,6 +151,7 @@
 		A21EDDE228D24A2A006573A4 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				A2C2636128DBECD000DCF778 /* Extension */,
 				A28A5F5F28D2E9F200D270E9 /* Literal */,
 				A21EDDE328D24A3D006573A4 /* Resources */,
 				A21EDDE428D24A52006573A4 /* Supports */,
@@ -260,6 +263,14 @@
 				A289FCA528D8CE26008046D1 /* UserPlayRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		A2C2636128DBECD000DCF778 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A2C2636228DBECDC00DCF778 /* String+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		E0FE80BA029746BB9C2FAA39 /* Frameworks */ = {
@@ -431,6 +442,7 @@
 				A289FCBB28DB5EC5008046D1 /* BaseViewController.swift in Sources */,
 				A2B0343528D6FA410066AE2D /* KOPISAPIManager.swift in Sources */,
 				A2C2635D28DBD22700DCF778 /* AddPlayInfoTableViewCell.swift in Sources */,
+				A2C2636328DBECDC00DCF778 /* String+Extension.swift in Sources */,
 				A2B0343928D6FC1E0066AE2D /* EndPoints.swift in Sources */,
 				A289FCA628D8CE26008046D1 /* UserPlayRepository.swift in Sources */,
 				A2B0343728D6FBDA0066AE2D /* Keys.swift in Sources */,

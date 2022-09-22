@@ -7,5 +7,6 @@ target 'YeonMuLog' do
 
   # Pods for YeonMuLog
   pod 'SwiftLint'
+  pod 'IQKeyboardManagerSwift'
 
 end

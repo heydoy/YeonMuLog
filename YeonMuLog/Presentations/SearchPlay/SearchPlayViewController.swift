@@ -16,7 +16,11 @@ class SearchPlayViewController: BaseViewController {
             mainView.tableView.reloadData()
         }
     }
-    var query = String()
+    var query = String() {
+        didSet {
+            searchQuery(query: query)
+        }
+    }
     
     // MARK: - Lifecycle
     override func loadView() {
@@ -33,7 +37,19 @@ class SearchPlayViewController: BaseViewController {
         
     // MARK: - Actions
     @objc func navigationCancelButtonTapped(_ sender: UIBarButtonItem) {
-        
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func searchQuery(query: String) {
+        KOPISAPIManager.shared.callList(query: query) { result in
+            switch result {
+            case let .success(result):
+                self.list = result
+            case let .failure(error):
+                // 사용자에게 메시지
+                print(error)
+            }
+        }
     }
     
     // MARK: - Helpers
@@ -46,6 +62,8 @@ class SearchPlayViewController: BaseViewController {
         navigationItem.rightBarButtonItem = cancel
     }
     override func configure() {
+        searchBar.delegate = self
+        
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
         mainView.tableView.register(SearchPlayResultTableViewCell.self, forCellReuseIdentifier: String(describing: SearchPlayResultTableViewCell.self))
@@ -72,5 +90,22 @@ extension SearchPlayViewController: UITableViewDelegate, UITableViewDataSource {
 
             return cell
         }
+    }
+}
+
+// MARK: - Search Bar Delegate
+
+extension SearchPlayViewController: UISearchBarDelegate {
+    private func dismissKeyboard() {
+        searchBar.resignFirstResponder()
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        dismissKeyboard()
+        guard let query = searchBar.text, !query.isEmpty else {
+            // 텍스트가 없을 경우 사용자에게 안내하기
+            print("서치바에 글자가 없습니다.")
+            return
+        }
+        self.query = query
     }
 }

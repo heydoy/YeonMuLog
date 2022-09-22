@@ -37,7 +37,7 @@ class SearchPlayViewController: BaseViewController {
         
     // MARK: - Actions
     @objc func navigationCancelButtonTapped(_ sender: UIBarButtonItem) {
-        
+        navigationController?.popViewController(animated: true)
     }
     
     func searchQuery(query: String) {

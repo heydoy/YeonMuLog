@@ -46,6 +46,12 @@
 		A2C2636328DBECDC00DCF778 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2636228DBECDC00DCF778 /* String+Extension.swift */; };
 		A2C2636528DCC9EB00DCF778 /* FirstSearchPlayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2636428DCC9EB00DCF778 /* FirstSearchPlayTableViewCell.swift */; };
 		A2C2636728DCCCF800DCF778 /* NoSearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2636628DCCCF800DCF778 /* NoSearchResultTableViewCell.swift */; };
+		A2C2636C28DD017700DCF778 /* AddWatchedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2636B28DD017700DCF778 /* AddWatchedViewController.swift */; };
+		A2C2636E28DD018900DCF778 /* AddWatchedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2636D28DD018900DCF778 /* AddWatchedView.swift */; };
+		A2C2637028DD076500DCF778 /* WatchedPosterGenreTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2636F28DD076500DCF778 /* WatchedPosterGenreTitleTableViewCell.swift */; };
+		A2C2637228DD0CE400DCF778 /* WatchedTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2637128DD0CE400DCF778 /* WatchedTextFieldTableViewCell.swift */; };
+		A2C2637428DD17F000DCF778 /* WatchedTagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2637328DD17F000DCF778 /* WatchedTagsTableViewCell.swift */; };
+		A2C2637628DD1B5900DCF778 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2637528DD1B5900DCF778 /* TagCollectionViewCell.swift */; };
 		D80C0742B1505AB363E00A17 /* Pods_YeonMuLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +93,12 @@
 		A2C2636428DCC9EB00DCF778 /* FirstSearchPlayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSearchPlayTableViewCell.swift; sourceTree = "<group>"; };
 		A2C2636628DCCCF800DCF778 /* NoSearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		A2C2636928DCD37300DCF778 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A2C2636B28DD017700DCF778 /* AddWatchedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatchedViewController.swift; sourceTree = "<group>"; };
+		A2C2636D28DD018900DCF778 /* AddWatchedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatchedView.swift; sourceTree = "<group>"; };
+		A2C2636F28DD076500DCF778 /* WatchedPosterGenreTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchedPosterGenreTitleTableViewCell.swift; sourceTree = "<group>"; };
+		A2C2637128DD0CE400DCF778 /* WatchedTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchedTextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		A2C2637328DD17F000DCF778 /* WatchedTagsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchedTagsTableViewCell.swift; sourceTree = "<group>"; };
+		A2C2637528DD1B5900DCF778 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YeonMuLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -183,6 +195,7 @@
 		A21EDDE528D24A7F006573A4 /* Presentations */ = {
 			isa = PBXGroup;
 			children = (
+				A2C2636A28DCD6B800DCF778 /* AddWatched */,
 				A289FCBC28DB65BD008046D1 /* SearchPlay */,
 				A289FCB728DB5E64008046D1 /* Base */,
 				A21EDDCF28D0B652006573A4 /* ViewController.swift */,
@@ -277,6 +290,19 @@
 				A2C2636228DBECDC00DCF778 /* String+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		A2C2636A28DCD6B800DCF778 /* AddWatched */ = {
+			isa = PBXGroup;
+			children = (
+				A2C2636B28DD017700DCF778 /* AddWatchedViewController.swift */,
+				A2C2636D28DD018900DCF778 /* AddWatchedView.swift */,
+				A2C2636F28DD076500DCF778 /* WatchedPosterGenreTitleTableViewCell.swift */,
+				A2C2637328DD17F000DCF778 /* WatchedTagsTableViewCell.swift */,
+				A2C2637528DD1B5900DCF778 /* TagCollectionViewCell.swift */,
+				A2C2637128DD0CE400DCF778 /* WatchedTextFieldTableViewCell.swift */,
+			);
+			path = AddWatched;
 			sourceTree = "<group>";
 		};
 		E0FE80BA029746BB9C2FAA39 /* Frameworks */ = {
@@ -442,7 +468,9 @@
 			files = (
 				A21EDDD028D0B652006573A4 /* ViewController.swift in Sources */,
 				A2B0344628D77DC90066AE2D /* PlayModel.swift in Sources */,
+				A2C2637628DD1B5900DCF778 /* TagCollectionViewCell.swift in Sources */,
 				A21EDDCC28D0B652006573A4 /* AppDelegate.swift in Sources */,
+				A2C2637428DD17F000DCF778 /* WatchedTagsTableViewCell.swift in Sources */,
 				A21EDDCE28D0B652006573A4 /* SceneDelegate.swift in Sources */,
 				A2C2636728DCCCF800DCF778 /* NoSearchResultTableViewCell.swift in Sources */,
 				A2B0344928D796840066AE2D /* UserPlayModel.swift in Sources */,
@@ -453,10 +481,14 @@
 				A2B0343928D6FC1E0066AE2D /* EndPoints.swift in Sources */,
 				A289FCA628D8CE26008046D1 /* UserPlayRepository.swift in Sources */,
 				A2B0343728D6FBDA0066AE2D /* Keys.swift in Sources */,
+				A2C2636E28DD018900DCF778 /* AddWatchedView.swift in Sources */,
 				A2C2636528DCC9EB00DCF778 /* FirstSearchPlayTableViewCell.swift in Sources */,
 				A289FCB928DB5E7E008046D1 /* BaseView.swift in Sources */,
+				A2C2637228DD0CE400DCF778 /* WatchedTextFieldTableViewCell.swift in Sources */,
+				A2C2637028DD076500DCF778 /* WatchedPosterGenreTitleTableViewCell.swift in Sources */,
 				A2C2635528DBBCFC00DCF778 /* SearchPlayResultTableViewCell.swift in Sources */,
 				A289FCAB28DACCEF008046D1 /* setFonts.swift in Sources */,
+				A2C2636C28DD017700DCF778 /* AddWatchedViewController.swift in Sources */,
 				A289FCC128DB65ED008046D1 /* SearchPlayView.swift in Sources */,
 				A289FCBE28DB65D4008046D1 /* SearchPlayViewController.swift in Sources */,
 			);

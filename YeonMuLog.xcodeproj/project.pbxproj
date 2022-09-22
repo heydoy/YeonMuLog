@@ -72,7 +72,6 @@
 		A289FCBA28DB5EC5008046D1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A289FCBD28DB65D4008046D1 /* SearchPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlayViewController.swift; sourceTree = "<group>"; };
 		A289FCC028DB65ED008046D1 /* SearchPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlayView.swift; sourceTree = "<group>"; };
-		A28A5F6628D2ECCB00D270E9 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A28A5F6728D2ECCB00D270E9 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		A28A5F6B28D2ECEC00D270E9 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A28A5F7028D2ED1900D270E9 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -87,6 +86,7 @@
 		A2C2636228DBECDC00DCF778 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		A2C2636428DCC9EB00DCF778 /* FirstSearchPlayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSearchPlayTableViewCell.swift; sourceTree = "<group>"; };
 		A2C2636628DCCCF800DCF778 /* NoSearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		A2C2636928DCD37300DCF778 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YeonMuLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -478,7 +478,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A21EDDD728D0B655006573A4 /* Base */,
-				A28A5F6628D2ECCB00D270E9 /* ko */,
+				A2C2636928DCD37300DCF778 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

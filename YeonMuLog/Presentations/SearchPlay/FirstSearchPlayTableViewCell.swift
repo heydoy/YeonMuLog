@@ -1,25 +1,25 @@
 //
-//  AddPlayInfoTableViewCell.swift
+//  FirstSearchPlayTableViewCell.swift
 //  YeonMuLog
 //
-//  Created by Doy Kim on 2022/09/22.
+//  Created by Doy Kim on 2022/09/23.
 //
 
 import UIKit
 
-final class AddPlayInfoTableViewCell: UITableViewCell {
+final class FirstSearchPlayTableViewCell: UITableViewCell {
     // MARK: - Properties
     private let guideLabel = UILabel().then {
         $0.font = .appleSDGothicNeo(of: .subTitle, weight: .regular)
         $0.textColor = .purple
         $0.numberOfLines = 0
         $0.textAlignment = .center
-        $0.text = "AddPlayInfoLabel".localized
+        $0.text = "FirstSearchLabel".localized
     }
     
     private let characterImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
-        $0.image = UIImage(named: "character-hold-pen")
+        $0.image = UIImage(named: "character-with-hearts")
     }
     
     // MARK: - Inintialisation
@@ -49,7 +49,8 @@ final class AddPlayInfoTableViewCell: UITableViewCell {
         characterImageView.snp.makeConstraints { make in
             make.centerX.equalTo(guideLabel)
             make.top.equalTo(guideLabel.snp.bottom).offset(4)
-            make.width.height.equalTo(80)
+            make.width.equalTo(102)
+            make.height.equalTo(90)
             make.bottom.equalToSuperview().inset(20)
             
         }
@@ -57,4 +58,5 @@ final class AddPlayInfoTableViewCell: UITableViewCell {
     func setUI() {
         backgroundColor = .clear
     }
+
 }

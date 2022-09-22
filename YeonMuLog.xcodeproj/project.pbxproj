@@ -49,6 +49,7 @@
 		A2C2636C28DD017700DCF778 /* AddWatchedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2636B28DD017700DCF778 /* AddWatchedViewController.swift */; };
 		A2C2636E28DD018900DCF778 /* AddWatchedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2636D28DD018900DCF778 /* AddWatchedView.swift */; };
 		A2C2637028DD076500DCF778 /* WatchedPosterGenreTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2636F28DD076500DCF778 /* WatchedPosterGenreTitleTableViewCell.swift */; };
+		A2C2637228DD0CE400DCF778 /* WatchedTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2637128DD0CE400DCF778 /* WatchedTextFieldTableViewCell.swift */; };
 		D80C0742B1505AB363E00A17 /* Pods_YeonMuLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		A2C2636B28DD017700DCF778 /* AddWatchedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatchedViewController.swift; sourceTree = "<group>"; };
 		A2C2636D28DD018900DCF778 /* AddWatchedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatchedView.swift; sourceTree = "<group>"; };
 		A2C2636F28DD076500DCF778 /* WatchedPosterGenreTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchedPosterGenreTitleTableViewCell.swift; sourceTree = "<group>"; };
+		A2C2637128DD0CE400DCF778 /* WatchedTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchedTextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YeonMuLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -292,6 +294,7 @@
 				A2C2636B28DD017700DCF778 /* AddWatchedViewController.swift */,
 				A2C2636D28DD018900DCF778 /* AddWatchedView.swift */,
 				A2C2636F28DD076500DCF778 /* WatchedPosterGenreTitleTableViewCell.swift */,
+				A2C2637128DD0CE400DCF778 /* WatchedTextFieldTableViewCell.swift */,
 			);
 			path = AddWatched;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				A2C2636E28DD018900DCF778 /* AddWatchedView.swift in Sources */,
 				A2C2636528DCC9EB00DCF778 /* FirstSearchPlayTableViewCell.swift in Sources */,
 				A289FCB928DB5E7E008046D1 /* BaseView.swift in Sources */,
+				A2C2637228DD0CE400DCF778 /* WatchedTextFieldTableViewCell.swift in Sources */,
 				A2C2637028DD076500DCF778 /* WatchedPosterGenreTitleTableViewCell.swift in Sources */,
 				A2C2635528DBBCFC00DCF778 /* SearchPlayResultTableViewCell.swift in Sources */,
 				A289FCAB28DACCEF008046D1 /* setFonts.swift in Sources */,

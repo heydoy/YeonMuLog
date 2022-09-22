@@ -63,8 +63,8 @@ final class WatchedPosterGenreTitleTableViewCell: UITableViewCell {
         posterImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview()
-            make.leading.greaterThanOrEqualTo(50)
-            make.trailing.greaterThanOrEqualTo(-50)
+            make.leading.equalTo(60)
+            make.trailing.equalTo(-60)
             make.height.equalTo(posterImageView.snp.width).multipliedBy(1.48)
         }
         

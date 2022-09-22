@@ -25,9 +25,19 @@ final class SearchPlayResultTableViewCell: UITableViewCell {
         $0.layer.cornerRadius = 4
         $0.contentMode = .scaleAspectFill
     }
+    
+    private let genreLabel = UILabel().then {
+        $0.font = .appleSDGothicNeo(of: .content, weight: .medium)
+        $0.layer.cornerRadius = 8
+        $0.layer.masksToBounds = true
+        $0.textColor = .white
+        $0.backgroundColor = .systemPink
+    }
+    
     private let titleLabel = UILabel().then {
         $0.font = .appleSDGothicNeo(of: .title, weight: .bold)
         $0.textColor = .black
+        $0.numberOfLines = 0
     }
     
     private let dateLabel = UILabel().then {
@@ -84,12 +94,14 @@ final class SearchPlayResultTableViewCell: UITableViewCell {
         dateLabel.text = "\(data.startDate) ~ \(data.endDate)"
         castLabel.text = data.cast
         placeLabel.text = data.place
+        genreLabel.text = "  \(data.genre)  "
     }
     
     // MARK: - UI
     private func configure() {
         self.contentView.addSubview(cellBackgroundView)
         cellBackgroundView.addSubview(posterImageView)
+        cellBackgroundView.addSubview(genreLabel)
         cellBackgroundView.addSubview(titleLabel)
         cellBackgroundView.addSubview(dateLabel)
         cellBackgroundView.addSubview(castLabel)
@@ -101,20 +113,27 @@ final class SearchPlayResultTableViewCell: UITableViewCell {
     
     private func setConstraints() {
         cellBackgroundView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.top.bottom.equalToSuperview().inset(4)
-            make.height.equalTo(128)
-            
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalToSuperview().offset(4)
+            make.bottom.equalToSuperview().offset(-4)
+            make.centerX.centerY.equalToSuperview()
+            make.height.equalTo(170)
         }
         posterImageView.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(8)
-            make.top.bottom.equalToSuperview().inset(10)
-            make.width.equalToSuperview().multipliedBy(0.24)
+            make.width.equalToSuperview().multipliedBy(0.28)
+            make.centerY.equalToSuperview()
+            make.trailing.bottom.equalToSuperview().offset(-10)
+            make.top.equalToSuperview().offset(10)
         }
-        
+        genreLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(15)
+            make.top.equalToSuperview().offset(15)
+            make.height.equalTo(24)
+        }
         titleLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(15)
-            make.top.equalToSuperview().inset(12)
+            make.leading.equalTo(genreLabel)
+            make.top.equalTo(genreLabel.snp.bottom).offset(4)
             make.trailing.equalTo(posterImageView.snp.leading).offset(-12)
         }
         dateIconImageView.snp.makeConstraints { make in
@@ -125,7 +144,7 @@ final class SearchPlayResultTableViewCell: UITableViewCell {
         dateLabel.snp.makeConstraints { make in
             make.trailing.equalTo(titleLabel)
             make.leading.equalTo(dateIconImageView.snp.trailing).offset(2)
-            make.centerY.equalTo(dateIconImageView)
+            make.top.equalTo(dateIconImageView)
         }
         
         castIconImageView.snp.makeConstraints { make in
@@ -147,7 +166,8 @@ final class SearchPlayResultTableViewCell: UITableViewCell {
         placeLabel.snp.makeConstraints { make in
             make.trailing.equalTo(titleLabel)
             make.leading.equalTo(placeIconImageView.snp.trailing).offset(2)
-            make.centerY.equalTo(placeIconImageView)
+            make.top.equalTo(placeIconImageView)
+            
         }
             
     }

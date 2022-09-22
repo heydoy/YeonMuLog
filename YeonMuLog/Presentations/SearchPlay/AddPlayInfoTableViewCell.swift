@@ -14,7 +14,7 @@ final class AddPlayInfoTableViewCell: UITableViewCell {
         $0.textColor = .purple
         $0.numberOfLines = 0
         $0.textAlignment = .center
-        $0.text = "SearchAddPlayInfoLabel".localized
+        $0.text = "AddPlayInfoLabel".localized
     }
     
     private let characterImageView = UIImageView().then {

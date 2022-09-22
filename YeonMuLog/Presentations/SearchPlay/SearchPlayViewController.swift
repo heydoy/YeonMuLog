@@ -11,7 +11,11 @@ class SearchPlayViewController: BaseViewController {
     // MARK: - Properties
     let mainView = SearchPlayView()
     let searchBar = UISearchBar()
-    var list: [Play] = []
+    var list: [Play] = [] {
+        didSet {
+            mainView.tableView.reloadData()
+        }
+    }
     var query = String()
     
     // MARK: - Lifecycle
@@ -21,13 +25,27 @@ class SearchPlayViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let item = Play(id: "PF333333", title: "마리 퀴리", cast: "김소향, 옥주현, 김히어라, 이봄소리, 양승리, 김찬호, 박영수 등", genre: "뮤지컬", poster: "http://www.kopis.or.kr/upload/pfmPoster/PF_PF165402_200702_093020.PNG", place: "홍익대 대학로 아트센터", startDate: "2020.07.30", endDate: "2020.09.27", runtime: "2시간 30분", ticket: "", time: "")
-        list.append(item)
+//        let item = Play(id: "PF333333", title: "마리 퀴리", cast: "김소향, 옥주현, 김히어라, 이봄소리, 양승리, 김찬호, 박영수 등", genre: "뮤지컬", poster: "http://www.kopis.or.kr/upload/pfmPoster/PF_PF165402_200702_093020.PNG", place: "홍익대 대학로 아트센터", startDate: "2020.07.30", endDate: "2020.09.27", runtime: "2시간 30분", ticket: "", time: "")
+//        list.append(item)
+        
+        searchQuery(query: "키다리")
     }
         
     // MARK: - Actions
     @objc func navigationCancelButtonTapped(_ sender: UIBarButtonItem) {
         
+    }
+    
+    func searchQuery(query: String) {
+        KOPISAPIManager.shared.callList(query: query) { result in
+            switch result {
+            case let .success(result):
+                self.list = result
+            case let .failure(error):
+                // 사용자에게 메시지
+                print(error)
+            }
+        }
     }
     // MARK: - Helpers
     override func setNavigationBar() {

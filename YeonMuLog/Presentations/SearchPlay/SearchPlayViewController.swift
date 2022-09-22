@@ -68,27 +68,35 @@ class SearchPlayViewController: BaseViewController {
         mainView.tableView.dataSource = self
         mainView.tableView.register(SearchPlayResultTableViewCell.self, forCellReuseIdentifier: String(describing: SearchPlayResultTableViewCell.self))
         mainView.tableView.register(AddPlayInfoTableViewCell.self, forCellReuseIdentifier: String(describing: AddPlayInfoTableViewCell.self))
+        mainView.tableView.register(FirstSearchPlayTableViewCell.self, forCellReuseIdentifier: String(describing: FirstSearchPlayTableViewCell.self))
     }
 }
 
 // MARK: - TableView
 extension SearchPlayViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return query.isEmpty ? 1 : 2 // 검색어 여부로 첫 진입 체크
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? list.count : 1
+        return query.isEmpty ? 1 : section == 0 ? list.count : 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.section == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SearchPlayResultTableViewCell.self)) as? SearchPlayResultTableViewCell else { return UITableViewCell() }
-            cell.setData(data: list[indexPath.row])
+        if query.isEmpty {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FirstSearchPlayTableViewCell.self)) as? FirstSearchPlayTableViewCell else { return UITableViewCell() }
             return cell
-        } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AddPlayInfoTableViewCell.self)) as? AddPlayInfoTableViewCell else { return UITableViewCell() }
+        }
+        
+        else {
+            if indexPath.section == 0 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SearchPlayResultTableViewCell.self)) as? SearchPlayResultTableViewCell else { return UITableViewCell() }
+                cell.setData(data: list[indexPath.row])
+                return cell
+            } else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AddPlayInfoTableViewCell.self)) as? AddPlayInfoTableViewCell else { return UITableViewCell() }
 
-            return cell
+                return cell
+            }
         }
     }
 }

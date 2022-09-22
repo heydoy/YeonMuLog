@@ -101,7 +101,8 @@ final class SearchPlayResultTableViewCell: UITableViewCell {
     
     private func setConstraints() {
         cellBackgroundView.snp.makeConstraints { make in
-            make.top.bottom.leading.trailing.equalToSuperview().inset(20)
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.top.bottom.equalToSuperview().inset(4)
             make.height.equalTo(128)
             
         }

@@ -102,6 +102,14 @@ extension SearchPlayViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if !list.isEmpty && indexPath.section == 0 {
+            let vc = AddWatchedViewController()
+            vc.playInfo = list[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
 // MARK: - Search Bar Delegate

@@ -37,6 +37,9 @@ class AddWatchedViewController: BaseViewController {
     // MARK: - Properties
     let mainView = AddWatchedView()
     var playInfo: Play? 
+    var castArray: [String] = []
+    var castSelectedIndex: [Int] = []
+    var castSelectedData: [String] = []
     
     // MARK: - Lifecycle
     override func loadView() {
@@ -72,6 +75,8 @@ class AddWatchedViewController: BaseViewController {
         mainView.tableView.register(WatchedPosterGenreTitleTableViewCell.self, forCellReuseIdentifier: String(describing: WatchedPosterGenreTitleTableViewCell.self))
         
         mainView.tableView.register(WatchedTextFieldTableViewCell.self, forCellReuseIdentifier: String(describing: WatchedTextFieldTableViewCell.self))
+        
+        mainView.tableView.register(WatchedTagsTableViewCell.self, forCellReuseIdentifier: String(describing: WatchedTagsTableViewCell.self))
     }
 }
 
@@ -118,7 +123,13 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
             
         case AddWatchedItem.cast.rawValue:
-            return UITableViewCell()
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: WatchedTagsTableViewCell.self)) as? WatchedTagsTableViewCell else { return UITableViewCell() }
+            
+            cell.setData(title: AddWatchedItem.cast.getTitle())
+            cell.collectionView.delegate = self
+            cell.collectionView.dataSource = self
+            
+            return cell
             
         case AddWatchedItem.seat.rawValue:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: WatchedTextFieldTableViewCell.self)) as? WatchedTextFieldTableViewCell else { return UITableViewCell() }
@@ -146,6 +157,58 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.row == 0 ? 470 : indexPath.row == 3 ?  UITableView.automaticDimension : 80 // size automatic dimension이 안되서 수동으로 해줘야되는 이유를 찾아야...
+        return indexPath.row == 0 ? 470 : indexPath.row == 3 ?  140 : 80 // size automatic dimension이 안되서 수동으로 해줘야되는 이유를 찾아야...
+    }
+}
+
+// MARK: - CollectionView
+
+extension AddWatchedViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        guard let play = playInfo else { return 0 }
+        castArray = play.cast.components(separatedBy: ", ")
+        return castArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: TagCollectionViewCell.self), for: indexPath) as? TagCollectionViewCell else { return UICollectionViewCell() }
+        
+        cell.setData(title: castArray[indexPath.item])
+        
+        if castSelectedIndex.contains(indexPath.item) {
+            cell.pressedDesign()
+        } else {
+            cell.defaultDesign()
+        }
+                
+
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let strData = castArray[indexPath.item]
+
+        if castSelectedIndex.contains(indexPath.item) {
+            castSelectedIndex = castSelectedIndex.filter { $0 != indexPath.item}
+            castSelectedData = castSelectedData.filter { $0 != strData}
+        } else {
+            castSelectedIndex.append(indexPath.item)
+            castSelectedData.append(strData)
+        }
+
+        print(#function, castSelectedData, castSelectedIndex)
+        collectionView.reloadData()
+    }
+        
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+ 
+        let width: CGFloat = castArray[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16)]).width + 25
+        let height: CGFloat = 40
+        
+        return CGSize(width: width, height: height)
     }
 }

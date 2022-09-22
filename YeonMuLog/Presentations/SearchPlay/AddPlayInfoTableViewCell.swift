@@ -44,12 +44,13 @@ final class AddPlayInfoTableViewCell: UITableViewCell {
     func setConstraints() {
         guideLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(12)
+            make.top.equalToSuperview().inset(20)
         }
         characterImageView.snp.makeConstraints { make in
             make.centerX.equalTo(guideLabel)
             make.top.equalTo(guideLabel.snp.bottom).offset(4)
             make.width.height.equalTo(80)
+            make.bottom.equalToSuperview().inset(20)
             
         }
     }

@@ -9,3 +9,4 @@
 "AddPlayInfoLabel" = "혹시 원하는 극 정보가 없으신가요?\n직접 입력해보세요!";
 "FirstSearchLabel" = "기록으로 남기고 싶은\n연극과 뮤지컬을 찾아보세요!";
 "NoSearchResult" = "앗, %@의 검색결과가 없어요!\n다른 검색어를 시도하거나\n극정보를 직접 입력해보세요!";
+"AddWatchedNavigationTitle" = "관람기록 추가하기";

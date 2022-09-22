@@ -36,6 +36,18 @@ class SearchPlayViewController: BaseViewController {
         
     }
     
+    func searchQuery(query: String) {
+        KOPISAPIManager.shared.callList(query: query) { result in
+            switch result {
+            case let .success(result):
+                self.list = result
+            case let .failure(error):
+                // 사용자에게 메시지
+                print(error)
+            }
+        }
+    }
+    
     // MARK: - Helpers
     override func setNavigationBar() {
         // Search Bar 설정

@@ -12,7 +12,6 @@ class AddWatchedViewController: BaseViewController {
     let mainView = AddWatchedView()
     var playInfo: Play? 
     
-    
     // MARK: - Lifecycle
     override func loadView() {
         view = mainView
@@ -20,7 +19,8 @@ class AddWatchedViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print(playInfo)
     }
     
     // MARK: - Actions
@@ -43,6 +43,8 @@ class AddWatchedViewController: BaseViewController {
     override func configure() {
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
+        
+        mainView.tableView.register(WatchedPosterGenreTitleTableViewCell.self, forCellReuseIdentifier: String(describing: WatchedPosterGenreTitleTableViewCell.self))
     }
 }
 
@@ -50,7 +52,7 @@ class AddWatchedViewController: BaseViewController {
 extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 7
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,6 +60,12 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+         
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: WatchedPosterGenreTitleTableViewCell.self)) as? WatchedPosterGenreTitleTableViewCell else { return UITableViewCell() }
+        
+        if let play = playInfo {
+            cell.setData(data: play)
+        }
+        return cell
     }
 }

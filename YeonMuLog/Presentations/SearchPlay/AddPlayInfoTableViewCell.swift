@@ -10,7 +10,7 @@ import UIKit
 final class AddPlayInfoTableViewCell: UITableViewCell {
     // MARK: - Properties
     private let guideLabel = UILabel().then {
-        $0.font = .appleSDGothicNeo(of: .caption, weight: .regular)
+        $0.font = .appleSDGothicNeo(of: .subTitle, weight: .regular)
         $0.textColor = .purple
         $0.numberOfLines = 0
         $0.textAlignment = .center

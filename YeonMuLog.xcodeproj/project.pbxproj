@@ -45,6 +45,7 @@
 		A2C2635D28DBD22700DCF778 /* AddPlayInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2635C28DBD22700DCF778 /* AddPlayInfoTableViewCell.swift */; };
 		A2C2636328DBECDC00DCF778 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2636228DBECDC00DCF778 /* String+Extension.swift */; };
 		A2C2636528DCC9EB00DCF778 /* FirstSearchPlayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2636428DCC9EB00DCF778 /* FirstSearchPlayTableViewCell.swift */; };
+		A2C2636728DCCCF800DCF778 /* NoSearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2636628DCCCF800DCF778 /* NoSearchResultTableViewCell.swift */; };
 		D80C0742B1505AB363E00A17 /* Pods_YeonMuLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		A2C2635C28DBD22700DCF778 /* AddPlayInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayInfoTableViewCell.swift; sourceTree = "<group>"; };
 		A2C2636228DBECDC00DCF778 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		A2C2636428DCC9EB00DCF778 /* FirstSearchPlayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSearchPlayTableViewCell.swift; sourceTree = "<group>"; };
+		A2C2636628DCCCF800DCF778 /* NoSearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YeonMuLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -225,6 +227,7 @@
 				A289FCC028DB65ED008046D1 /* SearchPlayView.swift */,
 				A2C2635428DBBCFC00DCF778 /* SearchPlayResultTableViewCell.swift */,
 				A2C2636428DCC9EB00DCF778 /* FirstSearchPlayTableViewCell.swift */,
+				A2C2636628DCCCF800DCF778 /* NoSearchResultTableViewCell.swift */,
 				A2C2635C28DBD22700DCF778 /* AddPlayInfoTableViewCell.swift */,
 			);
 			path = SearchPlay;
@@ -441,6 +444,7 @@
 				A2B0344628D77DC90066AE2D /* PlayModel.swift in Sources */,
 				A21EDDCC28D0B652006573A4 /* AppDelegate.swift in Sources */,
 				A21EDDCE28D0B652006573A4 /* SceneDelegate.swift in Sources */,
+				A2C2636728DCCCF800DCF778 /* NoSearchResultTableViewCell.swift in Sources */,
 				A2B0344928D796840066AE2D /* UserPlayModel.swift in Sources */,
 				A289FCBB28DB5EC5008046D1 /* BaseViewController.swift in Sources */,
 				A2B0343528D6FA410066AE2D /* KOPISAPIManager.swift in Sources */,

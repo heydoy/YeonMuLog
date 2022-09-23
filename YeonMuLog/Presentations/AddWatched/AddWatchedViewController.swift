@@ -54,7 +54,7 @@ class AddWatchedViewController: BaseViewController {
     
     // MARK: - Actions
     @objc func finishButtonTapped(_ sender: UIBarButtonItem) {
-        
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     // MARK: - Helpers

@@ -11,3 +11,16 @@
 "NoSearchResult" = "앗, %@의 검색결과가 없어요!\n다른 검색어를 시도하거나\n극정보를 직접 입력해보세요!";
 "AddWatchedNavigationTitle" = "관람기록 추가하기";
 "NoReview" = "관람한 극이 아직 없네요\n오른쪽 상단의 + 버튼을 눌러 추가해보세요";
+
+// 온보딩
+
+"goMainButtonTitle" = "바로 시작하기";
+
+"firstOnboardingTitle" = "연극과 뮤지컬의\n감동과 기억을\n기록으로 남겨보세요";
+"firstOnboardingSubtitle" = "텍스트와 사진, 음성메모로\n자유롭게 남겨보세요";
+
+"SecondOnboardingTitle" = "극 제목으로 검색하여\n장소와 캐스팅, 포스터를\n손쉽게 추가하세요";
+"SecondOnboardingSubtitle" = "오픈런이 아닌 예전 극들도\n모두 검색할 수 있어요";
+
+"ThirdOnboardingTitle" = "관극 기록을\n달력으로도 보고\n리뷰 통계도 볼 수 있어요";
+"ThirdOnboardingSubtitle" = "관극기록 결산을 한눈에\n손쉽게 볼 수 있어요.";

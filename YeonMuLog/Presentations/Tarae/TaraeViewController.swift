@@ -6,10 +6,17 @@
 //
 
 import UIKit
+import RealmSwift
 
 class TaraeViewController: BaseViewController {
     // MARK: - Properties
     let mainView = TaraeView()
+    let repository = UserPlayRepository()
+    var list: Results<UserPlayInfo>! {
+        didSet {
+            mainView.tableView.reloadData()
+        }
+    }
     
     // MARK: - Lifecycle
     override func loadView() {
@@ -18,7 +25,16 @@ class TaraeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if repository.fetch() != list {
+            list = repository.fetch()
+       }
     }
     
     // MARK: - Actions
@@ -44,6 +60,8 @@ class TaraeViewController: BaseViewController {
         mainView.tableView.dataSource = self
         
         mainView.tableView.register(NoReviewTableViewCell.self, forCellReuseIdentifier: String(describing: NoReviewTableViewCell.self))
+        
+        mainView.tableView.register(TaraeReviewTableViewCell.self, forCellReuseIdentifier: String(describing: TaraeReviewTableViewCell.self))
     }
 }
 
@@ -52,13 +70,20 @@ class TaraeViewController: BaseViewController {
 extension TaraeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return list == nil || list.count == 0 ? 1 : list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        if list == nil || list.count == 0 {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: NoReviewTableViewCell.self)) as? NoReviewTableViewCell else { return UITableViewCell() }
         
         return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TaraeReviewTableViewCell.self)) as? TaraeReviewTableViewCell else { return UITableViewCell() }
+            
+            cell.setData(data: list[indexPath.row])
+            
+            return cell
+        }
     }
 }

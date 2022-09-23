@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NoReviewTableViewCell: UITableViewCell {
+final class NoReviewTableViewCell: UITableViewCell {
     // MARK: - Properties
     private let guideLabel = UILabel().then {
         $0.font = .appleSDGothicNeo(of: .subTitle, weight: .regular)

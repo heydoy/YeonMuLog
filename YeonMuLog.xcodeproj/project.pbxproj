@@ -55,6 +55,7 @@
 		A2C2637928DD2EB700DCF778 /* TaraeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2637828DD2EB700DCF778 /* TaraeViewController.swift */; };
 		A2C2637B28DD2ECB00DCF778 /* TaraeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2637A28DD2ECB00DCF778 /* TaraeView.swift */; };
 		A2C2637D28DD318E00DCF778 /* NoReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2637C28DD318E00DCF778 /* NoReviewTableViewCell.swift */; };
+		A2C2637F28DD35B000DCF778 /* TaraeReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2637E28DD35B000DCF778 /* TaraeReviewTableViewCell.swift */; };
 		D80C0742B1505AB363E00A17 /* Pods_YeonMuLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +106,7 @@
 		A2C2637828DD2EB700DCF778 /* TaraeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaraeViewController.swift; sourceTree = "<group>"; };
 		A2C2637A28DD2ECB00DCF778 /* TaraeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaraeView.swift; sourceTree = "<group>"; };
 		A2C2637C28DD318E00DCF778 /* NoReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoReviewTableViewCell.swift; sourceTree = "<group>"; };
+		A2C2637E28DD35B000DCF778 /* TaraeReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaraeReviewTableViewCell.swift; sourceTree = "<group>"; };
 		C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YeonMuLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -318,6 +320,7 @@
 				A2C2637828DD2EB700DCF778 /* TaraeViewController.swift */,
 				A2C2637A28DD2ECB00DCF778 /* TaraeView.swift */,
 				A2C2637C28DD318E00DCF778 /* NoReviewTableViewCell.swift */,
+				A2C2637E28DD35B000DCF778 /* TaraeReviewTableViewCell.swift */,
 			);
 			path = Tarae;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				A21EDDCE28D0B652006573A4 /* SceneDelegate.swift in Sources */,
 				A2C2636728DCCCF800DCF778 /* NoSearchResultTableViewCell.swift in Sources */,
 				A2B0344928D796840066AE2D /* UserPlayModel.swift in Sources */,
+				A2C2637F28DD35B000DCF778 /* TaraeReviewTableViewCell.swift in Sources */,
 				A2C2637D28DD318E00DCF778 /* NoReviewTableViewCell.swift in Sources */,
 				A289FCBB28DB5EC5008046D1 /* BaseViewController.swift in Sources */,
 				A2B0343528D6FA410066AE2D /* KOPISAPIManager.swift in Sources */,

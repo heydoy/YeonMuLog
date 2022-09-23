@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 enum AddWatchedItem: Int {
     case posterGenreTitle = 0
@@ -36,10 +37,14 @@ enum AddWatchedItem: Int {
 class AddWatchedViewController: BaseViewController {
     // MARK: - Properties
     let mainView = AddWatchedView()
+    let repository = UserPlayRepository()
     var playInfo: Play? 
     var castArray: [String] = []
     var castSelectedIndex: [Int] = []
     var castSelectedData: [String] = []
+    
+    var seat: String = ""
+    var ticketPrice: Int = 0
     
     // MARK: - Lifecycle
     override func loadView() {
@@ -54,7 +59,47 @@ class AddWatchedViewController: BaseViewController {
     
     // MARK: - Actions
     @objc func finishButtonTapped(_ sender: UIBarButtonItem) {
+        saveUserPlayInfo()
         self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    @objc func seatValueChanged(_ sender: UITextField) {
+        if let text = sender.text {
+            seat = text
+        }
+    }
+    
+    @objc func ticketPriceValueChanged(_ sender: UITextField) {
+        if let text = sender.text {
+            if let price = Int(text) {
+                ticketPrice = price
+            }
+        }
+    }
+    
+    func saveUserPlayInfo() {
+        let list = UserPlayInfo()
+        if let play = playInfo {
+            list.date = Date()
+            list.casts.append(objectsIn: castSelectedData)
+
+            list.playId = play.id
+            list.genre = play.genre
+            list.seat = seat
+            list.ticket = ticketPrice
+            list.poster = play.poster
+            list.title = play.title
+            list.place = play.place
+            list.runtime = play.runtime
+            list.time = "19:00"
+//            let review = UserReview()
+//            review.text = "고양이가 보고싶다 스트링 리스트에 어떻게 접근하나요 ."
+//            review.image.append(objectsIn: ["jpg", "jpg"])
+//            list.userReview.append(review)
+//            list.userReview.append(review)
+            let repository = UserPlayRepository()
+            repository.createPlay(list)
+        }
     }
     
     // MARK: - Helpers
@@ -139,6 +184,8 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
                 textFieldText: "",
                 placeHolder: "좌석위치를 입력해주세요")
             
+            cell.userTextField.addTarget(self, action: #selector(seatValueChanged), for: .valueChanged)
+            
             return cell
             
         case AddWatchedItem.ticketPrice.rawValue:
@@ -148,6 +195,8 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
                 title: AddWatchedItem.ticketPrice.getTitle(),
                 textFieldText: "",
                 placeHolder: "티켓금액을 입력해주세요")
+            
+            cell.userTextField.addTarget(self, action: #selector(ticketPriceValueChanged), for: .valueChanged)
             
             return cell
                 

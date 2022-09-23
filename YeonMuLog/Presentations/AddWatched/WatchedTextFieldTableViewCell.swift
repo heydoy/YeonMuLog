@@ -18,7 +18,7 @@ final class WatchedTextFieldTableViewCell: UITableViewCell {
         $0.numberOfLines = 0
     }
     
-    private let userTextField = UITextField().then {
+    let userTextField = UITextField().then {
         $0.textColor = .darkGray
         $0.font = .appleSDGothicNeo(of: .subTitle, weight: .medium)
         $0.backgroundColor = .systemGray6

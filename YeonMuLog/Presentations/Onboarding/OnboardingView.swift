@@ -48,22 +48,23 @@ class OnboardingView: BaseView {
     }
     
     override func setConstraints() {
-        collectionView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.greaterThanOrEqualToSuperview().inset(50)
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalToSuperview().multipliedBy(0.67)
-            make.bottom.equalTo(pageControl.snp.top).offset(-24)
-        }
-        
         goMainButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview().inset(40)
             make.height.equalTo(52)
             make.leading.trailing.equalToSuperview().inset(20)
             make.centerX.equalToSuperview()
         }
+        
+        collectionView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.greaterThanOrEqualToSuperview().inset(40)
+            make.leading.trailing.equalToSuperview().inset(24)
+            make.height.equalToSuperview().multipliedBy(0.67)
+            make.bottom.equalTo(pageControl.snp.top).offset(-24)
+        }
+        
         pageControl.snp.makeConstraints { make in
-            make.bottom.equalTo(goMainButton.snp.top).offset(16)
+            make.bottom.equalTo(goMainButton.snp.top).offset(-16)
             make.centerX.equalToSuperview()
             make.height.equalTo(16)
             make.topMargin.greaterThanOrEqualTo(collectionView.snp.bottom).offset(12)

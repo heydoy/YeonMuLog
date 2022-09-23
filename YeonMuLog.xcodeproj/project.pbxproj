@@ -58,6 +58,8 @@
 		A2C2637F28DD35B000DCF778 /* TaraeReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2637E28DD35B000DCF778 /* TaraeReviewTableViewCell.swift */; };
 		A2C2638328DD6AF300DCF778 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2638228DD6AF300DCF778 /* OnboardingViewController.swift */; };
 		A2C2638528DD6B0800DCF778 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2638428DD6B0800DCF778 /* OnboardingView.swift */; };
+		A2C2638728DD727500DCF778 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2638628DD727500DCF778 /* OnboardingCollectionViewCell.swift */; };
+		A2C2638928DD73AD00DCF778 /* OnboardingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2638828DD73AD00DCF778 /* OnboardingMessage.swift */; };
 		D80C0742B1505AB363E00A17 /* Pods_YeonMuLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +113,8 @@
 		A2C2637E28DD35B000DCF778 /* TaraeReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaraeReviewTableViewCell.swift; sourceTree = "<group>"; };
 		A2C2638228DD6AF300DCF778 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		A2C2638428DD6B0800DCF778 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A2C2638628DD727500DCF778 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		A2C2638828DD73AD00DCF778 /* OnboardingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMessage.swift; sourceTree = "<group>"; };
 		C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YeonMuLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -335,6 +339,8 @@
 			children = (
 				A2C2638228DD6AF300DCF778 /* OnboardingViewController.swift */,
 				A2C2638428DD6B0800DCF778 /* OnboardingView.swift */,
+				A2C2638628DD727500DCF778 /* OnboardingCollectionViewCell.swift */,
+				A2C2638828DD73AD00DCF778 /* OnboardingMessage.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -521,6 +527,7 @@
 				A21EDDD028D0B652006573A4 /* ViewController.swift in Sources */,
 				A2B0344628D77DC90066AE2D /* PlayModel.swift in Sources */,
 				A2C2637628DD1B5900DCF778 /* TagCollectionViewCell.swift in Sources */,
+				A2C2638728DD727500DCF778 /* OnboardingCollectionViewCell.swift in Sources */,
 				A21EDDCC28D0B652006573A4 /* AppDelegate.swift in Sources */,
 				A2C2637428DD17F000DCF778 /* WatchedTagsTableViewCell.swift in Sources */,
 				A21EDDCE28D0B652006573A4 /* SceneDelegate.swift in Sources */,
@@ -534,6 +541,7 @@
 				A2C2635D28DBD22700DCF778 /* AddPlayInfoTableViewCell.swift in Sources */,
 				A2C2636328DBECDC00DCF778 /* String+Extension.swift in Sources */,
 				A2B0343928D6FC1E0066AE2D /* EndPoints.swift in Sources */,
+				A2C2638928DD73AD00DCF778 /* OnboardingMessage.swift in Sources */,
 				A289FCA628D8CE26008046D1 /* UserPlayRepository.swift in Sources */,
 				A2B0343728D6FBDA0066AE2D /* Keys.swift in Sources */,
 				A2C2636E28DD018900DCF778 /* AddWatchedView.swift in Sources */,

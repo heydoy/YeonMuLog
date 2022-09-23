@@ -16,8 +16,8 @@
 
 "goMainButtonTitle" = "바로 시작하기";
 
-"firstOnboardingTitle" = "연극과 뮤지컬의\n감동과 기억을\n기록으로 남겨보세요";
-"firstOnboardingSubtitle" = "텍스트와 사진, 음성메모로\n자유롭게 남겨보세요";
+"FirstOnboardingTitle" = "연극과 뮤지컬의\n감동과 기억을\n기록으로 남겨보세요";
+"FirstOnboardingSubtitle" = "텍스트와 사진, 음성메모로\n자유롭게 남겨보세요";
 
 "SecondOnboardingTitle" = "극 제목으로 검색하여\n장소와 캐스팅, 포스터를\n손쉽게 추가하세요";
 "SecondOnboardingSubtitle" = "오픈런이 아닌 예전 극들도\n모두 검색할 수 있어요";

@@ -6,19 +6,29 @@
 //
 
 import UIKit
+import Then
+import SnapKit
 
 class OnboardingView: BaseView {
     
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+        let layout = UICollectionViewFlowLayout()
+        layout.estimatedItemSize = .zero
+        layout.scrollDirection = .horizontal
+        $0.showsHorizontalScrollIndicator = false
+        $0.showsVerticalScrollIndicator = false
+        $0.isPagingEnabled = true
+        $0.collectionViewLayout = layout
         $0.backgroundColor = .clear
         $0.allowsMultipleSelection = true
 
     }
     
     let pageControl = UIPageControl().then {
-        $0.tintColor = UIColor(red: 181/255, green: 124/255, blue: 255/255, alpha: 1)
+        $0.pageIndicatorTintColor = .systemGray4
+        $0.currentPageIndicatorTintColor = UIColor(red: 181/255, green: 124/255, blue: 255/255, alpha: 1)
         $0.numberOfPages = 3
-        $0.currentPage = 1
+        $0.currentPage = 0
     }
     
     let goMainButton = UIButton().then {
@@ -40,19 +50,20 @@ class OnboardingView: BaseView {
     override func setConstraints() {
         collectionView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(48)
+            make.top.greaterThanOrEqualToSuperview().inset(50)
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalToSuperview().multipliedBy(0.67)
+            make.bottom.equalTo(pageControl.snp.top).offset(-24)
         }
         
         goMainButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(30)
+            make.bottom.equalToSuperview().inset(40)
             make.height.equalTo(52)
             make.leading.trailing.equalToSuperview().inset(20)
             make.centerX.equalToSuperview()
         }
         pageControl.snp.makeConstraints { make in
-            make.bottom.equalTo(goMainButton.snp.top).offset(-20)
+            make.bottom.equalTo(goMainButton.snp.top).offset(16)
             make.centerX.equalToSuperview()
             make.height.equalTo(16)
             make.topMargin.greaterThanOrEqualTo(collectionView.snp.bottom).offset(12)

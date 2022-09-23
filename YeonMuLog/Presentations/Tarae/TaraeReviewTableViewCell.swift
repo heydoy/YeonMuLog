@@ -25,7 +25,7 @@ final class TaraeReviewTableViewCell: UITableViewCell {
     }
     
     private let titleLabel = UILabel().then {
-        $0.font = .appleSDGothicNeo(of: .bigTitle, weight: .bold)
+        $0.font = .appleSDGothicNeo(of: .title, weight: .bold)
         $0.textColor = .black
         $0.numberOfLines = 0
         
@@ -139,7 +139,7 @@ final class TaraeReviewTableViewCell: UITableViewCell {
 
         titleLabel.snp.makeConstraints { make in
             make.leading.equalTo(posterImageView.snp.trailing).offset(12)
-            make.top.equalToSuperview().offset(18)
+            make.top.equalToSuperview().offset(10)
         }
         
         reviewBackgroundView.snp.makeConstraints { make in
@@ -165,10 +165,10 @@ final class TaraeReviewTableViewCell: UITableViewCell {
         castIconImageView.snp.makeConstraints { make in
             make.height.width.equalTo(16)
             make.leading.equalTo(titleLabel)
-            make.top.equalTo(titleLabel.snp.bottom).offset(8)
+            make.top.equalTo(titleLabel.snp.bottom).offset(3)
         }
         castLabel.snp.makeConstraints { make in
-            make.trailing.equalTo(titleLabel)
+            make.trailing.equalTo(reviewBackgroundView)
             make.leading.equalTo(castIconImageView.snp.trailing).offset(2)
             make.top.equalTo(castIconImageView)
         }
@@ -176,10 +176,10 @@ final class TaraeReviewTableViewCell: UITableViewCell {
         placeIconImageView.snp.makeConstraints { make in
             make.height.width.equalTo(16)
             make.leading.equalTo(titleLabel)
-            make.top.equalTo(castLabel.snp.bottom).offset(8)
+            make.top.equalTo(castLabel.snp.bottom).offset(3)
         }
         placeLabel.snp.makeConstraints { make in
-            make.trailing.equalTo(titleLabel)
+            make.trailing.equalTo(reviewBackgroundView)
             make.leading.equalTo(placeIconImageView.snp.trailing).offset(2)
             make.top.equalTo(placeIconImageView)
             

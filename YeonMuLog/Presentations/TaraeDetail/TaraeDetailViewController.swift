@@ -31,6 +31,8 @@ class TaraeDetailViewController: BaseViewController {
     
     // MARK: - Helpers
     override func setNavigationBar() {
+        super.setNavigationBar()
+        
         navigationItem.title = "스레드"
         
         let menuItems = [
@@ -47,6 +49,7 @@ class TaraeDetailViewController: BaseViewController {
         let editImage = UIImage(named: "dot.3.icon")
 
         let editAndRemove = UIBarButtonItem(title: nil, image: editImage, primaryAction: nil, menu: menu)
+        
         
         navigationItem.rightBarButtonItem = editAndRemove
         

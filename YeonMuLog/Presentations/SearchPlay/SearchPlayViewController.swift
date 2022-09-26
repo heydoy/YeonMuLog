@@ -54,6 +54,7 @@ class SearchPlayViewController: BaseViewController {
     
     // MARK: - Helpers
     override func setNavigationBar() {
+        super.setNavigationBar()
         // Search Bar 설정
         searchBar.placeholder = "극 제목으로 검색"
         navigationItem.titleView = searchBar

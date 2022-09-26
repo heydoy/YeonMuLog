@@ -19,6 +19,8 @@ class BaseViewController: UIViewController {
     }
     
     func configure() { }
-    func setNavigationBar() { }
+    func setNavigationBar() {
+        self.navigationController?.navigationBar.tintColor = .black
+    }
 
 }

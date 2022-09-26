@@ -104,6 +104,8 @@ class AddWatchedViewController: BaseViewController {
     
     // MARK: - Helpers
     override func setNavigationBar() {
+        super.setNavigationBar()
+        
         navigationItem.title = "AddWatchedNavigationTitle".localized
         let finish = UIBarButtonItem(
             title: "완료",

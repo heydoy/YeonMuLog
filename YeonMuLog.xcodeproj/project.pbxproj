@@ -13,6 +13,8 @@
 		A21EDDD328D0B652006573A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21EDDD128D0B652006573A4 /* Main.storyboard */; };
 		A21EDDD528D0B655006573A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A21EDDD428D0B655006573A4 /* Assets.xcassets */; };
 		A21EDDD828D0B655006573A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21EDDD628D0B655006573A4 /* LaunchScreen.storyboard */; };
+		A23716CB28E0A144004E9FE6 /* TaraeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23716CA28E0A144004E9FE6 /* TaraeDetailViewController.swift */; };
+		A23716CD28E0A193004E9FE6 /* TaraeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23716CC28E0A193004E9FE6 /* TaraeDetailView.swift */; };
 		A289FCA628D8CE26008046D1 /* UserPlayRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289FCA528D8CE26008046D1 /* UserPlayRepository.swift */; };
 		A289FCA828D956DF008046D1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = A289FCA728D956DF008046D1 /* .swiftlint.yml */; };
 		A289FCAB28DACCEF008046D1 /* setFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289FCAA28DACCEF008046D1 /* setFonts.swift */; };
@@ -74,6 +76,8 @@
 		A21EDDD428D0B655006573A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A21EDDD728D0B655006573A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A21EDDD928D0B655006573A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A23716CA28E0A144004E9FE6 /* TaraeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaraeDetailViewController.swift; sourceTree = "<group>"; };
+		A23716CC28E0A193004E9FE6 /* TaraeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaraeDetailView.swift; sourceTree = "<group>"; };
 		A289FCA528D8CE26008046D1 /* UserPlayRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlayRepository.swift; sourceTree = "<group>"; };
 		A289FCA728D956DF008046D1 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		A289FCAA28DACCEF008046D1 /* setFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setFonts.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				A2C2638028DD6AC800DCF778 /* Onboarding */,
+				A23716C928E0A0F4004E9FE6 /* TaraeDetail */,
 				A2C2637728DD2EA200DCF778 /* Tarae */,
 				A2C2636A28DCD6B800DCF778 /* AddWatched */,
 				A289FCBC28DB65BD008046D1 /* SearchPlay */,
@@ -220,6 +225,15 @@
 				A21EDDD128D0B652006573A4 /* Main.storyboard */,
 			);
 			path = Presentations;
+			sourceTree = "<group>";
+		};
+		A23716C928E0A0F4004E9FE6 /* TaraeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A23716CA28E0A144004E9FE6 /* TaraeDetailViewController.swift */,
+				A23716CC28E0A193004E9FE6 /* TaraeDetailView.swift */,
+			);
+			path = TaraeDetail;
 			sourceTree = "<group>";
 		};
 		A289FCA928DACCD6008046D1 /* Utils */ = {
@@ -553,8 +567,10 @@
 				A2C2637028DD076500DCF778 /* WatchedPosterGenreTitleTableViewCell.swift in Sources */,
 				A2C2635528DBBCFC00DCF778 /* SearchPlayResultTableViewCell.swift in Sources */,
 				A289FCAB28DACCEF008046D1 /* setFonts.swift in Sources */,
+				A23716CD28E0A193004E9FE6 /* TaraeDetailView.swift in Sources */,
 				A2C2636C28DD017700DCF778 /* AddWatchedViewController.swift in Sources */,
 				A289FCC128DB65ED008046D1 /* SearchPlayView.swift in Sources */,
+				A23716CB28E0A144004E9FE6 /* TaraeDetailViewController.swift in Sources */,
 				A289FCBE28DB65D4008046D1 /* SearchPlayViewController.swift in Sources */,
 				A2C2637B28DD2ECB00DCF778 /* TaraeView.swift in Sources */,
 			);

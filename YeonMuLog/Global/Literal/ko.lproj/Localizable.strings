@@ -24,3 +24,7 @@
 
 "ThirdOnboardingTitle" = "관극 기록을\n달력으로도 보고\n리뷰 통계도 볼 수 있어요";
 "ThirdOnboardingSubtitle" = "관극기록 결산을 한눈에\n손쉽게 볼 수 있어요.";
+
+// 타래 상세
+"EditPlayInfo" = "극 정보 수정하기"
+"RemoveUserPlay" = "삭제하기"

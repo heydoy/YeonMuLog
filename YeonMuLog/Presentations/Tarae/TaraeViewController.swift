@@ -86,4 +86,10 @@ extension TaraeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = TaraeDetailViewController()
+        // vc에 데이터 전달
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

@@ -13,7 +13,7 @@ class TaraeDetailView: BaseView {
     lazy var tableView = UITableView().then {
         $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
         $0.separatorColor = .clear
-        $0.backgroundColor = UIColor(red: 181/255, green: 124/255, blue: 255/255, alpha: 1)
+        
     }
     
     let addReviewButton = UIButton().then {
@@ -27,11 +27,13 @@ class TaraeDetailView: BaseView {
     override func setupUI() {
         self.addSubview(tableView)
         self.addSubview(addReviewButton)
+        self.backgroundColor = .white
     }
     
     override func setConstraints() {
         tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.top.equalTo(self.safeAreaLayoutGuide)
+            make.edges.leading.trailing.bottom.equalToSuperview()
         }
         
         addReviewButton.snp.makeConstraints { make in

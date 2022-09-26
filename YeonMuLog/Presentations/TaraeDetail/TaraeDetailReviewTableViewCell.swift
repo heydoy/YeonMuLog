@@ -47,6 +47,6 @@ class TaraeDetailReviewTableViewCell: UITableViewCell {
         
     }
     func setUI() {
-        backgroundColor = .clear
+        backgroundColor = UIColor(red: 213/255, green: 182/255, blue: 251/255, alpha: 1)
     }
 }

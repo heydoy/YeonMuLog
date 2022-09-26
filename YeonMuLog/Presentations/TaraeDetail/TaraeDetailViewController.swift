@@ -47,7 +47,7 @@ class TaraeDetailViewController: BaseViewController {
         
     }
     override func configure() {
-        <#code#>
+        //code 
     }
 
 }

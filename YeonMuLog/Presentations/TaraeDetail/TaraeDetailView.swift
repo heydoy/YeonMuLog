@@ -36,7 +36,7 @@ class TaraeDetailView: BaseView {
         addReviewButton.snp.makeConstraints { make in
             make.width.height.equalTo(48)
             make.trailing.equalToSuperview().inset(20)
-            make.bottom.equalTo(safeAreaLayoutGuide).offset(20)
+            make.bottom.equalTo(safeAreaLayoutGuide)
         }
     }
 

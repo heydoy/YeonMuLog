@@ -14,6 +14,7 @@ class TaraeDetailView: BaseView {
         $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         $0.separatorColor = .clear
         $0.backgroundColor = UIColor(red: 240/255, green: 235/255, blue: 243/255, alpha: 1)
+        $0.bounces = false
         
     }
     

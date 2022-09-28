@@ -10,6 +10,15 @@ import UIKit
 enum TaraeDetailSection: Int {
     case playInfo = 0
     case review = 1
+    
+    func getHeight() -> CGFloat {
+        switch self {
+        case .playInfo :
+            return 500
+        case .review :
+            return UIScreen.main.bounds.height - 500
+        }
+    }
 }
 
 class TaraeDetailViewController: BaseViewController {
@@ -98,7 +107,7 @@ extension TaraeDetailViewController: UITableViewDelegate, UITableViewDataSource 
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return  UIScreen.main.bounds.height/2  // UITableView.automaticDimension
+        return indexPath.section == TaraeDetailSection.playInfo.rawValue ? TaraeDetailSection.playInfo.getHeight() : TaraeDetailSection.review.getHeight()
     }
 }
 

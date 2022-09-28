@@ -28,3 +28,7 @@
 // 타래 상세
 "EditPlayInfo" = "극 정보 수정하기";
 "RemoveUserPlay" = "삭제하기";
+
+// 리뷰추가하기
+"finishReviewButton" = "보내기";
+"cancelButton" = "취소";

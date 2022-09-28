@@ -38,6 +38,8 @@
 		A28A5F7728D3F6AC00D270E9 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = A28A5F7628D3F6AC00D270E9 /* Then */; };
 		A28A5F7A28D3F6BC00D270E9 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A28A5F7928D3F6BC00D270E9 /* FSCalendar */; };
 		A28A5F7E28D3F94D00D270E9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A28A5F7D28D3F94D00D270E9 /* .gitignore */; };
+		A294B3E228E486AE002DD515 /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A294B3E128E486AE002DD515 /* AddReviewViewController.swift */; };
+		A294B3E428E48EE3002DD515 /* AddReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A294B3E328E48EE3002DD515 /* AddReviewView.swift */; };
 		A2B0343528D6FA410066AE2D /* KOPISAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0343428D6FA410066AE2D /* KOPISAPIManager.swift */; };
 		A2B0343728D6FBDA0066AE2D /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0343628D6FBDA0066AE2D /* Keys.swift */; };
 		A2B0343928D6FC1E0066AE2D /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0343828D6FC1E0066AE2D /* EndPoints.swift */; };
@@ -104,6 +106,8 @@
 		A28A5F6B28D2ECEC00D270E9 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A28A5F7028D2ED1900D270E9 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A28A5F7D28D3F94D00D270E9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A294B3E128E486AE002DD515 /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
+		A294B3E328E48EE3002DD515 /* AddReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewView.swift; sourceTree = "<group>"; };
 		A2B0343428D6FA410066AE2D /* KOPISAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KOPISAPIManager.swift; sourceTree = "<group>"; };
 		A2B0343628D6FBDA0066AE2D /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		A2B0343828D6FC1E0066AE2D /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				A2C2638028DD6AC800DCF778 /* Onboarding */,
+				A294B3E028E48684002DD515 /* AddReview */,
 				A23716C928E0A0F4004E9FE6 /* TaraeDetail */,
 				A2C2637728DD2EA200DCF778 /* Tarae */,
 				A2C2636A28DCD6B800DCF778 /* AddWatched */,
@@ -300,6 +305,15 @@
 				A28A5F7128D2ED1900D270E9 /* InfoPlist.strings */,
 			);
 			path = Literal;
+			sourceTree = "<group>";
+		};
+		A294B3E028E48684002DD515 /* AddReview */ = {
+			isa = PBXGroup;
+			children = (
+				A294B3E128E486AE002DD515 /* AddReviewViewController.swift */,
+				A294B3E328E48EE3002DD515 /* AddReviewView.swift */,
+			);
+			path = AddReview;
 			sourceTree = "<group>";
 		};
 		A2B0343228D6F97A0066AE2D /* Data */ = {
@@ -566,6 +580,7 @@
 				A2C2637F28DD35B000DCF778 /* TaraeReviewTableViewCell.swift in Sources */,
 				A2C2637D28DD318E00DCF778 /* NoReviewTableViewCell.swift in Sources */,
 				A289FCBB28DB5EC5008046D1 /* BaseViewController.swift in Sources */,
+				A294B3E228E486AE002DD515 /* AddReviewViewController.swift in Sources */,
 				A2B0343528D6FA410066AE2D /* KOPISAPIManager.swift in Sources */,
 				A2C2635D28DBD22700DCF778 /* AddPlayInfoTableViewCell.swift in Sources */,
 				A2C2636328DBECDC00DCF778 /* String+Extension.swift in Sources */,
@@ -584,6 +599,7 @@
 				A2C2637228DD0CE400DCF778 /* WatchedTextFieldTableViewCell.swift in Sources */,
 				A2C2637028DD076500DCF778 /* WatchedPosterGenreTitleTableViewCell.swift in Sources */,
 				A2C2635528DBBCFC00DCF778 /* SearchPlayResultTableViewCell.swift in Sources */,
+				A294B3E428E48EE3002DD515 /* AddReviewView.swift in Sources */,
 				A289FCAB28DACCEF008046D1 /* setFonts.swift in Sources */,
 				A23716CD28E0A193004E9FE6 /* TaraeDetailView.swift in Sources */,
 				A237170F28E1D35C004E9FE6 /* TaraeDetailPlayInfoTableViewCell.swift in Sources */,

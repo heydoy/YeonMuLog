@@ -10,6 +10,15 @@ import UIKit
 enum TaraeDetailSection: Int {
     case playInfo = 0
     case review = 1
+    
+    func getHeight() -> CGFloat {
+        switch self {
+        case .playInfo :
+            return 500
+        case .review :
+            return UIScreen.main.bounds.height - 500
+        }
+    }
 }
 
 class TaraeDetailViewController: BaseViewController {
@@ -31,6 +40,8 @@ class TaraeDetailViewController: BaseViewController {
     
     // MARK: - Helpers
     override func setNavigationBar() {
+        super.setNavigationBar()
+        
         navigationItem.title = "스레드"
         
         let menuItems = [
@@ -48,13 +59,17 @@ class TaraeDetailViewController: BaseViewController {
 
         let editAndRemove = UIBarButtonItem(title: nil, image: editImage, primaryAction: nil, menu: menu)
         
+        
         navigationItem.rightBarButtonItem = editAndRemove
         
     }
     override func configure() {
         mainView.tableView.delegate = self
+        mainView.tableView.dataSource = self
+        
         mainView.tableView.register(TaraeDetailPlayInfoTableViewCell.self, forCellReuseIdentifier: String(describing: TaraeDetailPlayInfoTableViewCell.self))
-        mainView.tableView.register(TaraeDetailReviewTableViewCell.self, forCellReuseIdentifier: String(describing: TaraeDetailReviewTableViewCell.self))
+        
+        mainView.tableView.register(TaraeDetailReviewTableViewCell.self,  forCellReuseIdentifier: String(describing: TaraeDetailReviewTableViewCell.self))
     }
 }
 extension TaraeDetailViewController: UITableViewDelegate, UITableViewDataSource {
@@ -66,7 +81,7 @@ extension TaraeDetailViewController: UITableViewDelegate, UITableViewDataSource 
         if section == TaraeDetailSection.playInfo.rawValue {
             return 1
         } else if section == TaraeDetailSection.review.rawValue {
-            return 2 // 리뷰 개수만큼
+            return 1 
         } else {
             return 0
         }
@@ -76,17 +91,23 @@ extension TaraeDetailViewController: UITableViewDelegate, UITableViewDataSource 
         
         if indexPath.section == TaraeDetailSection.playInfo.rawValue {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TaraeDetailPlayInfoTableViewCell.self)) as? TaraeDetailPlayInfoTableViewCell else { return UITableViewCell() }
+            print("TaraeDetailPlayInfoTableViewCell")
             
             return cell
+            
         } else if indexPath.section == TaraeDetailSection.review.rawValue {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TaraeDetailReviewTableViewCell.self)) as? TaraeDetailReviewTableViewCell else { return UITableViewCell() }
-            
+
             cell.flowLayout.delegate = self
             cell.collectionView.delegate = self
+            cell.collectionView.dataSource = self
             return cell
         } else {
             return UITableViewCell()
         }
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return indexPath.section == TaraeDetailSection.playInfo.rawValue ? TaraeDetailSection.playInfo.getHeight() : TaraeDetailSection.review.getHeight()
     }
 }
 

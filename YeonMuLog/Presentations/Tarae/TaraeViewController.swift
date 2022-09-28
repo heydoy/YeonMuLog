@@ -46,6 +46,8 @@ class TaraeViewController: BaseViewController {
     // MARK: - Helpers
     
     override func setNavigationBar() {
+        super.setNavigationBar()
+        
         navigationItem.title = "타래로 보기"
         
         let searchAndAdd = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(searchAndAddButtonTapped))

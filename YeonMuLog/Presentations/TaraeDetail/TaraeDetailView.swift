@@ -11,9 +11,11 @@ import SnapKit
 
 class TaraeDetailView: BaseView {
     lazy var tableView = UITableView().then {
-        $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
+        $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         $0.separatorColor = .clear
-        $0.backgroundColor = UIColor(red: 181/255, green: 124/255, blue: 255/255, alpha: 1)
+        $0.backgroundColor = UIColor(red: 240/255, green: 235/255, blue: 243/255, alpha: 1)
+        $0.bounces = false
+        
     }
     
     let addReviewButton = UIButton().then {
@@ -27,11 +29,13 @@ class TaraeDetailView: BaseView {
     override func setupUI() {
         self.addSubview(tableView)
         self.addSubview(addReviewButton)
+        self.backgroundColor = .white
     }
     
     override func setConstraints() {
         tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalTo(self.safeAreaLayoutGuide)
+            make.leading.trailing.bottom.equalToSuperview()
         }
         
         addReviewButton.snp.makeConstraints { make in

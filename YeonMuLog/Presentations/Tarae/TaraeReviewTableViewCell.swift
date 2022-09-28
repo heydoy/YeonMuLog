@@ -124,8 +124,7 @@ final class TaraeReviewTableViewCell: UITableViewCell {
         cellBackgroundView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
-            make.top.equalToSuperview().offset(4)
-            make.bottom.equalToSuperview().offset(-4)
+            make.top.bottom.equalToSuperview().inset(4)
             make.centerX.centerY.equalToSuperview()
             make.height.equalTo(150)
         }
@@ -140,11 +139,12 @@ final class TaraeReviewTableViewCell: UITableViewCell {
         titleLabel.snp.makeConstraints { make in
             make.leading.equalTo(posterImageView.snp.trailing).offset(12)
             make.top.equalToSuperview().offset(10)
+            make.height.greaterThanOrEqualTo(30)
         }
         
         reviewBackgroundView.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().offset(-18)
-            make.centerY.equalTo(titleLabel.snp.centerY)
+            make.trailing.equalToSuperview().inset(10)
+            make.top.equalToSuperview().inset(10)
             make.leading.greaterThanOrEqualTo(titleLabel.snp.trailing).offset(8)
             make.height.equalTo(30)
             make.width.equalTo(64)

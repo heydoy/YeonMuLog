@@ -30,23 +30,23 @@ class TaraeDetailReviewTableViewCell: UITableViewCell {
     
     }
     
-
     // MARK: - UI
     func configure() {
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        collectionView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0);
+        collectionView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
         collectionView.backgroundColor = .clear
         collectionView.register(ReviewCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: ReviewCollectionViewCell.self))
                 
-              
         self.contentView.addSubview(collectionView)
     }
     func setConstraints() {
-
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
         
     }
     func setUI() {
-        backgroundColor = .clear
+        backgroundColor = UIColor(red: 240/255, green: 235/255, blue: 243/255, alpha: 1)
     }
 }

@@ -38,6 +38,14 @@ class TaraeDetailViewController: BaseViewController {
     
     // MARK: - Actions
     
+    @objc func addReviewButtonTapped(_ sender: UIButton) {
+        let vc = AddReviewViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        
+        present(vc, animated: true)
+    }
+    
     // MARK: - Helpers
     override func setNavigationBar() {
         super.setNavigationBar()
@@ -70,6 +78,8 @@ class TaraeDetailViewController: BaseViewController {
         mainView.tableView.register(TaraeDetailPlayInfoTableViewCell.self, forCellReuseIdentifier: String(describing: TaraeDetailPlayInfoTableViewCell.self))
         
         mainView.tableView.register(TaraeDetailReviewTableViewCell.self,  forCellReuseIdentifier: String(describing: TaraeDetailReviewTableViewCell.self))
+        
+        mainView.addReviewButton.addTarget(self, action: #selector(addReviewButtonTapped), for: .touchUpInside)
     }
 }
 extension TaraeDetailViewController: UITableViewDelegate, UITableViewDataSource {

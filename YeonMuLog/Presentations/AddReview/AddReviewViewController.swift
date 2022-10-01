@@ -7,10 +7,12 @@
 
 import UIKit
 import SnapKit
+import YPImagePicker
 
 class AddReviewViewController: BaseViewController {
     // MARK: - Properties
     let mainView = AddReviewView()
+    let picker = UIImagePickerController()
     
     // MARK: - Lifecycle
     override func loadView() {
@@ -24,6 +26,8 @@ class AddReviewViewController: BaseViewController {
     // MARK: - Actions
     @objc func addImageButtonTapped(_ sender: UIButton) {
         print("사진추가")
+        
+        present(picker, animated: true, completion: nil)
     }
 
     @objc func addVoiceButtonTapped(_ sender: UIButton) {
@@ -48,6 +52,8 @@ class AddReviewViewController: BaseViewController {
         mainView.addVoiceButton.addTarget(self, action: #selector(addVoiceButtonTapped), for: .touchUpInside)
         mainView.cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
         mainView.finishReviewButton.addTarget(self, action: #selector(finishReviewButtonTapped), for: .touchUpInside)
+        
+        picker.delegate = self
        
     }
 }
@@ -59,5 +65,22 @@ extension AddReviewViewController: UITextViewDelegate {
         } else {
             return true
         }
+    }
+}
+
+// MARK: - YPImagePicker
+extension AddReviewViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    // - 사진선택, 카메라 촬영 직후에
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        print(#function)
+    }
+    
+    // - 취소 버튼 눌렀을 경우
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print(#function)
+        
+        dismiss(animated: true)
     }
 }

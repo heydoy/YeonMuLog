@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 import IQKeyboardManagerSwift
 
 @main
@@ -17,6 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         IQKeyboardManager.shared.enable = true
+        
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            // 오디오 세션 카테고리, 모드, 옵션 설정
+            try audioSession.setCategory(.playback, mode: .moviePlayback, options: [])
+        } catch {
+            print("Failed to set audio session category.")
+        }
         
         return true
     }

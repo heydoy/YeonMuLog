@@ -24,11 +24,11 @@ class VoiceMemoViewController: BaseViewController {
     
     // MARK: - Actions
     @objc func pauseButtonTapped(_ sender: UIButton) {
-        
+        playPauseToggle()
     }
     
     @objc func playButtonTapped(_ sender: UIButton) {
-        
+        playPauseToggle()
     }
     
     @objc func finishButtonTapped(_ sender: UIButton) {
@@ -39,6 +39,12 @@ class VoiceMemoViewController: BaseViewController {
         dismiss(animated: true)
     }
     
+    private func playPauseToggle() {
+        DispatchQueue.main.async {
+            self.mainView.playButton.isHidden = !self.mainView.playButton.isHidden
+            self.mainView.pauseButton.isHidden = !self.mainView.pauseButton.isHidden
+        }
+    }
     
     // MARK: - Helpers
     override func configure() {

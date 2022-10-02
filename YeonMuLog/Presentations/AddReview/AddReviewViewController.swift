@@ -24,7 +24,7 @@ class AddReviewViewController: BaseViewController {
     }
     
     // MARK: - Actions
-    @objc func addImageButtonTapped(_ sender: UIButton) {
+    @objc func addGalleryButtonTapped(_ sender: UIButton) {
         print("사진추가")
         
         present(picker, animated: true, completion: nil)
@@ -48,7 +48,7 @@ class AddReviewViewController: BaseViewController {
         
         mainView.userTextView.delegate = self
             
-        mainView.addImageButton.addTarget(self, action: #selector(addImageButtonTapped), for: .touchUpInside)
+        mainView.addGalleryButton.addTarget(self, action: #selector(addGalleryButtonTapped), for: .touchUpInside)
         mainView.addVoiceButton.addTarget(self, action: #selector(addVoiceButtonTapped), for: .touchUpInside)
         mainView.cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
         mainView.finishReviewButton.addTarget(self, action: #selector(finishReviewButtonTapped), for: .touchUpInside)

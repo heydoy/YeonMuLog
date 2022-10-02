@@ -24,12 +24,18 @@ class AddReviewViewController: BaseViewController {
     }
     
     // MARK: - Actions
-    @objc func addGalleryButtonTapped(_ sender: UIButton) {
-        print("사진추가")
-        
+    @objc func addCameraButtonTapped(_ sender: UIButton) {
+        print("사진촬영")
+        picker.sourceType = .camera
         present(picker, animated: true, completion: nil)
     }
 
+    @objc func addGalleryButtonTapped(_ sender: UIButton) {
+        print("사진추가")
+        picker.sourceType = .photoLibrary
+        present(picker, animated: true, completion: nil)
+    }
+    
     @objc func addVoiceButtonTapped(_ sender: UIButton) {
         print("음성메모")
     }
@@ -48,6 +54,7 @@ class AddReviewViewController: BaseViewController {
         
         mainView.userTextView.delegate = self
             
+        mainView.addCameraButton.addTarget(self, action: #selector(addCameraButtonTapped), for: .touchUpInside)
         mainView.addGalleryButton.addTarget(self, action: #selector(addGalleryButtonTapped), for: .touchUpInside)
         mainView.addVoiceButton.addTarget(self, action: #selector(addVoiceButtonTapped), for: .touchUpInside)
         mainView.cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
@@ -74,7 +81,9 @@ extension AddReviewViewController: UIImagePickerControllerDelegate, UINavigation
     // - 사진선택, 카메라 촬영 직후에
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        print(#function)
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            dismiss(animated: true)
+        }
     }
     
     // - 취소 버튼 눌렀을 경우

@@ -7,6 +7,7 @@
 */
 
 "CFBundleDisplayName" = "연뮤로그";
+"CFBundleDevelopmentRegion" = "ko_KR";
 
 "NSCameraUsageDescription" = "연극,뮤지컬 후기에 추가할 사진을 촬영하기 위해 카메라를 사용합니다.";
 "NSPhotoLibraryUsageDescription" = "연극,뮤지컬 후기에 추가할 사진을 앨범에서 선택하기 위해 사용합니다.";

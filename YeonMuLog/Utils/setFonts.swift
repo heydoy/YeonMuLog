@@ -26,6 +26,7 @@ struct AppFont {
 }
 
 enum FontSize: CGFloat {
+    case biggestTitle = 40
     case bigTitle = 20
     case title = 17
     case subTitle = 14

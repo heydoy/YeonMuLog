@@ -39,11 +39,6 @@ class AddReviewView: BaseView {
         $0.becomeFirstResponder()
     }
     
-    let addCameraButton = UIButton().then {
-        $0.setImage(UIImage(systemName: "camera"), for: .normal)
-        $0.tintColor = .black
-    }
-    
     let addGalleryButton = UIButton().then {
         $0.setImage(UIImage(systemName: "photo.on.rectangle"), for: .normal)
         $0.tintColor = .black
@@ -79,7 +74,6 @@ class AddReviewView: BaseView {
         //backgroundView.addSubview(stackView)
         backgroundView.addSubview(userTextView)
         
-        backgroundView.addSubview(addCameraButton)
         backgroundView.addSubview(addGalleryButton)
         backgroundView.addSubview(addVoiceButton)
         backgroundView.addSubview(cancelButton)
@@ -99,18 +93,12 @@ class AddReviewView: BaseView {
             make.top.equalToSuperview().inset(12)
             make.height.equalTo(userTextView.snp.height)
         }
-
-        addCameraButton.snp.makeConstraints { make in
+        
+        addGalleryButton.snp.makeConstraints { make in
             make.width.height.equalTo(30)
             make.leading.equalToSuperview().inset(20)
             make.top.equalTo(userTextView.snp.bottom).offset(12)
             make.bottom.equalToSuperview().inset(40)
-        }
-        
-        addGalleryButton.snp.makeConstraints { make in
-            make.width.height.equalTo(30)
-            make.leading.equalTo(addCameraButton.snp.trailing).offset(20)
-            make.centerY.bottom.equalTo(addCameraButton)
         }
         
         addVoiceButton.snp.makeConstraints { make in
@@ -124,14 +112,14 @@ class AddReviewView: BaseView {
             make.trailing.equalToSuperview().inset(20)
             make.width.equalTo(60)
             make.height.equalTo(30)
-            make.centerY.bottom.equalTo(addCameraButton)
+            make.centerY.bottom.equalTo(addGalleryButton)
         }
         
         cancelButton.snp.makeConstraints { make in
             make.trailing.equalTo(finishReviewButton.snp.leading).offset(-20)
             make.width.equalTo(48)
             make.height.equalTo(30)
-            make.centerY.equalTo(addCameraButton)
+            make.centerY.equalTo(addGalleryButton)
         }
     }
 }

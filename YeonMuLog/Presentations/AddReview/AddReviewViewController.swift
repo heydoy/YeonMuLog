@@ -62,9 +62,9 @@ class AddReviewViewController: BaseViewController {
     // MARK: - Helpers
     func imagePickerConfigure() {
         config.library.numberOfItemsInRow = 4
+        config.library.maxNumberOfItems = 4 //이미 선택된 사진 개수만큼 제외 
         config.library.mediaType = .photo
         config.albumName = "YeonMuLog"
-        config.library.defaultMultipleSelection = true
     }
     
     override func configure() {

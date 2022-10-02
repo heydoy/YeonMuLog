@@ -48,6 +48,8 @@ class AddReviewViewController: BaseViewController {
     
     @objc func addVoiceButtonTapped(_ sender: UIButton) {
         print("음성메모")
+        let vc = VoiceMemoViewController()
+        present(vc, animated: true)
     }
     
     @objc func cancelButtonTapped(_ sender: UIButton) {

@@ -36,7 +36,7 @@ class VoiceMemoViewController: BaseViewController {
     }
     
     @objc func closeButtonTapped(_ sender: UIButton) {
-        
+        dismiss(animated: true)
     }
     
     

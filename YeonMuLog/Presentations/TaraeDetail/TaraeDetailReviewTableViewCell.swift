@@ -26,7 +26,7 @@ class TaraeDetailReviewTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setData(query: UserReview) {
+    func setData(data: UserReview) {
     
     }
     

@@ -8,8 +8,10 @@
 import UIKit
 import SnapKit
 import YPImagePicker
+import Realm
+import Toast
 
-protocol recordVoiceMemoDelegate {
+protocol recordVoiceMemoDelegate: AnyObject {
     func sendVoiceMemo(url: String)
 }
 
@@ -19,7 +21,13 @@ class AddReviewViewController: BaseViewController {
     var config = YPImagePickerConfiguration()
     lazy var picker = YPImagePicker(configuration: config)
     
-    var voiceMemo: String?
+    var voiceMemo: String = ""
+    var text: String = ""
+    var image: [String] = []
+    
+    var playInfo: UserPlayInfo?
+    
+    let repository = UserPlayRepository.shared
     
     // MARK: - Lifecycle
     override func loadView() {
@@ -37,19 +45,21 @@ class AddReviewViewController: BaseViewController {
         print("사진추가")
         
         picker.didFinishPicking { [unowned picker] items, _ in
-            if let photo = items.singlePhoto {
-                  print(photo.fromCamera) // Image source (camera or library)
-                  print(photo.image) // Final image selected by the user
-                  print(photo.originalImage) // original image selected by the user, unfiltered
-                  print(photo.modifiedImage) // Transformed image, can be nil
-                  print(photo.exifMeta) // Print exif meta data of original image.
-              }
-              picker.dismiss(animated: true, completion: nil)
             
-          }
-        
-        present(picker, animated: true, completion: nil)
-
+            for item in items {
+                switch item {
+                case .photo(p: let photo):
+                    if let photoUrl = photo.url {
+                        print(photoUrl, photo.originalImage )
+                        self.image.append("\(photoUrl)")
+                    }
+                default:
+                    print("이미지만 첨부할 수 있습니다.")
+                }
+            }
+            picker.dismiss(animated: true, completion: nil)
+        }
+        self.present(picker, animated: true, completion: nil)
     }
     
     @objc func addVoiceButtonTapped(_ sender: UIButton) {
@@ -64,8 +74,37 @@ class AddReviewViewController: BaseViewController {
     }
     
     @objc func finishReviewButtonTapped(_ sender: UIButton) {
-        print("리뷰작성완료")
-        dismiss(animated: true)
+        
+        if let playInfo = playInfo {
+            let review = UserReview()
+            review.text = mainView.userTextView.text
+            review.voice = voiceMemo
+            if !image.isEmpty {
+                review.image.append(objectsIn: image)
+            }
+            
+            repository.updateReview(playInfo, review: review)
+            showFinishToast(title: "리뷰 추가 성공!", message: "리뷰가 성공적으로 저장되었습니다.", imageName: "character-pencil-finished") { _ in
+                self.dismiss(animated: true)
+            }
+            
+        } else {
+            print("저장할 수 없습니다.")
+        }
+        
+    }
+    private func showFinishToast(title: String?, message: String?, imageName: String, completion: ((Bool) -> Void)?) {
+        var style = ToastStyle()
+        style.backgroundColor = UIColor(red: 249/255, green: 243/255, blue: 253/255, alpha: 1.0)
+        style.maxWidthPercentage = 0.8
+        let fontColor = UIColor(red: 70/255, green: 30/255, blue: 121/255, alpha: 1.0)
+        style.titleColor = fontColor
+        style.messageColor = fontColor
+        style.imageSize = CGSize(width: 80, height: 80)
+        style.titleFont = .appleSDGothicNeo(of: .subTitle, weight: .medium)
+        style.messageFont = .appleSDGothicNeo(of: .content, weight: .regular)
+        self.mainView.makeToast(message, duration: 1.4, position: .center, title: title, image: UIImage(named: imageName), style: style, completion: completion)
+        
     }
     
     // MARK: - Helpers
@@ -104,8 +143,9 @@ extension AddReviewViewController: recordVoiceMemoDelegate {
     func sendVoiceMemo(url: String) {
         voiceMemo = url
         print(url, voiceMemo)
-        guard voiceMemo != nil else { return }
-        // 아이콘 디자인 변경 
-        
+        if !voiceMemo.isEmpty {
+            // 아이콘 디자인 변경
+            
+        }
     }
 }

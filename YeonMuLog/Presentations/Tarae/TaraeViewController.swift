@@ -11,7 +11,7 @@ import RealmSwift
 class TaraeViewController: BaseViewController {
     // MARK: - Properties
     let mainView = TaraeView()
-    let repository = UserPlayRepository()
+    let repository = UserPlayRepository.shared
     var list: Results<UserPlayInfo>! {
         didSet {
             mainView.tableView.reloadData()
@@ -92,6 +92,7 @@ extension TaraeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = TaraeDetailViewController()
         // vc에 데이터 전달
+        vc.playInfo = list[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 }

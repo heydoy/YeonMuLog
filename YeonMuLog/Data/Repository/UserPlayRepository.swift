@@ -18,9 +18,9 @@ fileprivate protocol UserPlayRepositoryType: AnyObject {
 }
 
 class UserPlayRepository {
+    static let shared = UserPlayRepository()
+    
     let localRealm = try! Realm()
-    
-    
     
     func fetch() -> Results<UserPlayInfo> {
         return localRealm.objects(UserPlayInfo.self).sorted(byKeyPath: "date", ascending: false) // 항상 최신순

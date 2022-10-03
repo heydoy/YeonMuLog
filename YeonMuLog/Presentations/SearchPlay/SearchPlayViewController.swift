@@ -102,11 +102,12 @@ extension SearchPlayViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SearchPlayResultTableViewCell.self)) as? SearchPlayResultTableViewCell else { return UITableViewCell() }
                 cell.setData(data: list[indexPath.row])
                 return cell
-            } else {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AddPlayInfoTableViewCell.self)) as? AddPlayInfoTableViewCell else { return UITableViewCell() }
-
-                return cell
-            }
+            } else { return UITableViewCell() }
+//            else {
+//                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AddPlayInfoTableViewCell.self)) as? AddPlayInfoTableViewCell else { return UITableViewCell() }
+//
+//                return cell
+//            }
         }
     }
     
@@ -115,7 +116,7 @@ extension SearchPlayViewController: UITableViewDelegate, UITableViewDataSource {
             let vc = AddWatchedViewController()
             vc.playInfo = list[indexPath.row]
             navigationController?.pushViewController(vc, animated: true)
-        }
+        } 
     }
 }
 

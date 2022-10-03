@@ -15,6 +15,7 @@ final class WatchedPosterGenreTitleTableViewCell: UITableViewCell {
     private let posterImageView = UIImageView().then {
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 20
+        $0.image = UIImage(named: "blank-poster-image")
         $0.contentMode = .scaleAspectFill
     }
     

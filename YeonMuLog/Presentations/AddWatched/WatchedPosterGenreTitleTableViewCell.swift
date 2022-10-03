@@ -63,9 +63,8 @@ final class WatchedPosterGenreTitleTableViewCell: UITableViewCell {
         posterImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview()
-            make.leading.equalTo(60)
-            make.trailing.equalTo(-60)
-            make.height.equalTo(posterImageView.snp.width).multipliedBy(1.48)
+            make.height.equalTo(300)
+            make.width.equalTo(posterImageView.snp.height).multipliedBy(0.72)
         }
         
         genreLabel.snp.makeConstraints { make in
@@ -77,6 +76,7 @@ final class WatchedPosterGenreTitleTableViewCell: UITableViewCell {
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(genreLabel.snp.bottom).offset(8)
             make.leading.equalTo(genreLabel)
+            make.trailing.equalToSuperview().inset(20)
         }
     }
     

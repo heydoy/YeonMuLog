@@ -237,7 +237,7 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.row == 0 ? 470 : indexPath.row == 3 ?  140 : 80 // size automatic dimension이 안되서 수동으로 해줘야되는 이유를 찾아야...
+        return indexPath.row == 0 ? 400 : indexPath.row == 3 ?  140 : 80 // size automatic dimension이 안되서 수동으로 해줘야되는 이유를 찾아야...
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

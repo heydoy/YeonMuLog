@@ -34,6 +34,12 @@ class SearchPlayViewController: BaseViewController {
         
         //searchQuery(query: "키다리")
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = true
+    }
         
     // MARK: - Actions
     @objc func navigationCancelButtonTapped(_ sender: UIBarButtonItem) {

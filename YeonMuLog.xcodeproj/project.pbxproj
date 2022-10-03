@@ -18,6 +18,7 @@
 		A20E104E28EB213D000AB31B /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104D28EB213D000AB31B /* ChartViewController.swift */; };
 		A20E105028EB214D000AB31B /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104F28EB214D000AB31B /* ChartView.swift */; };
 		A20E105228EB3283000AB31B /* NoChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E105128EB3283000AB31B /* NoChartTableViewCell.swift */; };
+		A20E105428EB3880000AB31B /* ChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E105328EB3880000AB31B /* ChartTableViewCell.swift */; };
 		A21EDDCC28D0B652006573A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EDDCB28D0B652006573A4 /* AppDelegate.swift */; };
 		A21EDDCE28D0B652006573A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EDDCD28D0B652006573A4 /* SceneDelegate.swift */; };
 		A21EDDD028D0B652006573A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EDDCF28D0B652006573A4 /* ViewController.swift */; };
@@ -95,6 +96,7 @@
 		A20E104D28EB213D000AB31B /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		A20E104F28EB214D000AB31B /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		A20E105128EB3283000AB31B /* NoChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoChartTableViewCell.swift; sourceTree = "<group>"; };
+		A20E105328EB3880000AB31B /* ChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTableViewCell.swift; sourceTree = "<group>"; };
 		A21EDDC828D0B652006573A4 /* YeonMuLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YeonMuLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21EDDCB28D0B652006573A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A21EDDCD28D0B652006573A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				A20E104D28EB213D000AB31B /* ChartViewController.swift */,
 				A20E104F28EB214D000AB31B /* ChartView.swift */,
 				A20E105128EB3283000AB31B /* NoChartTableViewCell.swift */,
+				A20E105328EB3880000AB31B /* ChartTableViewCell.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				A2B0344628D77DC90066AE2D /* PlayModel.swift in Sources */,
 				A20E104B28EB0A12000AB31B /* CustomTabBarViewController.swift in Sources */,
 				A2C2637628DD1B5900DCF778 /* TagCollectionViewCell.swift in Sources */,
+				A20E105428EB3880000AB31B /* ChartTableViewCell.swift in Sources */,
 				A2C2638728DD727500DCF778 /* OnboardingCollectionViewCell.swift in Sources */,
 				A21EDDCC28D0B652006573A4 /* AppDelegate.swift in Sources */,
 				A2C2637428DD17F000DCF778 /* WatchedTagsTableViewCell.swift in Sources */,

@@ -51,19 +51,23 @@ class ChartViewController: BaseViewController {
         mainView.tableView.dataSource = self
         
         mainView.tableView.register(NoChartTableViewCell.self, forCellReuseIdentifier: String(describing: NoChartTableViewCell.self))
+        mainView.tableView.register(ChartTableViewCell.self, forCellReuseIdentifier: String(describing: ChartTableViewCell.self))
     }
     
 }
 // MARK: - Table View
 extension ChartViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list != nil && !list.isEmpty ? list.count : 1
+        return list != nil && !list.isEmpty ? 2 : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if list != nil && !list.isEmpty {
-            return UITableViewCell()
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ChartTableViewCell.self)) as? ChartTableViewCell else { return UITableViewCell() }
+            
+            return cell
+            
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: NoChartTableViewCell.self)) as? NoChartTableViewCell else { return UITableViewCell() }
             

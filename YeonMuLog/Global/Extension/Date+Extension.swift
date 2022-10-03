@@ -24,4 +24,12 @@ extension Date {
         let dateString = dateFormatter.string(from: self)
         return dateString
     }
+    func extractDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "E"
+        
+        let dateString = dateFormatter.string(from: self)
+        return dateString
+    }
 }

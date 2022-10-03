@@ -30,13 +30,16 @@ class TaraeViewController: BaseViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if repository.fetch() != list {
             list = repository.fetch()
        }
-        
-        self.tabBarController?.tabBar.isHidden = false
     }
     
     // MARK: - Actions
@@ -90,6 +93,8 @@ extension TaraeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
     }
+    
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = TaraeDetailViewController()

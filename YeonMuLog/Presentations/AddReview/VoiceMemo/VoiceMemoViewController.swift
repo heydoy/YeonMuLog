@@ -106,7 +106,15 @@ extension VoiceMemoViewController {
                 } catch {
                     fatalError(error.localizedDescription)
                 }
+            } else {
+                if let player = self.audioPlayer {
+                    if player.isPlaying {
+                        player.stop()
+                        self.playPauseToggle()
+                    }
+                }
             }
+            
         }
         
     }

@@ -11,7 +11,7 @@ import RealmSwift
 class TaraeViewController: BaseViewController {
     // MARK: - Properties
     let mainView = TaraeView()
-    let repository = UserPlayRepository()
+    let repository = UserPlayRepository.shared
     var list: Results<UserPlayInfo>! {
         didSet {
             mainView.tableView.reloadData()

@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import YPImagePicker
+import Realm
 
 protocol recordVoiceMemoDelegate {
     func sendVoiceMemo(url: String)
@@ -19,7 +20,14 @@ class AddReviewViewController: BaseViewController {
     var config = YPImagePickerConfiguration()
     lazy var picker = YPImagePicker(configuration: config)
     
-    var voiceMemo: String?
+    var voiceMemo: String = ""
+    var text: String = ""
+    var image: [String] = []
+    
+    var playInfo: UserPlayInfo?
+    let review = UserReview()
+    
+    let repository = UserPlayRepository.shared
     
     // MARK: - Lifecycle
     override func loadView() {
@@ -38,15 +46,23 @@ class AddReviewViewController: BaseViewController {
         
         picker.didFinishPicking { [unowned picker] items, _ in
             if let photo = items.singlePhoto {
-                  print(photo.fromCamera) // Image source (camera or library)
-                  print(photo.image) // Final image selected by the user
-                  print(photo.originalImage) // original image selected by the user, unfiltered
-                  print(photo.modifiedImage) // Transformed image, can be nil
-                  print(photo.exifMeta) // Print exif meta data of original image.
-              }
-              picker.dismiss(animated: true, completion: nil)
+                print(photo.modifiedImage)
+            }
+            for item in items {
+                switch item {
+                case .photo(let photo):
+                    print(photo.url, photo.modifiedImage)
+                    if let url = photo.url {
+                        self.image.append("\(url)")
+                    }
+                    
+                default:
+                    print("사진만 첨부할 수 있습니다.")
+                }
+            }
+            picker.dismiss(animated: true, completion: nil)
             
-          }
+        }
         
         present(picker, animated: true, completion: nil)
 
@@ -64,8 +80,16 @@ class AddReviewViewController: BaseViewController {
     }
     
     @objc func finishReviewButtonTapped(_ sender: UIButton) {
-        print("리뷰작성완료")
-        dismiss(animated: true)
+        
+        
+        if let playInfo = playInfo, !text.isEmpty {
+            review.text = mainView.userTextView.text
+            review.voice = voiceMemo
+            review.image.append(objectsIn: [])
+            
+            repository.updateReview(playInfo, review: review)
+        }
+        
     }
     
     // MARK: - Helpers
@@ -104,8 +128,9 @@ extension AddReviewViewController: recordVoiceMemoDelegate {
     func sendVoiceMemo(url: String) {
         voiceMemo = url
         print(url, voiceMemo)
-        guard voiceMemo != nil else { return }
-        // 아이콘 디자인 변경 
-        
+        if !voiceMemo.isEmpty {
+            // 아이콘 디자인 변경
+            
+        }
     }
 }

@@ -21,6 +21,7 @@ enum TaraeDetailSection: Int {
     }
 }
 
+
 class TaraeDetailViewController: BaseViewController {
     // MARK: - Properties
     
@@ -46,6 +47,7 @@ class TaraeDetailViewController: BaseViewController {
     
     @objc func addReviewButtonTapped(_ sender: UIButton) {
         let vc = AddReviewViewController()
+        vc.playInfo = playInfo
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
         

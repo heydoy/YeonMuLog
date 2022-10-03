@@ -38,7 +38,7 @@ enum AddWatchedItem: Int {
 class AddWatchedViewController: BaseViewController {
     // MARK: - Properties
     let mainView = AddWatchedView()
-    let repository = UserPlayRepository()
+    let repository = UserPlayRepository.shared
     var playInfo: Play? 
     var castArray: [String] = []
     var castSelectedIndex: [Int] = []

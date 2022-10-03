@@ -33,10 +33,11 @@ class TaraeDetailReviewTableViewCell: UITableViewCell {
     // MARK: - UI
     func configure() {
         
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
         collectionView.backgroundColor = .clear
         collectionView.register(ReviewCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: ReviewCollectionViewCell.self))
+        collectionView.register(NoReviewCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: NoReviewCollectionViewCell.self))
                 
         self.contentView.addSubview(collectionView)
     }

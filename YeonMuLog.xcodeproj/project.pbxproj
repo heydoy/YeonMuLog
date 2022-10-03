@@ -13,6 +13,7 @@
 		A20E104128EA4B51000AB31B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104028EA4B51000AB31B /* UIViewController+Extension.swift */; };
 		A20E104428EA8051000AB31B /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = A20E104328EA8051000AB31B /* Toast */; };
 		A20E104628EAB9AE000AB31B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104528EAB9AE000AB31B /* Date+Extension.swift */; };
+		A20E104828EAEFDB000AB31B /* NoReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104728EAEFDB000AB31B /* NoReviewCollectionViewCell.swift */; };
 		A21EDDCC28D0B652006573A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EDDCB28D0B652006573A4 /* AppDelegate.swift */; };
 		A21EDDCE28D0B652006573A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EDDCD28D0B652006573A4 /* SceneDelegate.swift */; };
 		A21EDDD028D0B652006573A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EDDCF28D0B652006573A4 /* ViewController.swift */; };
@@ -85,6 +86,7 @@
 		A20E103E28E9B88A000AB31B /* VoiceMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemoViewController.swift; sourceTree = "<group>"; };
 		A20E104028EA4B51000AB31B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		A20E104528EAB9AE000AB31B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		A20E104728EAEFDB000AB31B /* NoReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoReviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		A21EDDC828D0B652006573A4 /* YeonMuLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YeonMuLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21EDDCB28D0B652006573A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A21EDDCD28D0B652006573A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				A237171228E1D828004E9FE6 /* ReviewCollectionViewLayout.swift */,
 				A237171428E1DBAE004E9FE6 /* ReviewCollectionViewLayoutDelegate.swift */,
 				A237171628E1DD8D004E9FE6 /* ReviewCollectionViewCell.swift */,
+				A20E104728EAEFDB000AB31B /* NoReviewCollectionViewCell.swift */,
 			);
 			path = TaraeDetail;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				A2B0343928D6FC1E0066AE2D /* EndPoints.swift in Sources */,
 				A237171728E1DD8D004E9FE6 /* ReviewCollectionViewCell.swift in Sources */,
 				A2C2638928DD73AD00DCF778 /* OnboardingMessage.swift in Sources */,
+				A20E104828EAEFDB000AB31B /* NoReviewCollectionViewCell.swift in Sources */,
 				A289FCA628D8CE26008046D1 /* UserPlayRepository.swift in Sources */,
 				A2B0343728D6FBDA0066AE2D /* Keys.swift in Sources */,
 				A2C2636E28DD018900DCF778 /* AddWatchedView.swift in Sources */,

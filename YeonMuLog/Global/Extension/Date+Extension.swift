@@ -16,4 +16,12 @@ extension Date {
         let dateString = dateFormatter.string(from: self)
         return dateString
     }
+    func reviewDateString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "YY.M.d H:mm"
+        
+        let dateString = dateFormatter.string(from: self)
+        return dateString
+    }
 }

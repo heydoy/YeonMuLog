@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Realm
+import Toast
 
 enum TaraeDetailSection: Int {
     case playInfo = 0
@@ -27,6 +29,8 @@ class TaraeDetailViewController: BaseViewController {
     
     let mainView = TaraeDetailView()
     
+    let repository = UserPlayRepository.shared
+    
     var playInfo: UserPlayInfo? {
         didSet {
             mainView.tableView.reloadData()
@@ -41,6 +45,11 @@ class TaraeDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        mainView.tableView.reloadData()
     }
     
     // MARK: - Actions
@@ -64,8 +73,20 @@ class TaraeDetailViewController: BaseViewController {
             UIAction(title: "EditPlayInfo".localized, image: UIImage(systemName: "square.and.pencil"), handler: { _ in
                 // code
             }),
-            UIAction(title: "RemoveUserPlay".localized, image: UIImage(systemName: "trash"), attributes: .destructive, handler: { _ in
-                //code
+            UIAction(title: "RemoveUserPlay".localized, image: UIImage(systemName: "trash"), attributes: .destructive, handler: { [self] _ in
+                
+                let remove = UIAlertAction(title: "삭제", style: .destructive) { _ in
+                    if let playInfo = self.playInfo {
+                        self.repository.deleteMemo(playInfo)
+                        self.mainView.makeToast("삭제되었습니다.", duration: 1.0, position: .top, title: nil, image: nil, style: ToastStyle()) { didTap in
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                        
+                    }
+                }
+                let cancel = UIAlertAction(title: "취소", style: .cancel)
+                
+                showAlert(title: "리뷰를 삭제하시겠습니까?", message: "삭제하시면 리뷰도 전부 삭제됩니다", actions: remove, cancel)
                 
             })
         ]
@@ -74,7 +95,6 @@ class TaraeDetailViewController: BaseViewController {
         let editImage = UIImage(named: "dot.3.icon")
 
         let editAndRemove = UIBarButtonItem(title: nil, image: editImage, primaryAction: nil, menu: menu)
-        
         
         navigationItem.rightBarButtonItem = editAndRemove
         
@@ -123,7 +143,8 @@ extension TaraeDetailViewController: UITableViewDelegate, UITableViewDataSource 
                 cell.setData(data: data)
             }
             
-            cell.flowLayout.delegate = self
+            //cell.flowLayout.delegate = self
+            
             cell.collectionView.delegate = self
             cell.collectionView.dataSource = self
             return cell
@@ -138,16 +159,41 @@ extension TaraeDetailViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension TaraeDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        
+        return playInfo?.userReview.count != 0 ? playInfo!.userReview.count : 1
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        
+        if playInfo?.userReview.count != 0 {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ReviewCollectionViewCell.self), for: indexPath) as? ReviewCollectionViewCell else { return UICollectionViewCell() }
+            cell.setData(review: playInfo!.userReview[indexPath.item])
+            return cell
+        } else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: NoReviewCollectionViewCell.self), for: indexPath) as? NoReviewCollectionViewCell else { return UICollectionViewCell() }
+            
+            return cell
+        }
+        
     }
 }
 
-extension TaraeDetailViewController: ReviewCollectionViewLayoutDelegate {
-    func collectionView(_ collectionView: UICollectionView, heightForCellAt indexPath: IndexPath) -> CGFloat {
-        return  .zero
+extension TaraeDetailViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = UIScreen.main.bounds.width
+        var height: CGFloat = 44
+        if let cell = collectionView.cellForItem(at: indexPath) {
+            print(cell)
+            height = cell.intrinsicContentSize.height + 20
+        }
+        return CGSize(width: width, height: height )
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
     }
 }

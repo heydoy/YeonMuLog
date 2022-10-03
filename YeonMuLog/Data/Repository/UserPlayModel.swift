@@ -29,7 +29,7 @@ class UserPlayInfo: Object {
 class UserReview: Object {
     @Persisted(primaryKey: true) var id: ObjectId
     @Persisted var text: String
+    @Persisted var voice: String
     @Persisted var image: List<String> // 도큐먼트에 저장한 이미지 URL
-    
 }
 

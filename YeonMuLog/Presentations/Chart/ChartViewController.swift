@@ -101,7 +101,7 @@ extension ChartViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 420
+        return list != nil && !list.isEmpty ? 420 : 270
     }
 }
 

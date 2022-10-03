@@ -48,11 +48,11 @@ final class NoReviewTableViewCell: UITableViewCell {
     func setConstraints() {
         guideLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(20)
+            make.centerY.equalToSuperview().multipliedBy(0.92)
         }
         characterImageView.snp.makeConstraints { make in
             make.centerX.equalTo(guideLabel)
-            make.top.equalTo(guideLabel.snp.bottom).offset(4)
+            make.top.equalTo(guideLabel.snp.bottom).offset(12)
             make.width.height.equalTo(80)
             make.bottom.equalToSuperview().inset(20)
             

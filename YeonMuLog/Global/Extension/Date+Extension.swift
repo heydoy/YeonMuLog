@@ -11,7 +11,7 @@ extension Date {
     func playString() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ko_KR")
-        dateFormatter.dateFormat = "YYYY.M.d(E) H:m"
+        dateFormatter.dateFormat = "YYYY.M.d(E) H:mm"
         
         let dateString = dateFormatter.string(from: self)
         return dateString

@@ -26,6 +26,12 @@ class TaraeDetailViewController: BaseViewController {
     
     let mainView = TaraeDetailView()
     
+    var playInfo: UserPlayInfo? {
+        didSet {
+            mainView.tableView.reloadData()
+        }
+    }
+    
     // MARK: - Lifecycle
     override func loadView() {
         view = mainView
@@ -103,11 +109,18 @@ extension TaraeDetailViewController: UITableViewDelegate, UITableViewDataSource 
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TaraeDetailPlayInfoTableViewCell.self)) as? TaraeDetailPlayInfoTableViewCell else { return UITableViewCell() }
             print("TaraeDetailPlayInfoTableViewCell")
             
+            if let data = playInfo {
+                cell.setData(data: data)
+            }
             return cell
             
         } else if indexPath.section == TaraeDetailSection.review.rawValue {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TaraeDetailReviewTableViewCell.self)) as? TaraeDetailReviewTableViewCell else { return UITableViewCell() }
 
+            if let data = playInfo?.userReview.first {
+                cell.setData(data: data)
+            }
+            
             cell.flowLayout.delegate = self
             cell.collectionView.delegate = self
             cell.collectionView.dataSource = self

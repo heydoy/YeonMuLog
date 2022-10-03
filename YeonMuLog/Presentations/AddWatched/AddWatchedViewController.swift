@@ -198,6 +198,8 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
                 textFieldText: "",
                 placeHolder: "티켓금액을 입력해주세요")
             
+            cell.userTextField.keyboardType = .numberPad
+            
             cell.userTextField.addTarget(self, action: #selector(ticketPriceValueChanged), for: .valueChanged)
             
             return cell

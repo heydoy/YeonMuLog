@@ -9,8 +9,9 @@ import UIKit
 import SnapKit
 import YPImagePicker
 import Realm
+import Toast
 
-protocol recordVoiceMemoDelegate {
+protocol recordVoiceMemoDelegate: AnyObject {
     func sendVoiceMemo(url: String)
 }
 
@@ -25,7 +26,6 @@ class AddReviewViewController: BaseViewController {
     var image: [String] = []
     
     var playInfo: UserPlayInfo?
-    let review = UserReview()
     
     let repository = UserPlayRepository.shared
     
@@ -45,27 +45,21 @@ class AddReviewViewController: BaseViewController {
         print("사진추가")
         
         picker.didFinishPicking { [unowned picker] items, _ in
-            if let photo = items.singlePhoto {
-                print(photo.modifiedImage)
-            }
+            
             for item in items {
                 switch item {
-                case .photo(let photo):
-                    print(photo.url, photo.modifiedImage)
-                    if let url = photo.url {
-                        self.image.append("\(url)")
+                case .photo(p: let photo):
+                    if let photoUrl = photo.url {
+                        print(photoUrl, photo.originalImage )
+                        self.image.append("\(photoUrl)")
                     }
-                    
                 default:
-                    print("사진만 첨부할 수 있습니다.")
+                    print("이미지만 첨부할 수 있습니다.")
                 }
             }
             picker.dismiss(animated: true, completion: nil)
-            
         }
-        
-        present(picker, animated: true, completion: nil)
-
+        self.present(picker, animated: true, completion: nil)
     }
     
     @objc func addVoiceButtonTapped(_ sender: UIButton) {
@@ -81,14 +75,35 @@ class AddReviewViewController: BaseViewController {
     
     @objc func finishReviewButtonTapped(_ sender: UIButton) {
         
-        
-        if let playInfo = playInfo, !text.isEmpty {
+        if let playInfo = playInfo {
+            let review = UserReview()
             review.text = mainView.userTextView.text
             review.voice = voiceMemo
-            review.image.append(objectsIn: [])
+            if !image.isEmpty {
+                review.image.append(objectsIn: image)
+            }
             
             repository.updateReview(playInfo, review: review)
+            showFinishToast(title: "리뷰 추가 성공!", message: "리뷰가 성공적으로 저장되었습니다.", imageName: "character-pencil-finished") { _ in
+                self.dismiss(animated: true)
+            }
+            
+        } else {
+            print("저장할 수 없습니다.")
         }
+        
+    }
+    private func showFinishToast(title: String?, message: String?, imageName: String, completion: ((Bool) -> Void)?) {
+        var style = ToastStyle()
+        style.backgroundColor = UIColor(red: 249/255, green: 243/255, blue: 253/255, alpha: 1.0)
+        style.maxWidthPercentage = 0.8
+        let fontColor = UIColor(red: 70/255, green: 30/255, blue: 121/255, alpha: 1.0)
+        style.titleColor = fontColor
+        style.messageColor = fontColor
+        style.imageSize = CGSize(width: 80, height: 80)
+        style.titleFont = .appleSDGothicNeo(of: .subTitle, weight: .medium)
+        style.messageFont = .appleSDGothicNeo(of: .content, weight: .regular)
+        self.mainView.makeToast(message, duration: 1.4, position: .center, title: title, image: UIImage(named: imageName), style: style, completion: completion)
         
     }
     

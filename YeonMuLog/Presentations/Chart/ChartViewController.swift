@@ -13,7 +13,11 @@ class ChartViewController: BaseViewController {
     // MARK: - Properties
     let mainView = ChartView()
     let repository = UserPlayRepository.shared
-    var list: Results<UserPlayInfo>!
+    var list: Results<UserPlayInfo>! {
+        didSet {
+            mainView.tableView.reloadData()
+        }
+    }
     
     // MARK: - Lifecycle
     override func loadView() {
@@ -53,12 +57,17 @@ class ChartViewController: BaseViewController {
 // MARK: - Table View
 extension ChartViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return list != nil && !list.isEmpty ? list.count : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: NoChartTableViewCell.self)) as? NoChartTableViewCell else { return UITableViewCell() }
         
-        return cell
+        if list != nil && !list.isEmpty {
+            return UITableViewCell()
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: NoChartTableViewCell.self)) as? NoChartTableViewCell else { return UITableViewCell() }
+            
+            return cell
+        }
     }
 }

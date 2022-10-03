@@ -12,6 +12,8 @@ class VoiceMemoViewController: BaseViewController {
     // MARK: - Properties
     let mainView = VoiceMemoView()
     
+    var delegate: recordVoiceMemoDelegate?
+    
     private var audioRecorder: AVAudioRecorder?
     private var audioPlayer: AVAudioPlayer?
     private lazy var recordURL: URL = {
@@ -57,7 +59,6 @@ class VoiceMemoViewController: BaseViewController {
     @objc func closeButtonTapped(_ sender: UIButton) {
         dismiss(animated: true)
     }
-    
     
     // MARK: - Helpers
     override func configure() {
@@ -135,7 +136,15 @@ extension VoiceMemoViewController {
     }
     
     @objc func finishButtonTapped(_ sender: UIButton) {
-        
+        if let recorder = audioRecorder {
+            if !recorder.isRecording {
+                let url = recorder.url
+                self.delegate?.sendVoiceMemo(url: "\(url)")
+                dismiss(animated: true)
+            } else {
+                print("녹음중입니다. 정지버튼을 누른 후 완료를 눌러주세요")
+            }
+        }
     }
     private func playPauseToggle() {
         DispatchQueue.main.async {

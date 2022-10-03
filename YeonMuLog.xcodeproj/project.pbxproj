@@ -15,6 +15,8 @@
 		A20E104628EAB9AE000AB31B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104528EAB9AE000AB31B /* Date+Extension.swift */; };
 		A20E104828EAEFDB000AB31B /* NoReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104728EAEFDB000AB31B /* NoReviewCollectionViewCell.swift */; };
 		A20E104B28EB0A12000AB31B /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104A28EB0A11000AB31B /* CustomTabBarViewController.swift */; };
+		A20E104E28EB213D000AB31B /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104D28EB213D000AB31B /* ChartViewController.swift */; };
+		A20E105028EB214D000AB31B /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104F28EB214D000AB31B /* ChartView.swift */; };
 		A21EDDCC28D0B652006573A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EDDCB28D0B652006573A4 /* AppDelegate.swift */; };
 		A21EDDCE28D0B652006573A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EDDCD28D0B652006573A4 /* SceneDelegate.swift */; };
 		A21EDDD028D0B652006573A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EDDCF28D0B652006573A4 /* ViewController.swift */; };
@@ -89,6 +91,8 @@
 		A20E104528EAB9AE000AB31B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		A20E104728EAEFDB000AB31B /* NoReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoReviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		A20E104A28EB0A11000AB31B /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
+		A20E104D28EB213D000AB31B /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		A20E104F28EB214D000AB31B /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		A21EDDC828D0B652006573A4 /* YeonMuLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YeonMuLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21EDDCB28D0B652006573A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A21EDDCD28D0B652006573A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +193,15 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		A20E104C28EB211E000AB31B /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				A20E104D28EB213D000AB31B /* ChartViewController.swift */,
+				A20E104F28EB214D000AB31B /* ChartView.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
 		A21EDDBF28D0B652006573A4 = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +277,7 @@
 			children = (
 				A2C2638028DD6AC800DCF778 /* Onboarding */,
 				A20E104928EB09B7000AB31B /* TabBar */,
+				A20E104C28EB211E000AB31B /* Chart */,
 				A294B3E028E48684002DD515 /* AddReview */,
 				A23716C928E0A0F4004E9FE6 /* TaraeDetail */,
 				A2C2637728DD2EA200DCF778 /* Tarae */,
@@ -617,6 +631,7 @@
 				A21EDDCC28D0B652006573A4 /* AppDelegate.swift in Sources */,
 				A2C2637428DD17F000DCF778 /* WatchedTagsTableViewCell.swift in Sources */,
 				A21EDDCE28D0B652006573A4 /* SceneDelegate.swift in Sources */,
+				A20E104E28EB213D000AB31B /* ChartViewController.swift in Sources */,
 				A2C2636728DCCCF800DCF778 /* NoSearchResultTableViewCell.swift in Sources */,
 				A2C2638328DD6AF300DCF778 /* OnboardingViewController.swift in Sources */,
 				A2B0344928D796840066AE2D /* UserPlayModel.swift in Sources */,
@@ -631,6 +646,7 @@
 				A20E104128EA4B51000AB31B /* UIViewController+Extension.swift in Sources */,
 				A237171128E1D36B004E9FE6 /* TaraeDetailReviewTableViewCell.swift in Sources */,
 				A2B0343928D6FC1E0066AE2D /* EndPoints.swift in Sources */,
+				A20E105028EB214D000AB31B /* ChartView.swift in Sources */,
 				A237171728E1DD8D004E9FE6 /* ReviewCollectionViewCell.swift in Sources */,
 				A2C2638928DD73AD00DCF778 /* OnboardingMessage.swift in Sources */,
 				A20E104828EAEFDB000AB31B /* NoReviewCollectionViewCell.swift in Sources */,

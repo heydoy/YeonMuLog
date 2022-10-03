@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import Toast
 
 enum AddWatchedItem: Int {
     case posterGenreTitle = 0
@@ -42,9 +43,10 @@ class AddWatchedViewController: BaseViewController {
     var castArray: [String] = []
     var castSelectedIndex: [Int] = []
     var castSelectedData: [String] = []
-    
+        
     var seat: String = ""
     var ticketPrice: Int = 0
+    var watchedDate = Date()
     
     // MARK: - Lifecycle
     override func loadView() {
@@ -70,17 +72,44 @@ class AddWatchedViewController: BaseViewController {
     }
     
     @objc func ticketPriceValueChanged(_ sender: UITextField) {
+
         if let text = sender.text {
             if let price = Int(text) {
                 ticketPrice = price
+            } else {
+                self.mainView.makeToast("숫자만 입력해주세요")
+                sender.text = nil
             }
         }
+    }
+    
+    @objc func selectWatchedDate(_ sender: UITextField) {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.preferredDatePickerStyle = .inline
+        datePicker.locale = NSLocale(localeIdentifier: "ko_KO") as Locale
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.view.addSubview(datePicker)
+        let ok = UIAlertAction(title: "확인", style: .default) { _ in
+            print(datePicker.date)
+            self.watchedDate = datePicker.date
+            self.mainView.tableView.reloadRows(at: [IndexPath(row: AddWatchedItem.date.rawValue, section: 0)], with: .none)
+        }
+        alert.addAction(ok)
+        
+        let height: NSLayoutConstraint = NSLayoutConstraint(item: alert.view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.1, constant: 400)
+        let width: NSLayoutConstraint = NSLayoutConstraint(item: alert.view, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width * 0.92)
+        
+        alert.view.addConstraint(height)
+        alert.view.addConstraint(width)
+        present(alert, animated: true)
     }
     
     func saveUserPlayInfo() {
         let list = UserPlayInfo()
         if let play = playInfo {
-            list.date = Date()
+            list.date = watchedDate
             list.casts.append(objectsIn: castSelectedData)
 
             list.playId = play.id
@@ -91,12 +120,7 @@ class AddWatchedViewController: BaseViewController {
             list.title = play.title
             list.place = play.place
             list.runtime = play.runtime
-            list.time = "19:00"
-//            let review = UserReview()
-//            review.text = "고양이가 보고싶다 스트링 리스트에 어떻게 접근하나요 ."
-//            review.image.append(objectsIn: ["jpg", "jpg"])
-//            list.userReview.append(review)
-//            list.userReview.append(review)
+            
             let repository = UserPlayRepository()
             repository.createPlay(list)
         }
@@ -153,8 +177,10 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
             
             cell.setData(
                 title: AddWatchedItem.date.getTitle(),
-                textFieldText: "2022년 9월 23일 오후 8시",
+                textFieldText: "\(watchedDate.playString())",   // "2022년 9월 23일 오후 8시"
                 placeHolder: "")
+            
+            cell.userTextField.isEnabled = false
             
             return cell
         case AddWatchedItem.place.rawValue:
@@ -167,6 +193,7 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
                     placeHolder: "관람한 장소를 입력해주세요")
             }
             
+            cell.userTextField.isEnabled = false
             return cell
             
         case AddWatchedItem.cast.rawValue:
@@ -187,19 +214,21 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
                 placeHolder: "좌석위치를 입력해주세요")
             
             cell.userTextField.addTarget(self, action: #selector(seatValueChanged), for: .valueChanged)
-            
+            cell.userTextField.isEnabled = true
             return cell
             
         case AddWatchedItem.ticketPrice.rawValue:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: WatchedTextFieldTableViewCell.self)) as? WatchedTextFieldTableViewCell else { return UITableViewCell() }
+            
+            cell.userTextField.addTarget(self, action: #selector(ticketPriceValueChanged), for: .valueChanged)
             
             cell.setData(
                 title: AddWatchedItem.ticketPrice.getTitle(),
                 textFieldText: "",
                 placeHolder: "티켓금액을 입력해주세요")
             
-            cell.userTextField.addTarget(self, action: #selector(ticketPriceValueChanged), for: .valueChanged)
-            
+            cell.userTextField.keyboardType = .numberPad
+            cell.userTextField.isEnabled = true
             return cell
                 
         default:
@@ -209,6 +238,17 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return indexPath.row == 0 ? 470 : indexPath.row == 3 ?  140 : 80 // size automatic dimension이 안되서 수동으로 해줘야되는 이유를 찾아야...
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case AddWatchedItem.date.rawValue:
+            guard let cell = tableView.cellForRow(at: indexPath) as? WatchedTextFieldTableViewCell else { return }
+            selectWatchedDate(cell.userTextField)
+            
+        default:
+            print("")
+        }
     }
 }
 
@@ -220,6 +260,9 @@ extension AddWatchedViewController: UICollectionViewDelegateFlowLayout, UICollec
         
         guard let play = playInfo else { return 0 }
         castArray = play.cast.components(separatedBy: ", ")
+        castArray = castArray.map {
+           $0.replacingOccurrences(of: " 등", with: "")
+        }
         return castArray.count
     }
     

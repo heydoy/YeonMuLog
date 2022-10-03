@@ -72,7 +72,7 @@ class AddWatchedViewController: BaseViewController {
     }
     
     @objc func ticketPriceValueChanged(_ sender: UITextField) {
-        print(sender.text, "티켓가격")
+
         if let text = sender.text {
             if let price = Int(text) {
                 ticketPrice = price
@@ -121,11 +121,6 @@ class AddWatchedViewController: BaseViewController {
             list.place = play.place
             list.runtime = play.runtime
             
-//            let review = UserReview()
-//            review.text = "고양이가 보고싶다 스트링 리스트에 어떻게 접근하나요 ."
-//            review.image.append(objectsIn: ["jpg", "jpg"])
-//            list.userReview.append(review)
-//            list.userReview.append(review)
             let repository = UserPlayRepository()
             repository.createPlay(list)
         }
@@ -219,7 +214,7 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
                 placeHolder: "좌석위치를 입력해주세요")
             
             cell.userTextField.addTarget(self, action: #selector(seatValueChanged), for: .valueChanged)
-            
+            cell.userTextField.isEnabled = true
             return cell
             
         case AddWatchedItem.ticketPrice.rawValue:
@@ -233,7 +228,7 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
                 placeHolder: "티켓금액을 입력해주세요")
             
             cell.userTextField.keyboardType = .numberPad
-            
+            cell.userTextField.isEnabled = true
             return cell
                 
         default:

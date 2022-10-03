@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import Toast
 
 class VoiceMemoViewController: BaseViewController {
     // MARK: - Properties
@@ -140,12 +141,31 @@ extension VoiceMemoViewController {
             if !recorder.isRecording {
                 let url = recorder.url
                 self.delegate?.sendVoiceMemo(url: "\(url)")
-                dismiss(animated: true)
+                self.mainView.isUserInteractionEnabled = false
+                showFinishToast(title: "추가 완료!", message: "음성메시지가 성공적으로 추가되었습니다", imageName: "character-mic-recording-finished") { _ in
+                    self.mainView.isUserInteractionEnabled = true
+                    self.dismiss(animated: true)
+                }
+                
             } else {
-                print("녹음중입니다. 정지버튼을 누른 후 완료를 눌러주세요")
+                showFinishToast(title: "앗, 녹음중이에요!", message: "정지버튼을 눌러 녹음을 끝내주세요.\n화면을 나가고 싶다면 좌측상단의 X 버튼을 눌러주세요.", imageName: "character-mic-recording-interrupted", completion: nil)
             }
         }
     }
+    private func showFinishToast(title: String?, message: String?, imageName: String, completion: ((Bool) -> Void)?) {
+        var style = ToastStyle()
+        style.backgroundColor = UIColor(red: 249/255, green: 243/255, blue: 253/255, alpha: 0.6)
+        style.maxWidthPercentage = 0.8
+        let fontColor = UIColor(red: 70/255, green: 30/255, blue: 121/255, alpha: 1.0)
+        style.titleColor = fontColor
+        style.messageColor = fontColor
+        style.imageSize = CGSize(width: 80, height: 80)
+        style.titleFont = .appleSDGothicNeo(of: .subTitle, weight: .medium)
+        style.messageFont = .appleSDGothicNeo(of: .content, weight: .regular)
+        self.mainView.makeToast(message, duration: 1.4, position: .bottom, title: title, image: UIImage(named: imageName), style: style, completion: completion)
+        
+    }
+    
     private func playPauseToggle() {
         DispatchQueue.main.async {
             self.mainView.playButton.isHidden = !self.mainView.playButton.isHidden

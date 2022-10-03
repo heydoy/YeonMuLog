@@ -81,9 +81,7 @@ class TaraeDetailViewController: BaseViewController {
         navigationItem.title = "스레드"
         
         let menuItems = [
-            UIAction(title: "EditPlayInfo".localized, image: UIImage(systemName: "square.and.pencil"), handler: { _ in
-                // code
-            }),
+
             UIAction(title: "RemoveUserPlay".localized, image: UIImage(systemName: "trash"), attributes: .destructive, handler: { [self] _ in
                 
                 let remove = UIAlertAction(title: "삭제", style: .destructive) { _ in

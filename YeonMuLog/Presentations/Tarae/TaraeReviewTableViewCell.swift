@@ -98,7 +98,7 @@ final class TaraeReviewTableViewCell: UITableViewCell {
         titleLabel.text = data.title
         let url = URL(string: data.poster)
         posterImageView.kf.setImage(with: url)
-        dateLabel.text = "\(data.date)"
+        dateLabel.text = "\(data.date) (\(data.runtime))"
         castLabel.text = data.casts.joined(separator: ", ")
         placeLabel.text = data.place
         reviewLabel.text = "리뷰 \(data.userReview.count)"

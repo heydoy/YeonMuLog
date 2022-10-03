@@ -35,6 +35,8 @@ class TaraeViewController: BaseViewController {
         if repository.fetch() != list {
             list = repository.fetch()
        }
+        
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     // MARK: - Actions

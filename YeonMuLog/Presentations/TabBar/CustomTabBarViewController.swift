@@ -38,6 +38,13 @@ class CustomTabBarViewController: UITabBarController {
                                               image: UIImage(systemName: "chart.pie"),
                                               selectedImage: UIImage(systemName: "chart.pie.fill"))
         
-        setViewControllers([mainRootVC, chartRootVC], animated: true)
+        let settingVC = SettingViewController()
+        let settingRootVC = UINavigationController(rootViewController: settingVC)
+        
+        settingRootVC.tabBarItem = UITabBarItem(title: "settingTabName".localized,
+                                                image: UIImage(systemName: "gearshape.2"),
+                                                selectedImage: UIImage(systemName: "gearshape.2.fill"))
+        
+        setViewControllers([mainRootVC, chartRootVC, settingRootVC], animated: true)
     }
 }

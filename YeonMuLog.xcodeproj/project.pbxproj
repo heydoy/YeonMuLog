@@ -82,6 +82,9 @@
 		A2C2638528DD6B0800DCF778 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2638428DD6B0800DCF778 /* OnboardingView.swift */; };
 		A2C2638728DD727500DCF778 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2638628DD727500DCF778 /* OnboardingCollectionViewCell.swift */; };
 		A2C2638928DD73AD00DCF778 /* OnboardingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2638828DD73AD00DCF778 /* OnboardingMessage.swift */; };
+		A2DFB1CA28EB4F4100E2A05D /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DFB1C928EB4F4100E2A05D /* SettingView.swift */; };
+		A2DFB1CC28EB4F4E00E2A05D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DFB1CB28EB4F4E00E2A05D /* SettingViewController.swift */; };
+		A2DFB1D028EB594600E2A05D /* SettingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DFB1CF28EB594600E2A05D /* SettingInfo.swift */; };
 		D80C0742B1505AB363E00A17 /* Pods_YeonMuLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */; };
 /* End PBXBuildFile section */
 
@@ -156,6 +159,9 @@
 		A2C2638428DD6B0800DCF778 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		A2C2638628DD727500DCF778 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		A2C2638828DD73AD00DCF778 /* OnboardingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMessage.swift; sourceTree = "<group>"; };
+		A2DFB1C928EB4F4100E2A05D /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		A2DFB1CB28EB4F4E00E2A05D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		A2DFB1CF28EB594600E2A05D /* SettingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingInfo.swift; sourceTree = "<group>"; };
 		C815EC606F5FDDC870D9410B /* Pods_YeonMuLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YeonMuLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -285,6 +291,7 @@
 			children = (
 				A2C2638028DD6AC800DCF778 /* Onboarding */,
 				A20E104928EB09B7000AB31B /* TabBar */,
+				A2DFB1C828EB4F1400E2A05D /* Setting */,
 				A20E104C28EB211E000AB31B /* Chart */,
 				A294B3E028E48684002DD515 /* AddReview */,
 				A23716C928E0A0F4004E9FE6 /* TaraeDetail */,
@@ -446,6 +453,16 @@
 				A2C2638828DD73AD00DCF778 /* OnboardingMessage.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		A2DFB1C828EB4F1400E2A05D /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				A2DFB1CF28EB594600E2A05D /* SettingInfo.swift */,
+				A2DFB1CB28EB4F4E00E2A05D /* SettingViewController.swift */,
+				A2DFB1C928EB4F4100E2A05D /* SettingView.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		E0FE80BA029746BB9C2FAA39 /* Frameworks */ = {
@@ -634,6 +651,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A21EDDD028D0B652006573A4 /* ViewController.swift in Sources */,
+				A2DFB1CA28EB4F4100E2A05D /* SettingView.swift in Sources */,
 				A2B0344628D77DC90066AE2D /* PlayModel.swift in Sources */,
 				A20E104B28EB0A12000AB31B /* CustomTabBarViewController.swift in Sources */,
 				A2C2637628DD1B5900DCF778 /* TagCollectionViewCell.swift in Sources */,
@@ -655,6 +673,8 @@
 				A2C2635D28DBD22700DCF778 /* AddPlayInfoTableViewCell.swift in Sources */,
 				A2C2636328DBECDC00DCF778 /* String+Extension.swift in Sources */,
 				A20E104128EA4B51000AB31B /* UIViewController+Extension.swift in Sources */,
+				A2DFB1CC28EB4F4E00E2A05D /* SettingViewController.swift in Sources */,
+				A2DFB1D028EB594600E2A05D /* SettingInfo.swift in Sources */,
 				A237171128E1D36B004E9FE6 /* TaraeDetailReviewTableViewCell.swift in Sources */,
 				A2B0343928D6FC1E0066AE2D /* EndPoints.swift in Sources */,
 				A20E105028EB214D000AB31B /* ChartView.swift in Sources */,

@@ -23,6 +23,9 @@ enum TaraeDetailSection: Int {
     }
 }
 
+protocol sendReviewDelegate {
+    func reviewDataReload()
+}
 
 class TaraeDetailViewController: BaseViewController {
     // MARK: - Properties
@@ -34,6 +37,9 @@ class TaraeDetailViewController: BaseViewController {
     var playInfo: UserPlayInfo? {
         didSet {
             mainView.tableView.reloadData()
+            for cell in mainView.tableView.visibleCells {
+                (cell as? TaraeDetailReviewTableViewCell)?.collectionView.reloadData()
+            }
         }
     }
     
@@ -47,11 +53,16 @@ class TaraeDetailViewController: BaseViewController {
 
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        mainView.tableView.reloadData()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = true
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)        
+    }
+        
     // MARK: - Actions
     
     @objc func addReviewButtonTapped(_ sender: UIButton) {
@@ -59,7 +70,7 @@ class TaraeDetailViewController: BaseViewController {
         vc.playInfo = playInfo
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
-        
+        vc.delegate = self
         present(vc, animated: true)
     }
     
@@ -195,5 +206,15 @@ extension TaraeDetailViewController: UICollectionViewDelegateFlowLayout {
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 8
+    }
+}
+
+extension TaraeDetailViewController: sendReviewDelegate {
+    func reviewDataReload() {
+        if let playInfo = playInfo {
+            let newPlayInfo = repository.localRealm.object(ofType: UserPlayInfo.self, forPrimaryKey: playInfo.id)
+            self.playInfo = newPlayInfo
+            
+        }
     }
 }

@@ -38,15 +38,17 @@ class ChartViewController: BaseViewController {
     
     // MARK: - Actions
     
-    
     // MARK: - Helpers
     override func setNavigationBar() {
         navigationItem.title = "통계"
     }
     override func configure() {
-        
+        mainView.tableView.delegate = self
+        mainView.tableView.dataSource = self
     }
     
+}
+// MARK: - Table View
+extension ChartViewController: UITableViewDelegate, UITableViewDataSource {
     
-
 }

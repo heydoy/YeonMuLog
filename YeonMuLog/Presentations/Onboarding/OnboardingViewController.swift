@@ -24,13 +24,12 @@ class OnboardingViewController: BaseViewController {
     // MARK: - Actions
     
     @objc func goMainButtonTapped(_ sender: UIButton) {
-        let vc = TaraeViewController()
-        let rootViewController = UINavigationController(rootViewController: vc)
+        let vc = CustomTabBarViewController()
         
-        rootViewController.modalPresentationStyle = .fullScreen
-        rootViewController.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
         
-        present(rootViewController, animated: true)
+        present(vc, animated: true)
     }
     
     // MARK: - Helpers

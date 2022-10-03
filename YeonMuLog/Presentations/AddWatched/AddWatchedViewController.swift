@@ -109,7 +109,7 @@ class AddWatchedViewController: BaseViewController {
     func saveUserPlayInfo() {
         let list = UserPlayInfo()
         if let play = playInfo {
-            list.date = Date()
+            list.date = watchedDate
             list.casts.append(objectsIn: castSelectedData)
 
             list.playId = play.id
@@ -120,7 +120,7 @@ class AddWatchedViewController: BaseViewController {
             list.title = play.title
             list.place = play.place
             list.runtime = play.runtime
-            list.time = "19:00"
+            
 //            let review = UserReview()
 //            review.text = "고양이가 보고싶다 스트링 리스트에 어떻게 접근하나요 ."
 //            review.image.append(objectsIn: ["jpg", "jpg"])

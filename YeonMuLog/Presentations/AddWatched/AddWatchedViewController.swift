@@ -177,7 +177,7 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
             
             cell.setData(
                 title: AddWatchedItem.date.getTitle(),
-                textFieldText: "\(watchedDate)",   // "2022년 9월 23일 오후 8시"
+                textFieldText: "\(watchedDate.playString())",   // "2022년 9월 23일 오후 8시"
                 placeHolder: "")
             
             cell.userTextField.isEnabled = false

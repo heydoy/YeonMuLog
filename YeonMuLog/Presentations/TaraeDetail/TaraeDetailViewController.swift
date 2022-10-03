@@ -123,7 +123,8 @@ extension TaraeDetailViewController: UITableViewDelegate, UITableViewDataSource 
                 cell.setData(data: data)
             }
             
-            cell.flowLayout.delegate = self
+            //cell.flowLayout.delegate = self
+            
             cell.collectionView.delegate = self
             cell.collectionView.dataSource = self
             return cell
@@ -138,16 +139,35 @@ extension TaraeDetailViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension TaraeDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        
+        return playInfo?.userReview.count != 0 ? playInfo!.userReview.count : 1
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        
+        if playInfo?.userReview.count != 0 {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ReviewCollectionViewCell.self), for: indexPath) as? ReviewCollectionViewCell else { return UICollectionViewCell() }
+            
+            return cell
+        } else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: NoReviewCollectionViewCell.self), for: indexPath) as? NoReviewCollectionViewCell else { return UICollectionViewCell() }
+            
+            return cell
+        }
+        
     }
 }
 
-extension TaraeDetailViewController: ReviewCollectionViewLayoutDelegate {
-    func collectionView(_ collectionView: UICollectionView, heightForCellAt indexPath: IndexPath) -> CGFloat {
-        return  .zero
+extension TaraeDetailViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = UIScreen.main.bounds.width
+        return CGSize(width: width, height: 200)
     }
 }
+
+//extension TaraeDetailViewController: ReviewCollectionViewLayoutDelegate {
+//    func collectionView(_ collectionView: UICollectionView, heightForCellAt indexPath: IndexPath) -> CGFloat {
+//        return  .zero
+//    }
+//}

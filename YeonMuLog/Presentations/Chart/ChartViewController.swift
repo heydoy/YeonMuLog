@@ -101,7 +101,7 @@ extension ChartViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 380
+        return 420
     }
 }
 
@@ -150,7 +150,7 @@ extension ChartViewController {
             dataEntries.append(dataEntry)
         }
         let chartDataSet = BarChartDataSet(entries: dataEntries, label: "요일")
-        let title = "📆 극을 제일 많이 본 요일은\n\(date[watched.firstIndex(of: watched.max()!)!])요일로\n총 \(Int(watched.max()!))번 관극하였습니다."
+        let title = "📆 극을 제일 많이 본 요일은\n\(date[watched.firstIndex(of: watched.max()!)!])요일로 총 \(Int(watched.max()!))번 관극하였습니다."
         return (chartDataSet, title, date)
     }
 }

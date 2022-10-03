@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import Toast
 
 enum AddWatchedItem: Int {
     case posterGenreTitle = 0
@@ -70,9 +71,13 @@ class AddWatchedViewController: BaseViewController {
     }
     
     @objc func ticketPriceValueChanged(_ sender: UITextField) {
+        print(sender.text, "티켓가격")
         if let text = sender.text {
             if let price = Int(text) {
                 ticketPrice = price
+            } else {
+                self.mainView.makeToast("숫자만 입력해주세요")
+                sender.text = nil
             }
         }
     }
@@ -193,14 +198,14 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
         case AddWatchedItem.ticketPrice.rawValue:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: WatchedTextFieldTableViewCell.self)) as? WatchedTextFieldTableViewCell else { return UITableViewCell() }
             
+            cell.userTextField.addTarget(self, action: #selector(ticketPriceValueChanged), for: .valueChanged)
+            
             cell.setData(
                 title: AddWatchedItem.ticketPrice.getTitle(),
                 textFieldText: "",
                 placeHolder: "티켓금액을 입력해주세요")
             
             cell.userTextField.keyboardType = .numberPad
-            
-            cell.userTextField.addTarget(self, action: #selector(ticketPriceValueChanged), for: .valueChanged)
             
             return cell
                 
@@ -222,6 +227,9 @@ extension AddWatchedViewController: UICollectionViewDelegateFlowLayout, UICollec
         
         guard let play = playInfo else { return 0 }
         castArray = play.cast.components(separatedBy: ", ")
+        castArray = castArray.map {
+           $0.replacingOccurrences(of: " 등", with: "")
+        }
         return castArray.count
     }
     

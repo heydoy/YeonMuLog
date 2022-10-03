@@ -8,9 +8,10 @@
 import UIKit
 
 class SettingView: BaseView {
-    lazy var tableView = UITableView().then {
-        $0.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+    lazy var tableView = UITableView(frame: .zero, style: .insetGrouped).then {
+        $0.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 20, right: 0)
         $0.separatorColor = .clear
+        
     }
 
     override func setupUI() {

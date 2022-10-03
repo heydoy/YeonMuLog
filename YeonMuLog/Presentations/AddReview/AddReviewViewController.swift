@@ -104,5 +104,8 @@ extension AddReviewViewController: recordVoiceMemoDelegate {
     func sendVoiceMemo(url: String) {
         voiceMemo = url
         print(url, voiceMemo)
+        guard voiceMemo != nil else { return }
+        // 아이콘 디자인 변경 
+        
     }
 }

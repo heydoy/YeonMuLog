@@ -43,9 +43,10 @@ class AddWatchedViewController: BaseViewController {
     var castArray: [String] = []
     var castSelectedIndex: [Int] = []
     var castSelectedData: [String] = []
-    
+        
     var seat: String = ""
     var ticketPrice: Int = 0
+    var watchedDate = Date()
     
     // MARK: - Lifecycle
     override func loadView() {
@@ -80,6 +81,29 @@ class AddWatchedViewController: BaseViewController {
                 sender.text = nil
             }
         }
+    }
+    
+    @objc func selectWatchedDate(_ sender: UITextField) {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.preferredDatePickerStyle = .inline
+        datePicker.locale = NSLocale(localeIdentifier: "ko_KO") as Locale
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.view.addSubview(datePicker)
+        let ok = UIAlertAction(title: "확인", style: .default) { _ in
+            print(datePicker.date)
+            self.watchedDate = datePicker.date
+            self.mainView.tableView.reloadRows(at: [IndexPath(row: AddWatchedItem.date.rawValue, section: 0)], with: .none)
+        }
+        alert.addAction(ok)
+        
+        let height: NSLayoutConstraint = NSLayoutConstraint(item: alert.view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.1, constant: 400)
+        let width: NSLayoutConstraint = NSLayoutConstraint(item: alert.view, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width * 0.92)
+        
+        alert.view.addConstraint(height)
+        alert.view.addConstraint(width)
+        present(alert, animated: true)
     }
     
     func saveUserPlayInfo() {
@@ -158,8 +182,10 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
             
             cell.setData(
                 title: AddWatchedItem.date.getTitle(),
-                textFieldText: "2022년 9월 23일 오후 8시",
+                textFieldText: "\(watchedDate)",   // "2022년 9월 23일 오후 8시"
                 placeHolder: "")
+            
+            cell.userTextField.isEnabled = false
             
             return cell
         case AddWatchedItem.place.rawValue:
@@ -172,6 +198,7 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
                     placeHolder: "관람한 장소를 입력해주세요")
             }
             
+            cell.userTextField.isEnabled = false
             return cell
             
         case AddWatchedItem.cast.rawValue:
@@ -216,6 +243,17 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return indexPath.row == 0 ? 470 : indexPath.row == 3 ?  140 : 80 // size automatic dimension이 안되서 수동으로 해줘야되는 이유를 찾아야...
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case AddWatchedItem.date.rawValue:
+            guard let cell = tableView.cellForRow(at: indexPath) as? WatchedTextFieldTableViewCell else { return }
+            selectWatchedDate(cell.userTextField)
+            
+        default:
+            print("")
+        }
     }
 }
 

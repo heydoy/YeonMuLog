@@ -18,7 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
-                let vc = OnboardingViewController() // 여기서 변경
+                let vc = OnboardingViewController() // 처음일경우
+                //let vc = CustomTabBarViewController()
                 //let rootViewController = UINavigationController(rootViewController: vc)
                 let window = UIWindow(windowScene: windowScene)
                 window.rootViewController = vc

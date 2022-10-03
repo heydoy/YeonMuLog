@@ -21,6 +21,8 @@ class AddReviewViewController: BaseViewController {
     var config = YPImagePickerConfiguration()
     lazy var picker = YPImagePicker(configuration: config)
     
+    var delegate: sendReviewDelegate?
+    
     var voiceMemo: String = ""
     var text: String = ""
     var image: [String] = []
@@ -86,6 +88,7 @@ class AddReviewViewController: BaseViewController {
             
             repository.updateReview(playInfo, review: review)
             showFinishToast(title: "리뷰 추가 성공!", message: "리뷰가 성공적으로 저장되었습니다.", imageName: "character-pencil-finished") { _ in
+                self.delegate?.reviewDataReload()
                 self.dismiss(animated: true)
             }
             

@@ -875,6 +875,10 @@
 				DEVELOPMENT_TEAM = F7B353LPM3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YeonMuLog/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "연극,뮤지컬 후기에 추가할 사진을 촬영하기 위해 카메라를 사용합니다.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "연극,뮤지컬 후기에 추가할 영상 및 음성메모를 위해 사용합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "연극,뮤지컬 후기에 추가할 사진을 앨범에서 선택하기 위해 사용합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -904,6 +908,10 @@
 				DEVELOPMENT_TEAM = F7B353LPM3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YeonMuLog/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "연극,뮤지컬 후기에 추가할 사진을 촬영하기 위해 카메라를 사용합니다.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "연극,뮤지컬 후기에 추가할 영상 및 음성메모를 위해 사용합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "연극,뮤지컬 후기에 추가할 사진을 앨범에서 선택하기 위해 사용합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

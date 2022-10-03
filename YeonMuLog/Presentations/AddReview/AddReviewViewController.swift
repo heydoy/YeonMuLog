@@ -9,11 +9,17 @@ import UIKit
 import SnapKit
 import YPImagePicker
 
+protocol recordVoiceMemoDelegate {
+    func sendVoiceMemo(url: String)
+}
+
 class AddReviewViewController: BaseViewController {
     // MARK: - Properties
     let mainView = AddReviewView()
     var config = YPImagePickerConfiguration()
     lazy var picker = YPImagePicker(configuration: config)
+    
+    var voiceMemo: String?
     
     // MARK: - Lifecycle
     override func loadView() {
@@ -49,6 +55,7 @@ class AddReviewViewController: BaseViewController {
     @objc func addVoiceButtonTapped(_ sender: UIButton) {
         print("음성메모")
         let vc = VoiceMemoViewController()
+        vc.delegate = self
         present(vc, animated: true)
     }
     
@@ -91,4 +98,14 @@ extension AddReviewViewController: UITextViewDelegate {
     }
 }
 
-
+// MARK: - 음성메모를 전달받기 위한 프로토콜 상속
+extension AddReviewViewController: recordVoiceMemoDelegate {
+    /// 음성메모를 presenting vc에 보내는 메서드 
+    func sendVoiceMemo(url: String) {
+        voiceMemo = url
+        print(url, voiceMemo)
+        guard voiceMemo != nil else { return }
+        // 아이콘 디자인 변경 
+        
+    }
+}

@@ -14,6 +14,7 @@
 		A20E104428EA8051000AB31B /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = A20E104328EA8051000AB31B /* Toast */; };
 		A20E104628EAB9AE000AB31B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104528EAB9AE000AB31B /* Date+Extension.swift */; };
 		A20E104828EAEFDB000AB31B /* NoReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104728EAEFDB000AB31B /* NoReviewCollectionViewCell.swift */; };
+		A20E104B28EB0A12000AB31B /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104A28EB0A11000AB31B /* CustomTabBarViewController.swift */; };
 		A21EDDCC28D0B652006573A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EDDCB28D0B652006573A4 /* AppDelegate.swift */; };
 		A21EDDCE28D0B652006573A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EDDCD28D0B652006573A4 /* SceneDelegate.swift */; };
 		A21EDDD028D0B652006573A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EDDCF28D0B652006573A4 /* ViewController.swift */; };
@@ -87,6 +88,7 @@
 		A20E104028EA4B51000AB31B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		A20E104528EAB9AE000AB31B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		A20E104728EAEFDB000AB31B /* NoReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoReviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		A20E104A28EB0A11000AB31B /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		A21EDDC828D0B652006573A4 /* YeonMuLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YeonMuLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21EDDCB28D0B652006573A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A21EDDCD28D0B652006573A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +181,14 @@
 			path = VoiceMemo;
 			sourceTree = "<group>";
 		};
+		A20E104928EB09B7000AB31B /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				A20E104A28EB0A11000AB31B /* CustomTabBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		A21EDDBF28D0B652006573A4 = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				A2C2638028DD6AC800DCF778 /* Onboarding */,
+				A20E104928EB09B7000AB31B /* TabBar */,
 				A294B3E028E48684002DD515 /* AddReview */,
 				A23716C928E0A0F4004E9FE6 /* TaraeDetail */,
 				A2C2637728DD2EA200DCF778 /* Tarae */,
@@ -600,6 +611,7 @@
 			files = (
 				A21EDDD028D0B652006573A4 /* ViewController.swift in Sources */,
 				A2B0344628D77DC90066AE2D /* PlayModel.swift in Sources */,
+				A20E104B28EB0A12000AB31B /* CustomTabBarViewController.swift in Sources */,
 				A2C2637628DD1B5900DCF778 /* TagCollectionViewCell.swift in Sources */,
 				A2C2638728DD727500DCF778 /* OnboardingCollectionViewCell.swift in Sources */,
 				A21EDDCC28D0B652006573A4 /* AppDelegate.swift in Sources */,

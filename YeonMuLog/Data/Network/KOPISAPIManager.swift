@@ -36,7 +36,9 @@ class KOPISAPIManager {
                         self.callDetail(id: id) { result in
                             switch result {
                             case let .success(result):
-                                playList.append(result)
+                                if result.genre == "뮤지컬" || result.genre == "연극" {
+                                    playList.append(result)
+                                }
                             case let .failure(error):
                                 print(error)
                             }

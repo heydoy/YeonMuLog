@@ -33,3 +33,7 @@
 // 리뷰추가하기
 "finishReviewButton" = "보내기";
 "cancelButton" = "취소";
+
+// 탭바
+"mainTabName" = "관극기록";
+"chartTabName" = "통계";

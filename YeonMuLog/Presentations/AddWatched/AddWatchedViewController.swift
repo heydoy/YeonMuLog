@@ -61,8 +61,30 @@ class AddWatchedViewController: BaseViewController {
     
     // MARK: - Actions
     @objc func finishButtonTapped(_ sender: UIBarButtonItem) {
-        saveUserPlayInfo()
-        self.navigationController?.popToRootViewController(animated: true)
+        if castSelectedData.isEmpty {
+            let ok = UIAlertAction(title: "확인", style: .default)
+            showAlert(title: "캐스팅을 선택해주세요", message: nil, actions: ok)
+        } else {
+            showFinishToast(title: "관람기록 추가 성공", message: "관람기록이 성공적으로 저장되었습니다.", imageName: "character-pencil-finished") { _ in
+                self.saveUserPlayInfo()
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+            
+        }
+    }
+    
+    private func showFinishToast(title: String?, message: String?, imageName: String, completion: ((Bool) -> Void)?) {
+        var style = ToastStyle()
+        style.backgroundColor = UIColor(red: 249/255, green: 243/255, blue: 253/255, alpha: 1.0)
+        style.maxWidthPercentage = 0.8
+        let fontColor = UIColor(red: 70/255, green: 30/255, blue: 121/255, alpha: 1.0)
+        style.titleColor = fontColor
+        style.messageColor = fontColor
+        style.imageSize = CGSize(width: 80, height: 80)
+        style.titleFont = .appleSDGothicNeo(of: .subTitle, weight: .medium)
+        style.messageFont = .appleSDGothicNeo(of: .content, weight: .regular)
+        self.mainView.makeToast(message, duration: 1.4, position: .bottom, title: title, image: UIImage(named: imageName), style: style, completion: completion)
+        
     }
     
     @objc func seatValueChanged(_ sender: UITextField) {

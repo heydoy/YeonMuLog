@@ -17,6 +17,7 @@
 		A20E104B28EB0A12000AB31B /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104A28EB0A11000AB31B /* CustomTabBarViewController.swift */; };
 		A20E104E28EB213D000AB31B /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104D28EB213D000AB31B /* ChartViewController.swift */; };
 		A20E105028EB214D000AB31B /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104F28EB214D000AB31B /* ChartView.swift */; };
+		A20E105228EB3283000AB31B /* NoChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E105128EB3283000AB31B /* NoChartTableViewCell.swift */; };
 		A21EDDCC28D0B652006573A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EDDCB28D0B652006573A4 /* AppDelegate.swift */; };
 		A21EDDCE28D0B652006573A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EDDCD28D0B652006573A4 /* SceneDelegate.swift */; };
 		A21EDDD028D0B652006573A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EDDCF28D0B652006573A4 /* ViewController.swift */; };
@@ -93,6 +94,7 @@
 		A20E104A28EB0A11000AB31B /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		A20E104D28EB213D000AB31B /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		A20E104F28EB214D000AB31B /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		A20E105128EB3283000AB31B /* NoChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoChartTableViewCell.swift; sourceTree = "<group>"; };
 		A21EDDC828D0B652006573A4 /* YeonMuLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YeonMuLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21EDDCB28D0B652006573A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A21EDDCD28D0B652006573A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				A20E104D28EB213D000AB31B /* ChartViewController.swift */,
 				A20E104F28EB214D000AB31B /* ChartView.swift */,
+				A20E105128EB3283000AB31B /* NoChartTableViewCell.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 				A2C2637228DD0CE400DCF778 /* WatchedTextFieldTableViewCell.swift in Sources */,
 				A2C2637028DD076500DCF778 /* WatchedPosterGenreTitleTableViewCell.swift in Sources */,
 				A2C2635528DBBCFC00DCF778 /* SearchPlayResultTableViewCell.swift in Sources */,
+				A20E105228EB3283000AB31B /* NoChartTableViewCell.swift in Sources */,
 				A20E103D28E9B876000AB31B /* VoiceMemoView.swift in Sources */,
 				A294B3E428E48EE3002DD515 /* AddReviewView.swift in Sources */,
 				A289FCAB28DACCEF008046D1 /* setFonts.swift in Sources */,

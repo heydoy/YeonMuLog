@@ -37,3 +37,6 @@
 // 탭바
 "mainTabName" = "관극기록";
 "chartTabName" = "통계";
+
+// 차트
+"NoChartAvailable" = "관극기록을 추가하고\n통계를 확인해보세요";

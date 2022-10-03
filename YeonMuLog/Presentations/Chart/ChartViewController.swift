@@ -45,10 +45,20 @@ class ChartViewController: BaseViewController {
     override func configure() {
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
+        
+        mainView.tableView.register(NoChartTableViewCell.self, forCellReuseIdentifier: String(describing: NoChartTableViewCell.self))
     }
     
 }
 // MARK: - Table View
 extension ChartViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: NoChartTableViewCell.self)) as? NoChartTableViewCell else { return UITableViewCell() }
+        
+        return cell
+    }
 }

@@ -237,6 +237,9 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
             
             cell.userTextField.addTarget(self, action: #selector(seatValueChanged), for: .valueChanged)
             cell.userTextField.isEnabled = true
+            
+            cell.userTextField.tag = indexPath.row
+            cell.userTextField.delegate = self
             return cell
             
         case AddWatchedItem.ticketPrice.rawValue:
@@ -251,6 +254,9 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
             
             cell.userTextField.keyboardType = .numberPad
             cell.userTextField.isEnabled = true
+            
+            cell.userTextField.tag = indexPath.row
+            cell.userTextField.delegate = self
             return cell
                 
         default:
@@ -270,6 +276,28 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
             
         default:
             print("")
+        }
+    }
+}
+
+// MARK: - TextFieldDelegate
+extension AddWatchedViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        if let text = textField.text, !text.isEmpty{
+            if textField.tag == AddWatchedItem.seat.rawValue {
+                seat = text
+            } else if textField.tag == AddWatchedItem.ticketPrice.rawValue {
+                if let price = Int(text) {
+                    ticketPrice = price
+                } else {
+                    self.mainView.makeToast("숫자만 입력해주세요.")
+                    textField.text = ""
+                }
+            }
         }
     }
 }

@@ -18,13 +18,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
-                let vc = OnboardingViewController() // 처음일경우
-                //let vc = CustomTabBarViewController()
-                //let rootViewController = UINavigationController(rootViewController: vc)
-                let window = UIWindow(windowScene: windowScene)
-                window.rootViewController = vc
-                self.window = window
-                window.makeKeyAndVisible()
+        
+        if LandscapeManager.shared.isFirstLaunch {
+            // 처음 앱에 진입하는 경우
+            let vc = OnboardingViewController()
+            let window = UIWindow(windowScene: windowScene)
+            window.rootViewController = vc
+            self.window = window
+            window.makeKeyAndVisible()
+            
+            LandscapeManager.shared.isFirstLaunch = false
+        } else {
+            // 처음이 아닐 경우
+            let vc = CustomTabBarViewController()
+            let window = UIWindow(windowScene: windowScene)
+            window.rootViewController = vc
+            self.window = window
+            window.makeKeyAndVisible()
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

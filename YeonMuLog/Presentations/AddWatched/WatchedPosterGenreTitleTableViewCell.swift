@@ -78,6 +78,7 @@ final class WatchedPosterGenreTitleTableViewCell: UITableViewCell {
             make.top.equalTo(genreLabel.snp.bottom).offset(8)
             make.leading.equalTo(genreLabel)
             make.trailing.equalToSuperview().inset(20)
+            make.bottom.equalToSuperview().inset(20)
         }
     }
     

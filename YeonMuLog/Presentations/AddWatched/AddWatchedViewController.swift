@@ -259,7 +259,7 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.row == 0 ? 400 : indexPath.row == 3 ?  140 : 80 // size automatic dimension이 안되서 수동으로 해줘야되는 이유를 찾아야...
+        return indexPath.row == 3 ? 140 : UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -281,11 +281,20 @@ extension AddWatchedViewController: UICollectionViewDelegateFlowLayout, UICollec
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         guard let play = playInfo else { return 0 }
-        castArray = play.cast.components(separatedBy: ", ")
-        castArray = castArray.map {
-           $0.replacingOccurrences(of: " 등", with: "")
+        
+        if  !play.cast.trimmingCharacters(in: .whitespaces).isEmpty {
+            castArray = play.cast.components(separatedBy: ", ")
+            castArray = castArray.map {
+               $0.replacingOccurrences(of: " 등", with: "")
+            }
+            return castArray.count
+        } else {
+            let noCast = ["정보 없음"]
+            castArray = noCast
+            castSelectedData = noCast
+            castSelectedIndex.append(0)
+            return castArray.count
         }
-        return castArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

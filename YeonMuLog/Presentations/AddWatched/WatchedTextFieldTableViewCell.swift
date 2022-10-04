@@ -55,7 +55,7 @@ final class WatchedTextFieldTableViewCell: UITableViewCell {
     private func setConstraints() {
 
         titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(4)
+            make.top.equalToSuperview().inset(6)
             make.leading.equalToSuperview().offset(20)
         }
         
@@ -63,6 +63,7 @@ final class WatchedTextFieldTableViewCell: UITableViewCell {
             make.top.equalTo(titleLabel.snp.bottom).offset(10)
             make.leading.trailing.equalToSuperview().inset(20)
             make.height.equalTo(40)
+            make.bottom.equalToSuperview().inset(6)
         }
     }
     

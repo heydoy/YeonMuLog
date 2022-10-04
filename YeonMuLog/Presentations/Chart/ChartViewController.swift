@@ -101,7 +101,11 @@ extension ChartViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return list != nil && !list.isEmpty ? 420 : 270
+        return list != nil && !list.isEmpty ? UITableView.automaticDimension : 270
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return .zero
     }
 }
 
@@ -125,12 +129,12 @@ extension ChartViewController {
             dataEntries.append(dataEntry)
         }
         let chartDataSet = BarChartDataSet(entries: dataEntries, label: "리뷰 수")
-        let title = "✍️ 리뷰를 제일 많이 쓴 극은\n\(play[reviewNumber.firstIndex(of: reviewNumber.max()!)!])으로\n총 \(Int(reviewNumber.max()!))개의 리뷰를 썼습니다."
+        let title = "✍️ 리뷰를 제일 많이 쓴 극은\n\(play[reviewNumber.firstIndex(of: reviewNumber.max()!)!])(으)로 총 \(Int(reviewNumber.max()!))개의 리뷰를 썼습니다."
         return (chartDataSet, title, play)
     }
     
     func dateBarChartDataSet() -> (BarChartDataSet, String, [String]) {
-        let date: [String] = ["월","화","수","목","금","토"]
+        let date: [String] = ["월", "화", "수", "목", "금", "토"]
         var watched: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
         
         if let list = list {

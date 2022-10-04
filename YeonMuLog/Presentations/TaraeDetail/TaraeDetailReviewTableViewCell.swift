@@ -9,7 +9,7 @@ import UIKit
 
 class TaraeDetailReviewTableViewCell: UITableViewCell {
     // MARK: - Properties
-    let flowLayout = ReviewCollectionViewLayout()
+    //let flowLayout = ReviewCollectionViewLayout()
     var collectionView: UICollectionView!
     
     // MARK: - Inintialisation
@@ -32,9 +32,13 @@ class TaraeDetailReviewTableViewCell: UITableViewCell {
     
     // MARK: - UI
     func configure() {
-        
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        collectionView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .vertical
+        flowLayout.minimumLineSpacing = 8
+        flowLayout.minimumInteritemSpacing = 8
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collectionView.isScrollEnabled = true
+        collectionView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 50, right: 0)
         collectionView.backgroundColor = .clear
         collectionView.register(ReviewCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: ReviewCollectionViewCell.self))
         collectionView.register(NoReviewCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: NoReviewCollectionViewCell.self))

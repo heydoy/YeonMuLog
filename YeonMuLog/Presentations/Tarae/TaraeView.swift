@@ -9,8 +9,10 @@ import UIKit
 
 class TaraeView: BaseView {
     lazy var tableView = UITableView().then {
-        $0.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+        $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         $0.separatorColor = .clear
+        $0.showsHorizontalScrollIndicator = false
+        $0.showsVerticalScrollIndicator = false
     }
 
     override func setupUI() {

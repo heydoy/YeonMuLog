@@ -28,7 +28,7 @@ final class TaraeReviewTableViewCell: UITableViewCell {
         $0.font = .appleSDGothicNeo(of: .title, weight: .bold)
         $0.textColor = .black
         $0.numberOfLines = 0
-        
+        $0.adjustsFontSizeToFitWidth = true
     }
     
     private let reviewBackgroundView = UIView().then {
@@ -48,6 +48,7 @@ final class TaraeReviewTableViewCell: UITableViewCell {
         $0.textColor = .purple
         $0.font = .appleSDGothicNeo(of: .content, weight: .medium)
         $0.text = "리뷰 0"
+        $0.adjustsFontSizeToFitWidth = true
     }
     
     private let castIconImageView = UIImageView().then {
@@ -126,20 +127,20 @@ final class TaraeReviewTableViewCell: UITableViewCell {
             make.trailing.equalToSuperview().offset(-20)
             make.top.bottom.equalToSuperview().inset(4)
             make.centerX.centerY.equalToSuperview()
-            make.height.equalTo(150)
+            
         }
         posterImageView.snp.makeConstraints { make in
             make.width.equalToSuperview().multipliedBy(0.28)
             make.height.equalTo(posterImageView.snp.width).multipliedBy(1.3)
             make.centerY.equalToSuperview()
-            make.bottom.greaterThanOrEqualToSuperview().offset(-10)
-            make.top.leading.equalToSuperview().offset(10)
+            make.top.leading.equalToSuperview().inset(10)
+            make.bottom.greaterThanOrEqualToSuperview().inset(10)
         }
 
         titleLabel.snp.makeConstraints { make in
-            make.leading.equalTo(posterImageView.snp.trailing).offset(12)
-            make.top.equalToSuperview().offset(10)
-            make.height.greaterThanOrEqualTo(30)
+            make.leading.equalTo(posterImageView.snp.trailing).offset(8)
+            make.top.equalToSuperview().inset(10)
+            make.height.greaterThanOrEqualTo(34)
         }
         
         reviewBackgroundView.snp.makeConstraints { make in
@@ -185,8 +186,10 @@ final class TaraeReviewTableViewCell: UITableViewCell {
             
         }
         dateLabel.snp.makeConstraints { make in
+            make.top.greaterThanOrEqualTo(placeLabel.snp.bottom).offset(12)
             make.leading.equalTo(titleLabel)
-            make.bottom.equalToSuperview().offset(-12)
+            make.trailing.equalTo(reviewBackgroundView)
+            make.bottom.equalToSuperview().inset(10)
         }
     }
     

@@ -43,7 +43,7 @@ class TaraeViewController: BaseViewController {
     }
     
     // MARK: - Actions
-    @objc func searchAndAddButtonTapped(_ sender: UIBarButtonItem) {
+    @objc func searchAndAddButtonTapped() {
         let vc = SearchPlayViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -94,12 +94,15 @@ extension TaraeViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = TaraeDetailViewController()
-        // vc에 데이터 전달
-        vc.playInfo = list[indexPath.row]
-        navigationController?.pushViewController(vc, animated: true)
+       
+        if list == nil || list.count == 0 {
+            searchAndAddButtonTapped()
+        } else {
+            let vc = TaraeDetailViewController()
+            // vc에 데이터 전달
+            vc.playInfo = list[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

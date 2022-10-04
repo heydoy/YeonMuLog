@@ -78,9 +78,6 @@ final class TaraeReviewTableViewCell: UITableViewCell {
         $0.textColor = .systemGray
     }
     
-
-    
-
     // MARK: - Inintialisation
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -123,9 +120,8 @@ final class TaraeReviewTableViewCell: UITableViewCell {
     
     private func setConstraints() {
         cellBackgroundView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
-            make.top.bottom.equalToSuperview().inset(4)
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.top.bottom.equalToSuperview().inset(6)
             make.centerX.centerY.equalToSuperview()
             
         }

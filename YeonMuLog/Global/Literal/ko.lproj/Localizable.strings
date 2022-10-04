@@ -17,13 +17,13 @@
 
 "goMainButtonTitle" = "바로 시작하기";
 
-"FirstOnboardingTitle" = "연극과 뮤지컬의\n감동과 기억을\n기록으로 남겨보세요";
-"FirstOnboardingSubtitle" = "텍스트와 사진, 음성메모로\n자유롭게 남겨보세요";
+"FirstOnboardingTitle" = "포스터와 캐스팅이 있는 관극기록을\n검색으로 손쉽게 추가하세요";
+"FirstOnboardingSubtitle" = "오픈런이 아닌 예전 극들도\n모두 검색할 수 있어요";
 
-"SecondOnboardingTitle" = "극 제목으로 검색하여\n장소와 캐스팅, 포스터를\n손쉽게 추가하세요";
-"SecondOnboardingSubtitle" = "오픈런이 아닌 예전 극들도\n모두 검색할 수 있어요";
+"SecondOnboardingTitle" = "그날의 감동과 기억을\n기록으로 남겨보세요";
+"SecondOnboardingSubtitle" = "뮤지컬과 연극 후기를\n생각날때마다 텍스트로 자유롭게 남겨보세요";
 
-"ThirdOnboardingTitle" = "관극 기록을\n달력으로도 보고\n리뷰 통계도 볼 수 있어요";
+"ThirdOnboardingTitle" = "관극 기록을 남기면\n통계도 볼 수 있어요";
 "ThirdOnboardingSubtitle" = "관극기록 결산을 한눈에\n손쉽게 볼 수 있어요.";
 
 // 타래 상세

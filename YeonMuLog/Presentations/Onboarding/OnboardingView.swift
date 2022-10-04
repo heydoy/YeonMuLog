@@ -57,8 +57,8 @@ class OnboardingView: BaseView {
         
         collectionView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.greaterThanOrEqualToSuperview().inset(40)
-            make.leading.trailing.equalToSuperview().inset(24)
+            make.top.greaterThanOrEqualToSuperview().inset(20)
+            make.leading.trailing.equalToSuperview()
             make.height.equalToSuperview().multipliedBy(0.67)
             make.bottom.equalTo(pageControl.snp.top).offset(-24)
         }

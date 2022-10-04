@@ -56,8 +56,8 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
     private func setConstraints() {
         
         mainImageView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(12)
-            make.top.equalToSuperview().inset(20)
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.top.equalToSuperview()
             make.centerX.equalToSuperview()
             make.height.equalTo(mainImageView.snp.width).multipliedBy(1.11)
         }

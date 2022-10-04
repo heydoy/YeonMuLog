@@ -130,7 +130,7 @@ class TaraeDetailPlayInfoTableViewCell: UITableViewCell {
     func setConstraints() {
         posterImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(8)
+            make.top.equalToSuperview().inset(16)
             make.width.equalToSuperview().multipliedBy(0.6)
             make.height.equalTo(posterImageView.snp.width).multipliedBy(1.3)
         }
@@ -192,6 +192,7 @@ class TaraeDetailPlayInfoTableViewCell: UITableViewCell {
         seatAndTicketLabel.snp.makeConstraints { make in
             make.top.equalTo(seatAndTicketImageView)
             make.leading.equalTo(seatAndTicketImageView.snp.trailing).offset(4)
+            make.bottom.equalToSuperview().inset(36)
         }
         
     }

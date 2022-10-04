@@ -162,7 +162,7 @@ extension TaraeDetailViewController: UITableViewDelegate, UITableViewDataSource 
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.section == TaraeDetailSection.playInfo.rawValue ? TaraeDetailSection.playInfo.getHeight() : TaraeDetailSection.review.getHeight()
+        return indexPath.section == TaraeDetailSection.playInfo.rawValue ? UITableView.automaticDimension : TaraeDetailSection.review.getHeight()
     }
 }
 

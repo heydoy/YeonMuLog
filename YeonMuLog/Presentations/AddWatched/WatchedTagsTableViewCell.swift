@@ -16,7 +16,12 @@ final class WatchedTagsTableViewCell: UITableViewCell {
         $0.numberOfLines = 0
     }
     
-    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+    let flowLayout = UICollectionViewFlowLayout().then {
+        $0.estimatedItemSize = .zero
+        $0.scrollDirection = .vertical
+    }
+    
+    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout ).then {
         $0.backgroundColor = .clear
         $0.allowsMultipleSelection = true
         $0.register(TagCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: TagCollectionViewCell.self))
@@ -48,14 +53,14 @@ final class WatchedTagsTableViewCell: UITableViewCell {
     private func setConstraints() {
 
         titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(4)
+            make.top.equalToSuperview().inset(6)
             make.leading.equalToSuperview().offset(20)
         }
         
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(4)
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
             make.leading.trailing.equalToSuperview().inset(25)
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().inset(6)
         }
         
     }

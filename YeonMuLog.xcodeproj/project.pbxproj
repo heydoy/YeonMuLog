@@ -53,6 +53,7 @@
 		A28A5F7E28D3F94D00D270E9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A28A5F7D28D3F94D00D270E9 /* .gitignore */; };
 		A294B3E228E486AE002DD515 /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A294B3E128E486AE002DD515 /* AddReviewViewController.swift */; };
 		A294B3E428E48EE3002DD515 /* AddReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A294B3E328E48EE3002DD515 /* AddReviewView.swift */; };
+		A29E408128ECAD1F00EF1AFC /* LandscapeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E408028ECAD1F00EF1AFC /* LandscapeManager.swift */; };
 		A2B0343528D6FA410066AE2D /* KOPISAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0343428D6FA410066AE2D /* KOPISAPIManager.swift */; };
 		A2B0343728D6FBDA0066AE2D /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0343628D6FBDA0066AE2D /* Keys.swift */; };
 		A2B0343928D6FC1E0066AE2D /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0343828D6FC1E0066AE2D /* EndPoints.swift */; };
@@ -134,6 +135,7 @@
 		A28A5F7D28D3F94D00D270E9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A294B3E128E486AE002DD515 /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
 		A294B3E328E48EE3002DD515 /* AddReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewView.swift; sourceTree = "<group>"; };
+		A29E408028ECAD1F00EF1AFC /* LandscapeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeManager.swift; sourceTree = "<group>"; };
 		A2B0343428D6FA410066AE2D /* KOPISAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KOPISAPIManager.swift; sourceTree = "<group>"; };
 		A2B0343628D6FBDA0066AE2D /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		A2B0343828D6FC1E0066AE2D /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
@@ -381,9 +383,18 @@
 			path = AddReview;
 			sourceTree = "<group>";
 		};
+		A29E407F28ECAD0000EF1AFC /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				A29E408028ECAD1F00EF1AFC /* LandscapeManager.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
 		A2B0343228D6F97A0066AE2D /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A29E407F28ECAD0000EF1AFC /* UserDefaults */,
 				A2B0343328D6F9910066AE2D /* Network */,
 				A2B0344728D795CC0066AE2D /* Repository */,
 			);
@@ -673,6 +684,7 @@
 				A2C2635D28DBD22700DCF778 /* AddPlayInfoTableViewCell.swift in Sources */,
 				A2C2636328DBECDC00DCF778 /* String+Extension.swift in Sources */,
 				A20E104128EA4B51000AB31B /* UIViewController+Extension.swift in Sources */,
+				A29E408128ECAD1F00EF1AFC /* LandscapeManager.swift in Sources */,
 				A2DFB1CC28EB4F4E00E2A05D /* SettingViewController.swift in Sources */,
 				A2DFB1D028EB594600E2A05D /* SettingInfo.swift in Sources */,
 				A237171128E1D36B004E9FE6 /* TaraeDetailReviewTableViewCell.swift in Sources */,

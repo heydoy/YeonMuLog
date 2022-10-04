@@ -21,8 +21,12 @@ class ChartTableViewCell: UITableViewCell {
         $0.xAxis.labelPosition = .bottom
         $0.rightAxis.enabled = false
         $0.animate(xAxisDuration: 0.6, yAxisDuration: 0.4)
+        $0.isUserInteractionEnabled = false
     }
     
+    let dividerView = UIView().then {
+        $0.backgroundColor = .systemGray6
+    }
     
     // MARK: - Inintialisation
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -41,18 +45,24 @@ class ChartTableViewCell: UITableViewCell {
     func configure() {
         contentView.addSubview(titleLabel)
         contentView.addSubview(barChartView)
+        contentView.addSubview(dividerView)
     }
     
     func setConstraints() {
         
         titleLabel.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.top.equalToSuperview().inset(8)
+            make.top.leading.trailing.equalToSuperview().inset(20)
         }
         barChartView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(20)
             make.top.equalTo(titleLabel.snp.bottom).offset(12)
             make.height.equalTo(300)
+        }
+        dividerView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.top.equalTo(barChartView.snp.bottom).offset(20)
+            make.bottom.equalToSuperview()
+            make.height.equalTo(8)
         }
         
     }

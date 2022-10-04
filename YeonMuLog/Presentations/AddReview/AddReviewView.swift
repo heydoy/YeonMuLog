@@ -35,7 +35,7 @@ class AddReviewView: BaseView {
         $0.font = textViewFont
         $0.textColor = .black
         $0.sizeThatFits(CGSize(width: $0.frame.size.width, height: textViewMaxHeight))
-        $0.keyboardDistanceFromTextField = 50 // 키보드 위치
+        $0.keyboardDistanceFromTextField = 60 // 키보드 위치
         $0.becomeFirstResponder()
     }
     
@@ -74,8 +74,8 @@ class AddReviewView: BaseView {
         //backgroundView.addSubview(stackView)
         backgroundView.addSubview(userTextView)
         
-        backgroundView.addSubview(addGalleryButton)
-        backgroundView.addSubview(addVoiceButton)
+        //backgroundView.addSubview(addGalleryButton)
+        //backgroundView.addSubview(addVoiceButton)
         backgroundView.addSubview(cancelButton)
         backgroundView.addSubview(finishReviewButton)
         
@@ -94,32 +94,33 @@ class AddReviewView: BaseView {
             make.height.equalTo(userTextView.snp.height)
         }
         
-        addGalleryButton.snp.makeConstraints { make in
-            make.width.height.equalTo(30)
-            make.leading.equalToSuperview().inset(20)
-            make.top.equalTo(userTextView.snp.bottom).offset(12)
-            make.bottom.equalToSuperview().inset(40)
-        }
-        
-        addVoiceButton.snp.makeConstraints { make in
-            make.width.height.equalTo(30)
-            make.leading.equalTo(addGalleryButton.snp.trailing).offset(20)
-            make.centerY.bottom.equalTo(addGalleryButton)
-            
-        }
+//        addGalleryButton.snp.makeConstraints { make in
+//            make.width.height.equalTo(30)
+//            make.leading.equalToSuperview().inset(20)
+//            make.top.equalTo(userTextView.snp.bottom).offset(12)
+//            make.bottom.equalToSuperview().inset(40)
+//        }
+//
+//        addVoiceButton.snp.makeConstraints { make in
+//            make.width.height.equalTo(30)
+//            make.leading.equalTo(addGalleryButton.snp.trailing).offset(20)
+//            make.centerY.bottom.equalTo(addGalleryButton)
+//
+//        }
         
         finishReviewButton.snp.makeConstraints { make in
+            make.top.equalTo(userTextView.snp.bottom).offset(12)
             make.trailing.equalToSuperview().inset(20)
             make.width.equalTo(60)
             make.height.equalTo(30)
-            make.centerY.bottom.equalTo(addGalleryButton)
+            make.bottom.equalToSuperview().inset(40)
         }
         
         cancelButton.snp.makeConstraints { make in
             make.trailing.equalTo(finishReviewButton.snp.leading).offset(-20)
             make.width.equalTo(48)
             make.height.equalTo(30)
-            make.centerY.equalTo(addGalleryButton)
+            make.bottom.centerY.equalTo(finishReviewButton)
         }
     }
 }

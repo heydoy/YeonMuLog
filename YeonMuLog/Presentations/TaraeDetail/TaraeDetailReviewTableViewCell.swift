@@ -34,8 +34,9 @@ class TaraeDetailReviewTableViewCell: UITableViewCell {
     func configure() {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
-        flowLayout.minimumLineSpacing = 8
-        flowLayout.minimumInteritemSpacing = 8
+        flowLayout.minimumLineSpacing = 12
+        flowLayout.minimumInteritemSpacing = 12
+        flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.isScrollEnabled = true
         collectionView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 50, right: 0)

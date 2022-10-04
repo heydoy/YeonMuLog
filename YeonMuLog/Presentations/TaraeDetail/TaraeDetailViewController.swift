@@ -183,20 +183,13 @@ extension TaraeDetailViewController: UICollectionViewDelegate, UICollectionViewD
 extension TaraeDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = UIScreen.main.bounds.width
-        var height: CGFloat = 44
-        if let cell = collectionView.cellForItem(at: indexPath) {
-            print(cell)
-            height = cell.intrinsicContentSize.height + 20
-        }
+        let height: CGFloat = collectionView.intrinsicContentSize.height + 60
+        print("#높이", height)
+
         return CGSize(width: width, height: height )
+        
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 8
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 8
-    }
 }
 
 extension TaraeDetailViewController: sendReviewDelegate {

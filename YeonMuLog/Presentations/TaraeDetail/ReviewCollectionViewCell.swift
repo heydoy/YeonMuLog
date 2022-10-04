@@ -61,12 +61,15 @@ class ReviewCollectionViewCell: UICollectionViewCell {
         textLabel.snp.makeConstraints { make in
             make.centerY.centerX.equalToSuperview()
             make.width.lessThanOrEqualTo(contentView).multipliedBy(0.6)
+            make.top.bottom.equalToSuperview().inset(12)
         }
         bubbleBackgroundView.snp.makeConstraints { make in
             make.width.height.equalTo(textLabel).offset(20)
-            make.top.equalTo(dateLabel).offset(-4)
+            make.top.equalTo(dateLabel).offset(-6)
             make.leading.equalTo(dateLabel.snp.trailing).offset(8)
+            make.bottom.greaterThanOrEqualToSuperview()
         }
+
     }
     private func setUI() {
         backgroundColor = .clear

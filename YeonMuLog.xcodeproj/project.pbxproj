@@ -33,6 +33,7 @@
 		A237171328E1D828004E9FE6 /* ReviewCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A237171228E1D828004E9FE6 /* ReviewCollectionViewLayout.swift */; };
 		A237171528E1DBAE004E9FE6 /* ReviewCollectionViewLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A237171428E1DBAE004E9FE6 /* ReviewCollectionViewLayoutDelegate.swift */; };
 		A237171728E1DD8D004E9FE6 /* ReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A237171628E1DD8D004E9FE6 /* ReviewCollectionViewCell.swift */; };
+		A26097AE28F44BF40051BA41 /* setColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26097AD28F44BF40051BA41 /* setColor.swift */; };
 		A289FCA628D8CE26008046D1 /* UserPlayRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289FCA528D8CE26008046D1 /* UserPlayRepository.swift */; };
 		A289FCA828D956DF008046D1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = A289FCA728D956DF008046D1 /* .swiftlint.yml */; };
 		A289FCAB28DACCEF008046D1 /* setFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289FCAA28DACCEF008046D1 /* setFonts.swift */; };
@@ -117,6 +118,7 @@
 		A237171228E1D828004E9FE6 /* ReviewCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewLayout.swift; sourceTree = "<group>"; };
 		A237171428E1DBAE004E9FE6 /* ReviewCollectionViewLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewLayoutDelegate.swift; sourceTree = "<group>"; };
 		A237171628E1DD8D004E9FE6 /* ReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		A26097AD28F44BF40051BA41 /* setColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setColor.swift; sourceTree = "<group>"; };
 		A289FCA528D8CE26008046D1 /* UserPlayRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlayRepository.swift; sourceTree = "<group>"; };
 		A289FCA728D956DF008046D1 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		A289FCAA28DACCEF008046D1 /* setFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setFonts.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				A289FCAA28DACCEF008046D1 /* setFonts.swift */,
+				A26097AD28F44BF40051BA41 /* setColor.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -664,6 +667,7 @@
 				A21EDDD028D0B652006573A4 /* ViewController.swift in Sources */,
 				A2DFB1CA28EB4F4100E2A05D /* SettingView.swift in Sources */,
 				A2B0344628D77DC90066AE2D /* PlayModel.swift in Sources */,
+				A26097AE28F44BF40051BA41 /* setColor.swift in Sources */,
 				A20E104B28EB0A12000AB31B /* CustomTabBarViewController.swift in Sources */,
 				A2C2637628DD1B5900DCF778 /* TagCollectionViewCell.swift in Sources */,
 				A20E105428EB3880000AB31B /* ChartTableViewCell.swift in Sources */,

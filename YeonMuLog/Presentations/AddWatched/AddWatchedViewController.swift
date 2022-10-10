@@ -75,9 +75,9 @@ class AddWatchedViewController: BaseViewController {
     
     private func showFinishToast(title: String?, message: String?, imageName: String, completion: ((Bool) -> Void)?) {
         var style = ToastStyle()
-        style.backgroundColor = UIColor(red: 249/255, green: 243/255, blue: 253/255, alpha: 1.0)
+        style.backgroundColor = .CustomColor.purple30
         style.maxWidthPercentage = 0.8
-        let fontColor = UIColor(red: 70/255, green: 30/255, blue: 121/255, alpha: 1.0)
+        let fontColor = UIColor.CustomColor.purple800
         style.titleColor = fontColor
         style.messageColor = fontColor
         style.imageSize = CGSize(width: 80, height: 80)

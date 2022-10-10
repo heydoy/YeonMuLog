@@ -60,7 +60,7 @@ class AddReviewView: BaseView {
         $0.setTitle("finishReviewButton".localized, for: .normal)
         $0.titleLabel?.font = .appleSDGothicNeo(of: .content, weight: .bold)
         $0.clipsToBounds = true
-        $0.backgroundColor = UIColor(red: 199/255, green: 156/255, blue: 255/255, alpha: 1)
+        $0.backgroundColor = .CustomColor.purple100
         $0.layer.cornerRadius = 6
     }
     

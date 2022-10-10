@@ -17,13 +17,13 @@ final class VoiceMemoView: BaseView {
     let playButton = UIButton().then {
         $0.setImage(UIImage(systemName: "play.fill"), for: .normal)
         $0.setPreferredSymbolConfiguration(.init(pointSize: 50), forImageIn: .normal)
-        $0.tintColor = UIColor(red: 199/255, green: 156/255, blue: 255/255, alpha: 1)
+        $0.tintColor = .CustomColor.purple100
         $0.isHidden = true
     }
     
     let pauseButton = UIButton().then {
         $0.setImage(UIImage(systemName: "pause.fill"), for: .normal)
-        $0.tintColor = UIColor(red: 199/255, green: 156/255, blue: 255/255, alpha: 1)
+        $0.tintColor = .CustomColor.purple100
         $0.setPreferredSymbolConfiguration(.init(pointSize: 50), forImageIn: .normal)
         $0.isHidden = false
     }
@@ -37,7 +37,7 @@ final class VoiceMemoView: BaseView {
     let finishButton = UIButton().then {
         $0.setTitle("완료", for: .normal)
         $0.titleLabel?.font = .appleSDGothicNeo(of: .title, weight: .semibold)
-        $0.setTitleColor(UIColor(red: 199/255, green: 156/255, blue: 255/255, alpha: 1), for: .normal)
+        $0.setTitleColor(.CustomColor.purple100, for: .normal)
     }
 
     override func setupUI() {

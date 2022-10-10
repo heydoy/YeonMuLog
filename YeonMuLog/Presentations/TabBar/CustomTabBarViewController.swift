@@ -20,7 +20,7 @@ class CustomTabBarViewController: UITabBarController {
 
     // MARK: - Helper
     private func setUI() {
-        tabBar.tintColor = UIColor(red: 199/255, green: 156/255, blue: 255/255, alpha: 1.0)
+        tabBar.tintColor = .CustomColor.purple100
         tabBar.unselectedItemTintColor = .systemGray3
         tabBar.backgroundColor = .white
     }

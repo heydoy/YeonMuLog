@@ -20,7 +20,7 @@ class TaraeDetailView: BaseView {
     let addReviewButton = UIButton().then {
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 24
-        $0.backgroundColor = UIColor(red: 181/255, green: 124/255, blue: 255/255, alpha: 1)
+        $0.backgroundColor = .CustomColor.purple200
         $0.setImage(UIImage(systemName: "plus.bubble"), for: .normal)
         $0.tintColor = .white
     }

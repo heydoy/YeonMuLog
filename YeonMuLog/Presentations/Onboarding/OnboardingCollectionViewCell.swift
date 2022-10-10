@@ -16,7 +16,7 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
     let titleLabel = UILabel().then {
         $0.font = .appleSDGothicNeo(of: .title, weight: .bold)
         $0.textAlignment = .center
-        $0.textColor = UIColor(red: 123/255, green: 67/255, blue: 194/255, alpha: 1.0)
+        $0.textColor = .CustomColor.purple500
         $0.numberOfLines = 0
     }
     let subtitleLabel = UILabel().then {

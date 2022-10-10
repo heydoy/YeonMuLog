@@ -26,7 +26,7 @@ class OnboardingView: BaseView {
     
     let pageControl = UIPageControl().then {
         $0.pageIndicatorTintColor = .systemGray4
-        $0.currentPageIndicatorTintColor = UIColor(red: 181/255, green: 124/255, blue: 255/255, alpha: 1)
+        $0.currentPageIndicatorTintColor = .CustomColor.purple200
         $0.numberOfPages = 3
         $0.currentPage = 0
     }
@@ -37,7 +37,7 @@ class OnboardingView: BaseView {
         $0.layer.cornerRadius = 12
         $0.titleLabel?.font = .appleSDGothicNeo(of: .subTitle, weight: .bold)
         $0.tintColor = .white
-        $0.backgroundColor = UIColor(red: 181/255, green: 124/255, blue: 255/255, alpha: 1)
+        $0.backgroundColor = .CustomColor.purple200
         
     }
 

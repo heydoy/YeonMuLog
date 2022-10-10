@@ -77,7 +77,10 @@ class ChartTableViewCell: UITableViewCell {
         let chartDataSet = data
 
         // 차트 컬러
-        chartDataSet.colors = [UIColor.CustomColor.purple100, UIColor.CustomColor.purple200, UIColor.CustomColor.purple500 ]
+        chartDataSet.colors = [
+            UIColor.CustomColor.purple100, UIColor.CustomColor.purple200,
+            UIColor.CustomColor.purple300, UIColor.CustomColor.purple400,
+            UIColor.CustomColor.purple500, UIColor.CustomColor.purple600 ]
 
         // 데이터 삽입
         let chartData = BarChartData(dataSet: chartDataSet)

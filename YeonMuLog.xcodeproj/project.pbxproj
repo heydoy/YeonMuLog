@@ -26,6 +26,9 @@
 		A21EDDD328D0B652006573A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21EDDD128D0B652006573A4 /* Main.storyboard */; };
 		A21EDDD528D0B655006573A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A21EDDD428D0B655006573A4 /* Assets.xcassets */; };
 		A21EDDD828D0B655006573A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21EDDD628D0B655006573A4 /* LaunchScreen.storyboard */; };
+		A229EE9D28F5AA3F00A326FB /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = A229EE9C28F5AA3F00A326FB /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		A229EE9F28F5AA3F00A326FB /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = A229EE9E28F5AA3F00A326FB /* FirebaseCrashlytics */; };
+		A229EEA128F5AA3F00A326FB /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = A229EEA028F5AA3F00A326FB /* FirebaseMessaging */; };
 		A23716CB28E0A144004E9FE6 /* TaraeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23716CA28E0A144004E9FE6 /* TaraeDetailViewController.swift */; };
 		A23716CD28E0A193004E9FE6 /* TaraeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23716CC28E0A193004E9FE6 /* TaraeDetailView.swift */; };
 		A237170F28E1D35C004E9FE6 /* TaraeDetailPlayInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A237170E28E1D35C004E9FE6 /* TaraeDetailPlayInfoTableViewCell.swift */; };
@@ -174,8 +177,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A229EE9D28F5AA3F00A326FB /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				A20E104428EA8051000AB31B /* Toast in Frameworks */,
 				A2B0344428D73BD60066AE2D /* SWXMLHash in Frameworks */,
+				A229EE9F28F5AA3F00A326FB /* FirebaseCrashlytics in Frameworks */,
 				A20E103A28E85E5B000AB31B /* YPImagePicker in Frameworks */,
 				A2B0343F28D7059E0066AE2D /* Realm in Frameworks */,
 				A2B0343C28D7051F0066AE2D /* Alamofire in Frameworks */,
@@ -184,6 +189,7 @@
 				A20E105728EB3B33000AB31B /* Charts in Frameworks */,
 				A28A5F7428D3F6A000D270E9 /* SnapKit in Frameworks */,
 				A28A5F7A28D3F6BC00D270E9 /* FSCalendar in Frameworks */,
+				A229EEA128F5AA3F00A326FB /* FirebaseMessaging in Frameworks */,
 				A28A5F7728D3F6AC00D270E9 /* Then in Frameworks */,
 				D80C0742B1505AB363E00A17 /* Pods_YeonMuLog.framework in Frameworks */,
 			);
@@ -527,6 +533,9 @@
 				A20E103928E85E5B000AB31B /* YPImagePicker */,
 				A20E104328EA8051000AB31B /* Toast */,
 				A20E105628EB3B33000AB31B /* Charts */,
+				A229EE9C28F5AA3F00A326FB /* FirebaseAnalyticsWithoutAdIdSupport */,
+				A229EE9E28F5AA3F00A326FB /* FirebaseCrashlytics */,
+				A229EEA028F5AA3F00A326FB /* FirebaseMessaging */,
 			);
 			productName = YeonMuLog;
 			productReference = A21EDDC828D0B652006573A4 /* YeonMuLog.app */;
@@ -568,6 +577,7 @@
 				A20E103828E85E5A000AB31B /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 				A20E104228EA8051000AB31B /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				A20E105528EB3B32000AB31B /* XCRemoteSwiftPackageReference "Charts" */,
+				A229EE9B28F5AA3E00A326FB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = A21EDDC928D0B652006573A4 /* Products */;
 			projectDirPath = "";
@@ -994,6 +1004,14 @@
 				minimumVersion = 4.1.0;
 			};
 		};
+		A229EE9B28F5AA3E00A326FB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		A28A5F7228D3F6A000D270E9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -1067,6 +1085,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A20E105528EB3B32000AB31B /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
+		};
+		A229EE9C28F5AA3F00A326FB /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A229EE9B28F5AA3E00A326FB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		A229EE9E28F5AA3F00A326FB /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A229EE9B28F5AA3E00A326FB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		A229EEA028F5AA3F00A326FB /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A229EE9B28F5AA3E00A326FB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 		A28A5F7328D3F6A000D270E9 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

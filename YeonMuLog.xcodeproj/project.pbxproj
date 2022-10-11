@@ -29,6 +29,7 @@
 		A229EE9D28F5AA3F00A326FB /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = A229EE9C28F5AA3F00A326FB /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		A229EE9F28F5AA3F00A326FB /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = A229EE9E28F5AA3F00A326FB /* FirebaseCrashlytics */; };
 		A229EEA128F5AA3F00A326FB /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = A229EEA028F5AA3F00A326FB /* FirebaseMessaging */; };
+		A229EEA328F5ACC900A326FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A229EEA228F5ACC900A326FB /* GoogleService-Info.plist */; };
 		A23716CB28E0A144004E9FE6 /* TaraeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23716CA28E0A144004E9FE6 /* TaraeDetailViewController.swift */; };
 		A23716CD28E0A193004E9FE6 /* TaraeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23716CC28E0A193004E9FE6 /* TaraeDetailView.swift */; };
 		A237170F28E1D35C004E9FE6 /* TaraeDetailPlayInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A237170E28E1D35C004E9FE6 /* TaraeDetailPlayInfoTableViewCell.swift */; };
@@ -114,6 +115,7 @@
 		A21EDDD428D0B655006573A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A21EDDD728D0B655006573A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A21EDDD928D0B655006573A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A229EEA228F5ACC900A326FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A23716CA28E0A144004E9FE6 /* TaraeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaraeDetailViewController.swift; sourceTree = "<group>"; };
 		A23716CC28E0A193004E9FE6 /* TaraeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaraeDetailView.swift; sourceTree = "<group>"; };
 		A237170E28E1D35C004E9FE6 /* TaraeDetailPlayInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaraeDetailPlayInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				A2B0343228D6F97A0066AE2D /* Data */,
 				A21EDDE528D24A7F006573A4 /* Presentations */,
 				A21EDDD928D0B655006573A4 /* Info.plist */,
+				A229EEA228F5ACC900A326FB /* GoogleService-Info.plist */,
 				A289FCA928DACCD6008046D1 /* Utils */,
 			);
 			path = YeonMuLog;
@@ -600,6 +603,7 @@
 				A289FCA828D956DF008046D1 /* .swiftlint.yml in Resources */,
 				A289FCB528DAD689008046D1 /* SCDream7.otf in Resources */,
 				A289FCB628DAD689008046D1 /* SCDream4.otf in Resources */,
+				A229EEA328F5ACC900A326FB /* GoogleService-Info.plist in Resources */,
 				A289FCB428DAD689008046D1 /* SCDream9.otf in Resources */,
 				A289FCB228DAD689008046D1 /* SCDream2.otf in Resources */,
 				A21EDDD328D0B652006573A4 /* Main.storyboard in Resources */,

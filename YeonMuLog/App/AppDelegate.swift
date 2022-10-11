@@ -90,6 +90,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
     }
+    // 포그라운드 상태에서도 알림: 로컬/푸시 동일
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        // .banner, .list: iOS 14+부터 사용가능
+        completionHandler([.badge, .sound, .banner, .list])
+    }
 }
 extension AppDelegate: MessagingDelegate {
     // 토큰 갱신 모니터링: 토큰 정보가 언제 바뀔까?

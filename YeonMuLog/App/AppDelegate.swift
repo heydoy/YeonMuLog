@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 import IQKeyboardManagerSwift
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             print("Failed to set audio session category.")
         }
+        
+        // 파이어베이스 구성
+        FirebaseApp.configure()
         
         return true
     }

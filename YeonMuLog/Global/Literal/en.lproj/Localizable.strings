@@ -10,14 +10,14 @@
 "FirstSearchLabel" = "Find the plays and musicals\nyou want to record!";
 "NoSearchResult" = "No results found for %@";
 "AddWatchedNavigationTitle" = "Add watched";
-"NoReview" = "Click the + button in the upper right corner\nto add watched history";
+"NoReview" = "Click the + button to add\nthe plays and musicals you've watched";
 "NoUserReview" = "No reviews here!\nBefore you forget\nLeave a record of your feelings!";
 
 // 온보딩
 
 "goMainButtonTitle" = "Start";
 
-"FirstOnboardingTitle" = "Easily add play and musical records\nwith poster and castings";
+"FirstOnboardingTitle" = "Add play and musical records easily\nwith poster and castings";
 "FirstOnboardingSubtitle" = "You can search for all non-open runs as well.";
 
 "SecondOnboardingTitle" = "Leave a record of your feelings!";
@@ -40,7 +40,7 @@
 "settingTabName" = "Setting";
 
 // 차트
-"NoChartAvailable" = "Add plays and musicals you watched\nand check the stats.";
+"NoChartAvailable" = "Add plays and musicals you watched\nand check the statistics.";
 
 // 설정
 "AppInfoSectionTitle" = "App Info";

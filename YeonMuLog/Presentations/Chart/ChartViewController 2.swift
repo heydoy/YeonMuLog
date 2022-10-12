@@ -45,7 +45,7 @@ class ChartViewController: BaseViewController {
     
     // MARK: - Helpers
     override func setNavigationBar() {
-        navigationItem.title = "chartTabName".localized
+        navigationItem.title = "통계"
     }
     override func configure() {
         mainView.tableView.delegate = self

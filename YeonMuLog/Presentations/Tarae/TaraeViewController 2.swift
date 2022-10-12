@@ -53,7 +53,7 @@ class TaraeViewController: BaseViewController {
     override func setNavigationBar() {
         super.setNavigationBar()
         
-        navigationItem.title = "mainTabName".localized
+        navigationItem.title = "타래로 보기"
         
         let searchAndAdd = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(searchAndAddButtonTapped))
         searchAndAdd.tintColor = .black

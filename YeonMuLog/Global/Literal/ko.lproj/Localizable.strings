@@ -41,3 +41,12 @@
 
 // 차트
 "NoChartAvailable" = "관극기록을 추가하고\n통계를 확인해보세요";
+
+// 설정
+"AppInfoSectionTitle" = "앱 정보";
+"Version" = "버전";
+"SupportSectionTitle" = "지원";
+"Support" = "문의 및 지원";
+
+// 검색
+"searchPlaceHolderText" = "극 제목으로 검색";

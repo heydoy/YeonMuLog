@@ -23,7 +23,7 @@ struct SettingInfo {
 
 extension SettingInfo {
     static let list: [SettingInfo] = [
-        SettingInfo(text: "Version".localized, detailText: version, image: "info.circle"),
-        SettingInfo(text: "Support".localized, detailText: nil, image: "questionmark.app")
+        SettingInfo(text: "버전", detailText: version, image: "info.circle"),
+        SettingInfo(text: "문의 및 지원", detailText: nil, image: "questionmark.app")
     ]
 }

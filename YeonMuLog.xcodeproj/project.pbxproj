@@ -37,6 +37,7 @@
 		A237171328E1D828004E9FE6 /* ReviewCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A237171228E1D828004E9FE6 /* ReviewCollectionViewLayout.swift */; };
 		A237171528E1DBAE004E9FE6 /* ReviewCollectionViewLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A237171428E1DBAE004E9FE6 /* ReviewCollectionViewLayoutDelegate.swift */; };
 		A237171728E1DD8D004E9FE6 /* ReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A237171628E1DD8D004E9FE6 /* ReviewCollectionViewCell.swift */; };
+		A23F25FA28FBE5A3002E1732 /* yeonmulog-loading-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = A23F25F928FBE5A2002E1732 /* yeonmulog-loading-animation.json */; };
 		A26097AE28F44BF40051BA41 /* setColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26097AD28F44BF40051BA41 /* setColor.swift */; };
 		A289FCA628D8CE26008046D1 /* UserPlayRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289FCA528D8CE26008046D1 /* UserPlayRepository.swift */; };
 		A289FCA828D956DF008046D1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = A289FCA728D956DF008046D1 /* .swiftlint.yml */; };
@@ -68,6 +69,7 @@
 		A2B0344428D73BD60066AE2D /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = A2B0344328D73BD60066AE2D /* SWXMLHash */; };
 		A2B0344628D77DC90066AE2D /* PlayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0344528D77DC90066AE2D /* PlayModel.swift */; };
 		A2B0344928D796840066AE2D /* UserPlayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0344828D796840066AE2D /* UserPlayModel.swift */; };
+		A2B7BDFA28FA7AB000BBFB67 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A2B7BDF928FA7AB000BBFB67 /* Lottie */; };
 		A2C2635528DBBCFC00DCF778 /* SearchPlayResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2635428DBBCFC00DCF778 /* SearchPlayResultTableViewCell.swift */; };
 		A2C2635B28DBC9AD00DCF778 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A2C2635A28DBC9AD00DCF778 /* Kingfisher */; };
 		A2C2635D28DBD22700DCF778 /* AddPlayInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2635C28DBD22700DCF778 /* AddPlayInfoTableViewCell.swift */; };
@@ -124,6 +126,7 @@
 		A237171228E1D828004E9FE6 /* ReviewCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewLayout.swift; sourceTree = "<group>"; };
 		A237171428E1DBAE004E9FE6 /* ReviewCollectionViewLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewLayoutDelegate.swift; sourceTree = "<group>"; };
 		A237171628E1DD8D004E9FE6 /* ReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		A23F25F928FBE5A2002E1732 /* yeonmulog-loading-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "yeonmulog-loading-animation.json"; sourceTree = "<group>"; };
 		A26097AD28F44BF40051BA41 /* setColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setColor.swift; sourceTree = "<group>"; };
 		A289FCA528D8CE26008046D1 /* UserPlayRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlayRepository.swift; sourceTree = "<group>"; };
 		A289FCA728D956DF008046D1 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -189,6 +192,7 @@
 				A20E103A28E85E5B000AB31B /* YPImagePicker in Frameworks */,
 				A2B0343F28D7059E0066AE2D /* Realm in Frameworks */,
 				A2B0343C28D7051F0066AE2D /* Alamofire in Frameworks */,
+				A2B7BDFA28FA7AB000BBFB67 /* Lottie in Frameworks */,
 				A2C2635B28DBC9AD00DCF778 /* Kingfisher in Frameworks */,
 				A2B0344128D7059E0066AE2D /* RealmSwift in Frameworks */,
 				A20E105728EB3B33000AB31B /* Charts in Frameworks */,
@@ -289,6 +293,7 @@
 		A21EDDE328D24A3D006573A4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A2B7BDF228F9764000BBFB67 /* Lottie */,
 				A289FCAC28DAD555008046D1 /* Fonts */,
 				A21EDDD428D0B655006573A4 /* Assets.xcassets */,
 			);
@@ -437,6 +442,14 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		A2B7BDF228F9764000BBFB67 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				A23F25F928FBE5A2002E1732 /* yeonmulog-loading-animation.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
 		A2C2636128DBECD000DCF778 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -543,6 +556,7 @@
 				A229EE9C28F5AA3F00A326FB /* FirebaseAnalyticsWithoutAdIdSupport */,
 				A229EE9E28F5AA3F00A326FB /* FirebaseCrashlytics */,
 				A229EEA028F5AA3F00A326FB /* FirebaseMessaging */,
+				A2B7BDF928FA7AB000BBFB67 /* Lottie */,
 			);
 			productName = YeonMuLog;
 			productReference = A21EDDC828D0B652006573A4 /* YeonMuLog.app */;
@@ -585,6 +599,7 @@
 				A20E104228EA8051000AB31B /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				A20E105528EB3B32000AB31B /* XCRemoteSwiftPackageReference "Charts" */,
 				A229EE9B28F5AA3E00A326FB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A2B7BDF828FA7AAF00BBFB67 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = A21EDDC928D0B652006573A4 /* Products */;
 			projectDirPath = "";
@@ -600,6 +615,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A23F25FA28FBE5A3002E1732 /* yeonmulog-loading-animation.json in Resources */,
 				A21EDDD828D0B655006573A4 /* LaunchScreen.storyboard in Resources */,
 				A28A5F6A28D2ECEC00D270E9 /* Localizable.strings in Resources */,
 				A21EDDD528D0B655006573A4 /* Assets.xcassets in Resources */,
@@ -1074,6 +1090,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		A2B7BDF828FA7AAF00BBFB67 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/heydoy/lottie-ios";
+			requirement = {
+				kind = exactVersion;
+				version = 3.2.3;
+			};
+		};
 		A2C2635928DBC9AD00DCF778 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
@@ -1149,6 +1173,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A2B0344228D73BD60066AE2D /* XCRemoteSwiftPackageReference "SWXMLHash" */;
 			productName = SWXMLHash;
+		};
+		A2B7BDF928FA7AB000BBFB67 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2B7BDF828FA7AAF00BBFB67 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 		A2C2635A28DBC9AD00DCF778 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;

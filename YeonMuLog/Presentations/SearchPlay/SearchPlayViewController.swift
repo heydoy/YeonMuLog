@@ -47,7 +47,10 @@ class SearchPlayViewController: BaseViewController {
     }
     
     func searchQuery(query: String) {
+        mainView.dimmedView.isHidden = false
+        mainView.lottieView.play()
         KOPISAPIManager.shared.callList(query: query) { result in
+            
             switch result {
             case let .success(result):
                 self.list = result
@@ -55,6 +58,8 @@ class SearchPlayViewController: BaseViewController {
                 // 사용자에게 메시지
                 print(error)
             }
+            self.mainView.lottieView.stop()
+            self.mainView.dimmedView.isHidden = true
         }
     }
     

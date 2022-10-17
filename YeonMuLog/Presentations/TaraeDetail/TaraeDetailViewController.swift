@@ -78,7 +78,7 @@ class TaraeDetailViewController: BaseViewController {
                 
                 let remove = UIAlertAction(title: "삭제", style: .destructive) { _ in
                     if let playInfo = self.playInfo {
-                        self.repository.deleteMemo(playInfo)
+                        self.repository.deletePlay(playInfo)
                         self.mainView.makeToast("삭제되었습니다.", duration: 1.0, position: .top, title: nil, image: nil, style: ToastStyle()) { didTap in
                             self.navigationController?.popViewController(animated: true)
                         }

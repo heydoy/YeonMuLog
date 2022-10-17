@@ -12,7 +12,7 @@ fileprivate protocol UserPlayRepositoryType: AnyObject {
     func fetch() -> Results<UserPlayInfo>
     func createPlay(_ item: UserPlayInfo)
     func updatePlay(_ item: UserPlayInfo)
-    func deleteMemo(_ item: UserPlayInfo)
+    func deletePlay(_ item: UserPlayInfo)
     
     func updateReview(_ item: UserPlayInfo)
 }
@@ -74,9 +74,10 @@ class UserPlayRepository {
         }
     }
     
-    func deleteMemo(_ item: UserPlayInfo) {
+    func deletePlay(_ item: UserPlayInfo) {
         do {
             try localRealm.write {
+                localRealm.delete(item.userReview)
                 localRealm.delete(item)
             }
         } catch let error {

@@ -77,6 +77,7 @@ class UserPlayRepository {
     func deleteMemo(_ item: UserPlayInfo) {
         do {
             try localRealm.write {
+                localRealm.delete(item.userReview)
                 localRealm.delete(item)
             }
         } catch let error {

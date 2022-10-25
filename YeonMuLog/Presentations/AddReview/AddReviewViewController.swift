@@ -91,7 +91,7 @@ class AddReviewViewController: BaseViewController {
             }
             repository.updateReview(playInfo!, review: review)
             
-            // 완료 토스트 
+            // 완료 토스트
             showFinishToast(title: "리뷰 추가 성공!", message: "리뷰가 성공적으로 저장되었습니다.", imageName: "character-pencil-finished") { _ in
                 self.delegate?.reviewDataReload()
                 self.dismiss(animated: true)
@@ -118,7 +118,7 @@ class AddReviewViewController: BaseViewController {
         style.imageSize = CGSize(width: 80, height: 80)
         style.titleFont = .appleSDGothicNeo(of: .subTitle, weight: .medium)
         style.messageFont = .appleSDGothicNeo(of: .content, weight: .regular)
-        self.mainView.makeToast(message, duration: 1.0, position: .bottom, title: title, image: UIImage(named: imageName), style: style, completion: completion)
+        self.mainView.makeToast(message, duration: 0.8, position: .bottom, title: title, image: UIImage(named: imageName), style: style, completion: completion)
         
     }
     

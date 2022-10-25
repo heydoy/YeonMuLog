@@ -90,7 +90,7 @@ class AddWatchedViewController: BaseViewController {
         style.imageSize = CGSize(width: 80, height: 80)
         style.titleFont = .appleSDGothicNeo(of: .subTitle, weight: .medium)
         style.messageFont = .appleSDGothicNeo(of: .content, weight: .regular)
-        self.mainView.makeToast(message, duration: 1.4, position: .bottom, title: title, image: UIImage(named: imageName), style: style, completion: completion)
+        self.mainView.makeToast(message, duration: 0.8, position: .center, title: title, image: UIImage(named: imageName), style: style, completion: completion)
         
     }
     

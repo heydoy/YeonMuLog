@@ -78,6 +78,10 @@ class AddReviewViewController: BaseViewController {
     @objc func finishReviewButtonTapped(_ sender: UIButton) {
         
         if playInfo != nil && !mainView.userTextView.text.trimmingCharacters(in: .whitespaces).isEmpty {
+            // 사용자 인터랙션 비활성화
+            self.mainView.isUserInteractionEnabled = false
+            
+            // 저장
             let review = UserReview()
             review.text = mainView.userTextView.text
             review.voice = voiceMemo
@@ -85,11 +89,17 @@ class AddReviewViewController: BaseViewController {
             if !image.isEmpty {
                 review.image.append(objectsIn: image)
             }
-            
             repository.updateReview(playInfo!, review: review)
+            
+            // 완료 토스트 
             showFinishToast(title: "리뷰 추가 성공!", message: "리뷰가 성공적으로 저장되었습니다.", imageName: "character-pencil-finished") { _ in
                 self.delegate?.reviewDataReload()
                 self.dismiss(animated: true)
+                
+                // 사용자 인터랙션 재활성화
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.mainView.isUserInteractionEnabled = true
+                }
             }
             
         } else {

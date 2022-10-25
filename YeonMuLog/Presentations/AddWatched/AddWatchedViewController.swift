@@ -65,9 +65,16 @@ class AddWatchedViewController: BaseViewController {
             let ok = UIAlertAction(title: "확인", style: .default)
             showAlert(title: "캐스팅을 선택해주세요", message: nil, actions: ok)
         } else {
+            self.navigationController?.navigationBar.isUserInteractionEnabled = false
+            self.mainView.isUserInteractionEnabled = false
             showFinishToast(title: "관람기록 추가 성공", message: "관람기록이 성공적으로 저장되었습니다.", imageName: "character-pencil-finished") { _ in
+                
                 self.saveUserPlayInfo()
                 self.navigationController?.popToRootViewController(animated: true)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.navigationController?.navigationBar.isUserInteractionEnabled = true
+                    self.mainView.isUserInteractionEnabled = true
+                }
             }
             
         }

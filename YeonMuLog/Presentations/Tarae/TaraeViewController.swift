@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import Toast
 
 class TaraeViewController: BaseViewController {
     // MARK: - Properties
@@ -108,5 +109,31 @@ extension TaraeViewController: UITableViewDelegate, UITableViewDataSource {
             vc.playInfo = list[indexPath.row]
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    // Swipe Action
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let delete = UIContextualAction(style: .normal, title: nil) { [weak self] _, _, _ in
+            
+            let remove = UIAlertAction(title: "삭제", style: .destructive) { _ in
+                if let item = self?.list[indexPath.row] {
+                    
+                    self?.repository.deletePlay(item)
+                    self?.mainView.makeToast("관극기록이 삭제되었습니다.", duration: 1.0, position: .center, title: nil, image: nil, style: ToastStyle(), completion: nil)
+                    
+                    self?.list = self?.repository.fetch()
+                }
+            }
+            
+            let cancel = UIAlertAction(title: "취소", style: .cancel)
+            
+            self?.showAlert(title: "관극기록을 삭제하시겠습니까?", message: "삭제하시면 리뷰도 전부 삭제됩니다", actions: remove, cancel)
+            
+        }
+        delete.image = UIImage(systemName: "trash.fill")
+        delete.backgroundColor = .systemRed
+        
+        return UISwipeActionsConfiguration(actions: [delete])
     }
 }

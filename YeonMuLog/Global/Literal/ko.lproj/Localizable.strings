@@ -57,3 +57,9 @@
 "sortByOldest" = "오래된 순";
 "sortByAlphabetical" = "가나다 순";
 "sortByReverseAlphabetical" = "가나다 역순";
+
+// 관극기록 검색
+"searchWatchedAlertTitle" = "관극기록 검색";
+"searchWatchedAlertMessage" = "극 제목, 공연장소, 리뷰, 캐스팅으로 관극기록을 검색할 수 있습니다.";
+"searchWatchedAlertTextFieldPlaceHolder" = "검색어를 입력하세요";
+"searchButtonTitle" = "검색하기";

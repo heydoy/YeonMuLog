@@ -57,3 +57,9 @@
 "sortByOldest" = "Oldest";
 "sortByAlphabetical" = "Alphabetical";
 "sortByReverseAlphabetical" = "Reverse Alphabetical";
+
+// 관극기록 검색
+"searchWatchedAlertTitle" = "Search Reviews";
+"searchWatchedAlertMessage" = "You can search by title, place, review content, and  cast";
+"searchWatchedAlertTextFieldPlaceHolder" = "Type here";
+"searchButtonTitle" = "Search";

@@ -100,6 +100,7 @@ final class TaraeReviewTableViewCell: UITableViewCell {
         castLabel.text = data.casts.joined(separator: ", ")
         placeLabel.text = data.place
         reviewLabel.text = "리뷰 \(data.userReview.count)"
+        reviewBackgroundView.isHidden = data.userReview.count == 0 ? true : false
     }
     
     // MARK: - UI

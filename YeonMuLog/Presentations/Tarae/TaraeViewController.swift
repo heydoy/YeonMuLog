@@ -94,8 +94,14 @@ class TaraeViewController: BaseViewController {
             image: UIImage(systemName: "line.3.horizontal.decrease.circle"),
             menu: sortMenu)
         
-        navigationItem.leftBarButtonItems = [sort]
-
+        // - 검색
+        let search = UIBarButtonItem(
+            barButtonSystemItem: .search,
+            target: self,
+            action: #selector(searchButtonTapped(_:)))
+        
+        navigationItem.leftBarButtonItems = [sort, search]
+        
     }
     
     override func configure() {
@@ -106,6 +112,56 @@ class TaraeViewController: BaseViewController {
         
         mainView.tableView.register(TaraeReviewTableViewCell.self, forCellReuseIdentifier: String(describing: TaraeReviewTableViewCell.self))
     }
+    // MARK: - Actions
+        @objc
+        func searchButtonTapped(_ sender: UIBarButtonItem) {
+            // 텍스트필드가 있는 얼럿을 띄우고 검색하기
+            let searchAlert = UIAlertController(
+                title: "searchWatchedAlertTitle".localized,
+                message: "searchWatchedAlertMessage".localized,
+                preferredStyle: .alert)
+            
+            let search = UIAlertAction(
+                title: "searchButtonTitle".localized,
+                style: .default) { [weak self] _ in
+                    var style = ToastStyle()
+                    style.backgroundColor = .CustomColor.purple30
+                    let fontColor = UIColor.CustomColor.purple800
+                    style.titleColor = fontColor
+                    style.messageColor = fontColor
+                    style.imageSize = CGSize(width: 80, height: 80)
+                    style.titleFont = .appleSDGothicNeo(of: .title, weight: .medium)
+                    style.messageFont = .appleSDGothicNeo(of: .subTitle, weight: .regular)
+                    
+                    // 검색어가 없을 시
+                    guard let text = searchAlert.textFields?[0].text, !text.isEmpty else {
+                        self?.view.makeToast("검색어를 제대로 입력해주세요", duration: 0.75, position: .center, title: nil, image: nil, style: style, completion: nil)
+                        return
+                    }
+                    // 검색결과가 없을 시
+                    guard let list = self?.repository.fetchFilter(text), !list.isEmpty else {
+                        self?.view.makeToast("\(text)에 해당하는 결과가 없습니다.", duration: 0.75, position: .center, title: nil, image: nil, style: style, completion: nil)
+                        return
+                    }
+                    // 검색결과를 리스트에 넣고, 알려줌
+                    self?.list = list
+                    self?.view.makeToast("\(text)에 해당하는 결과가 \(list.count)건 있습니다.", duration: 0.75, position: .center, title: nil, image: nil, style: style, completion: nil)
+                }
+            
+            let cancel = UIAlertAction(
+                title: "cancelButton".localized,
+                style: .cancel)
+            
+            searchAlert.addTextField { textField in
+                textField.placeholder = "searchWatchedAlertTextFieldPlaceHolder".localized
+            }
+            
+            searchAlert.addAction(search)
+            searchAlert.addAction(cancel)
+            
+            present(searchAlert, animated: true)
+            
+        }
 }
 
 // MARK: - Table View

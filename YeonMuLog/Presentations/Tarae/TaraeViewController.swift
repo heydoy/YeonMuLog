@@ -53,14 +53,49 @@ class TaraeViewController: BaseViewController {
     
     override func setNavigationBar() {
         super.setNavigationBar()
-        
         navigationItem.title = "mainTabName".localized
         
-        let searchAndAdd = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(searchAndAddButtonTapped))
+        // 오른쪽 바버튼
+        let searchAndAdd = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(searchAndAddButtonTapped))
         searchAndAdd.tintColor = .black
         navigationItem.backButtonTitle = ""
         
         navigationItem.rightBarButtonItem = searchAndAdd
+        
+        // 왼쪽 바버튼
+        // - 정렬
+        let sortMenuItems: [UIAction] =  [
+            UIAction(title: "sortByLatest".localized, handler: { [weak self] _ in
+                self?.list = self?.repository.fetchWith(sort: .date, option: false)
+            }),
+            UIAction(title: "sortByOldest".localized, handler: { [weak self] _ in
+                self?.list = self?.repository.fetchWith(sort: .date, option: true)
+            }),
+            UIAction(title: "sortByAlphabetical".localized, handler: { [weak self] _ in
+                self?.list = self?.repository.fetchWith(sort: .title, option: true)
+            }),
+            UIAction(title: "sortByReverseAlphabetical".localized, handler: { [weak self] _ in
+                self?.list = self?.repository.fetchWith(sort: .title, option: false)
+            })
+            
+        ]
+    
+        let sortMenu = UIMenu(
+            title: "sortBy".localized,
+            image: nil,
+            identifier: nil,
+            options: [],
+            children: sortMenuItems)
+
+        let sort = UIBarButtonItem(
+            image: UIImage(systemName: "line.3.horizontal.decrease.circle"),
+            menu: sortMenu)
+        
+        navigationItem.leftBarButtonItems = [sort]
+
     }
     
     override func configure() {

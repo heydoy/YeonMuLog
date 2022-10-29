@@ -50,3 +50,10 @@
 
 // 검색
 "searchPlaceHolderText" = "Please enter a title";
+
+// 정렬
+"sortBy" = "Sort by";
+"sortByLatest" = "Latest";
+"sortByOldest" = "Oldest";
+"sortByAlphabetical" = "Alphabetical";
+"sortByReverseAlphabetical" = "Reverse Alphabetical";

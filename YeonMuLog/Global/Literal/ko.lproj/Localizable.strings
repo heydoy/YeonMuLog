@@ -50,3 +50,10 @@
 
 // 검색
 "searchPlaceHolderText" = "극 제목으로 검색";
+
+// 정렬
+"sortBy" = "정렬";
+"sortByLatest" = "최신 순";
+"sortByOldest" = "오래된 순";
+"sortByAlphabetical" = "가나다 순";
+"sortByReverseAlphabetical" = "가나다 역순";

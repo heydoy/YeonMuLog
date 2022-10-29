@@ -41,12 +41,12 @@ class TagCollectionViewCell: UICollectionViewCell {
     }
     func defaultDesign() {
         self.backgroundColor = .systemGray6
-        tagLabel.textColor = .black
+        tagLabel.textColor = .systemGray2
     }
     
     func pressedDesign() {
-        self.backgroundColor = .systemPink
-        tagLabel.textColor = .white
+        self.backgroundColor = .CustomColor.castTagBGColor
+        tagLabel.textColor = .CustomColor.castTagFontColor
     }
     
     private func setConstraints() {

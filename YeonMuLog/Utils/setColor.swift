@@ -18,6 +18,17 @@ extension UIColor {
         static let purple600 = #colorLiteral(red: 0.3882352941, green: 0.1882352941, blue: 0.6509803922, alpha: 1)
         static let purple800 = #colorLiteral(red: 0.2745098039, green: 0.1176470588, blue: 0.4745098039, alpha: 1)
         
+        // - 리뷰 셀 배경컬러
+        static let reviewBGColor = #colorLiteral(red: 0.9725490196, green: 0.9568627451, blue: 1, alpha: 1)
+        
+        // - 장르 태그 컬러
+        static let musicalTagColor = #colorLiteral(red: 0.5594159961, green: 0.4652210474, blue: 1, alpha: 1)
+        static let playTagColor = #colorLiteral(red: 0.9013746381, green: 0.4565898776, blue: 1, alpha: 1)
+        
+        // - 캐스팅 태그 컬러
+        static let castTagBGColor = #colorLiteral(red: 0.8901960784, green: 0.8, blue: 1, alpha: 1)
+        static let castTagFontColor = #colorLiteral(red: 0.4274509804, green: 0, blue: 0.9764705882, alpha: 1)
+        
         // #colorLiteral(red:  , green: , blue: , alpha: )
     }
 }

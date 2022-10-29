@@ -107,8 +107,25 @@ class TaraeDetailPlayInfoTableViewCell: UITableViewCell {
         dateLabel.text = "\(data.date.playString())"
         castLabel.text = data.casts.joined(separator: ", ")
         placeLabel.text = data.place
-        seatAndTicketLabel.text = "\(data.seat) | \(data.ticket) 원"
+        
+        // 좌석과 가격 둘다 없을 경우 히든처리
+        if data.seat.isEmpty && data.ticket == 0 {
+            seatAndTicketLabel.isHidden = true
+            seatAndTicketImageView.isHidden = true
+        } else {
+            seatAndTicketLabel.isHidden = false
+            seatAndTicketImageView.isHidden = false
+            
+            if !data.seat.isEmpty && data.ticket > 0 {
+                seatAndTicketLabel.text = "\(data.seat) | \(data.ticket) 원"
+            } else if !data.seat.isEmpty && data.ticket == 0 {
+                seatAndTicketLabel.text = "\(data.seat)"
+            } else if data.seat.isEmpty && data.ticket > 0 {
+                seatAndTicketLabel.text = "\(data.ticket) 원"
+            }
+        }
         reviewCountLabel.text = "리뷰 \(data.userReview.count)"
+        reviewBackgroundView.isHidden = data.userReview.count == 0 ? true : false
     }
     
     // MARK: - UI

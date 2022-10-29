@@ -11,7 +11,7 @@ class NoChartTableViewCell: UITableViewCell {
     // MARK: - Properties
     private let guideLabel = UILabel().then {
         $0.font = .appleSDGothicNeo(of: .subTitle, weight: .regular)
-        $0.textColor = .purple
+        $0.textColor = .CustomColor.purple500
         $0.numberOfLines = 0
         $0.textAlignment = .center
         $0.text = "NoChartAvailable".localized

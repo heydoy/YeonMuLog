@@ -34,18 +34,18 @@ final class TaraeReviewTableViewCell: UITableViewCell {
     private let reviewBackgroundView = UIView().then {
         $0.layer.cornerRadius = 6
         $0.clipsToBounds = true
-        $0.backgroundColor = .systemGray6
+        $0.backgroundColor = .CustomColor.reviewBGColor
     }
     
     private let reviewIconImageView = UIImageView().then {
         $0.image = UIImage(systemName: "quote.bubble")
-        $0.tintColor = .purple
+        $0.tintColor = .CustomColor.purple500
         $0.preferredSymbolConfiguration = .init(pointSize: 11)
         $0.contentMode = .scaleAspectFit
         
     }
     private let reviewLabel = UILabel().then {
-        $0.textColor = .purple
+        $0.textColor = .CustomColor.purple500
         $0.font = .appleSDGothicNeo(of: .content, weight: .medium)
         $0.text = "리뷰 0"
         $0.adjustsFontSizeToFitWidth = true

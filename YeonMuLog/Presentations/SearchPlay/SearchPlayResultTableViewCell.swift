@@ -31,7 +31,7 @@ final class SearchPlayResultTableViewCell: UITableViewCell {
         $0.layer.cornerRadius = 8
         $0.layer.masksToBounds = true
         $0.textColor = .white
-        $0.backgroundColor = .systemPink
+        $0.backgroundColor = .CustomColor.musicalTagColor
     }
     
     private let titleLabel = UILabel().then {
@@ -95,6 +95,7 @@ final class SearchPlayResultTableViewCell: UITableViewCell {
         castLabel.text = data.cast
         placeLabel.text = data.place
         genreLabel.text = "  \(data.genre)  "
+        genreLabel.backgroundColor = data.genre == "뮤지컬" ? .CustomColor.musicalTagColor : .CustomColor.playTagColor
     }
     
     // MARK: - UI

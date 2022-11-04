@@ -84,3 +84,20 @@
 // 극 검색
 "tagMusical" = "뮤지컬";
 "tagPlay" = "연극";
+
+// 관람기록 추가하기
+"addWatchedDate" = "관람일자";
+"addWatchedPlace" = "공연장소";
+"addWatchedCasts" = "캐스팅";
+"addWatchedSeat" = "좌석";
+"addWatchedPrice" = "가격";
+"addWatchedSave" = "저장하기";
+"noCast" = "정보 없음";
+"onlyNumberPlease" = "티켓 금액은 숫자로만 입력해주세요";
+"ticketPriceHerePlease" = "티켓 금액을 입력해주세요";
+"seatLocationPlease" = "좌석 위치를 입력해주세요";
+"placePlease" = "관람한 장소를 입력해주세요";
+"selectCastingPlease" = "캐스팅을 선택해주세요";
+"ok" = "확인";
+"addWatchedSuccess" = "관람기록 추가 성공";
+"addWatchedSuccessfully" = "관람기록이 성공적으로 저장되었습니다.";

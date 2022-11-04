@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SwipeableTabBarController
 
-class CustomTabBarViewController: UITabBarController {
+class CustomTabBarViewController: SwipeableTabBarController {
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -17,12 +18,14 @@ class CustomTabBarViewController: UITabBarController {
         setTabBarController()
     }
     
-
     // MARK: - Helper
     private func setUI() {
         tabBar.tintColor = .CustomColor.purple100
         tabBar.unselectedItemTintColor = .systemGray3
         tabBar.backgroundColor = .white
+        
+        isCyclingEnabled = false
+        swipeAnimatedTransitioning?.animationType = SwipeAnimationType.sideBySide
     }
 
     private func setTabBarController() {

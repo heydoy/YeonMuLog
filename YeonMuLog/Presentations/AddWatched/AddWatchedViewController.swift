@@ -8,6 +8,7 @@
 import UIKit
 import RealmSwift
 import Toast
+import SwipeableTabBarController
 
 enum AddWatchedItem: Int {
     case posterGenreTitle = 0
@@ -55,9 +56,14 @@ class AddWatchedViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(playInfo)
+        //print(playInfo)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setTabBarSwipe(enabled: false)
+    }
+    
     
     // MARK: - Actions
     @objc func finishButtonTapped(_ sender: UIBarButtonItem) {

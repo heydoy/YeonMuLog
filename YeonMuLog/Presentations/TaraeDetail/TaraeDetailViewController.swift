@@ -8,6 +8,7 @@
 import UIKit
 import Realm
 import Toast
+import SwipeableTabBarController
 
 enum TaraeDetailSection: Int {
     case playInfo = 0
@@ -38,6 +39,7 @@ class TaraeDetailViewController: BaseViewController {
     // MARK: - Lifecycle
     override func loadView() {
         view = mainView
+        
     }
     
     override func viewDidLoad() {
@@ -47,7 +49,7 @@ class TaraeDetailViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.setTabBarSwipe(enabled: false)
         self.tabBarController?.tabBar.isHidden = true
     }
     

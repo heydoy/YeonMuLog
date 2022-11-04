@@ -13,7 +13,8 @@ class CustomTabBarViewController: SwipeableTabBarController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        minimumNumberOfTouches = 2
+        
         setUI()
         setTabBarController()
     }
@@ -24,8 +25,6 @@ class CustomTabBarViewController: SwipeableTabBarController {
         tabBar.unselectedItemTintColor = .systemGray3
         tabBar.backgroundColor = .white
         
-        isCyclingEnabled = false
-        swipeAnimatedTransitioning?.animationType = SwipeAnimationType.sideBySide
     }
 
     private func setTabBarController() {

@@ -81,3 +81,7 @@
 "theMostReviewedIs" = "✍️ The show with the most reviews was %@";
 "NumberOfReviews" = "Number of reviews";
 "NumberOfReviewsWritten" = ", with a total of %d reviews.";
+
+// 극 검색
+"tagMusical" = "MUSICAL";
+"tagPlay" = "PLAY";

@@ -80,3 +80,7 @@
 "theMostReviewedIs" = "✍️ 리뷰를 제일 많이 쓴 극은\n%@(으)로 ";
 "NumberOfReviews" = "리뷰 수";
 "NumberOfReviewsWritten" = "총 %d개의 리뷰를 썼습니다.";
+
+// 극 검색
+"tagMusical" = "뮤지컬";
+"tagPlay" = "연극";

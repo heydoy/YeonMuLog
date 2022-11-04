@@ -128,19 +128,22 @@ extension ChartViewController {
             let dataEntry = BarChartDataEntry(x: Double(index), y: reviewNumber[index])
             dataEntries.append(dataEntry)
         }
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "리뷰 수")
-        let title = "✍️ 리뷰를 제일 많이 쓴 극은\n\(play[reviewNumber.firstIndex(of: reviewNumber.max()!)!])(으)로 총 \(Int(reviewNumber.max()!))개의 리뷰를 썼습니다."
+        
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "NumberOfReviews".localized)
+        let title = "theMostReviewedIs".localized(with: play[reviewNumber.firstIndex(of: reviewNumber.max()!)!]) + "NumberOfReviewsWritten".localized(number: Int(reviewNumber.max()!))
+
         return (chartDataSet, title, play)
     }
     
     func dateBarChartDataSet() -> (BarChartDataSet, String, [String]) {
-        let date: [String] = ["월", "화", "수", "목", "금", "토"]
-        var watched: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        let date: [String] = ["Mon".localized, "Tue".localized, "Wed".localized, "Thu".localized, "Fri".localized, "Sat".localized, "Sun".localized]
+        let dateForCalculation: [String] = ["월","화","수","목","금","토","일"]
+        var watched: [Double] = [0, 0, 0, 0, 0, 0, 0]
         
         if let list = list {
             list.forEach {
                 for index in 0..<date.count {
-                    if $0.date.extractDate() == date[index] {
+                    if $0.date.extractDate() == dateForCalculation[index] {
                         watched[index] += 1.0
                     }
                 }
@@ -153,8 +156,13 @@ extension ChartViewController {
             let dataEntry = BarChartDataEntry(x: Double(index), y: watched[index])
             dataEntries.append(dataEntry)
         }
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "요일")
-        let title = "📆 극을 제일 많이 본 요일은\n\(date[watched.firstIndex(of: watched.max()!)!])요일로 총 \(Int(watched.max()!))번 관극하였습니다."
+        
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "DaysOfTheWeek".localized)
+        
+        let chartData = BarChartData(dataSet: chartDataSet)
+        
+        let title = "theMostWatched".localized(with: date[watched.firstIndex(of: watched.max()!)!]) + "NumberOftheWatched".localized(number: Int(watched.max()!))
+        
         return (chartDataSet, title, date)
     }
 }

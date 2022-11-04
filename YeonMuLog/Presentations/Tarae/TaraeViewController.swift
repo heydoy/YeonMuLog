@@ -8,6 +8,7 @@
 import UIKit
 import RealmSwift
 import Toast
+import SwipeableTabBarController
 
 class TaraeViewController: BaseViewController {
     // MARK: - Properties
@@ -34,6 +35,7 @@ class TaraeViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        self.setTabBarSwipe(enabled: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {

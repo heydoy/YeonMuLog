@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwipeableTabBarController
 
 class TaraeView: BaseView {
     lazy var tableView = UITableView().then {

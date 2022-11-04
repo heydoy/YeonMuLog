@@ -6,23 +6,25 @@
 //
 
 import UIKit
+import SwipeableTabBarController
 
-class CustomTabBarViewController: UITabBarController {
+class CustomTabBarViewController: SwipeableTabBarController {
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        minimumNumberOfTouches = 2
+        
         setUI()
         setTabBarController()
     }
     
-
     // MARK: - Helper
     private func setUI() {
         tabBar.tintColor = .CustomColor.purple100
         tabBar.unselectedItemTintColor = .systemGray3
         tabBar.backgroundColor = .white
+        
     }
 
     private func setTabBarController() {

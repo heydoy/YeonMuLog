@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwipeableTabBarController
 
 class SearchPlayViewController: BaseViewController {
     // MARK: - Properties
@@ -28,7 +29,7 @@ class SearchPlayViewController: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.setTabBarSwipe(enabled: false)
 //        let item = Play(id: "PF333333", title: "마리 퀴리", cast: "김소향, 옥주현, 김히어라, 이봄소리, 양승리, 김찬호, 박영수 등", genre: "뮤지컬", poster: "http://www.kopis.or.kr/upload/pfmPoster/PF_PF165402_200702_093020.PNG", place: "홍익대 대학로 아트센터", startDate: "2020.07.30", endDate: "2020.09.27", runtime: "2시간 30분", ticket: "", time: "")
 //        list.append(item)
         

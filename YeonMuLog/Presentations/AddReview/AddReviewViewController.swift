@@ -10,6 +10,7 @@ import SnapKit
 import YPImagePicker
 import Realm
 import Toast
+import SwipeableTabBarController
 
 protocol recordVoiceMemoDelegate: AnyObject {
     func sendVoiceMemo(url: String)
@@ -37,6 +38,7 @@ class AddReviewViewController: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setTabBarSwipe(enabled: false)
         
         //imagePickerConfigure()
     }

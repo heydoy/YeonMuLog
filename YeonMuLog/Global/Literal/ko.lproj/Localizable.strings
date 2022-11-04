@@ -1,9 +1,8 @@
-/* 
+/*
   Localizable.strings
   YeonMuLog
 
   Created by Doy Kim on 2022/09/15.
-  
 */
 
 "AddPlayInfoLabel" = "혹시 원하는 극 정보가 없으신가요?\n직접 입력해보세요!";
@@ -63,3 +62,21 @@
 "searchWatchedAlertMessage" = "극 제목, 공연장소, 리뷰, 캐스팅으로 관극기록을 검색할 수 있습니다.";
 "searchWatchedAlertTextFieldPlaceHolder" = "검색어를 입력하세요";
 "searchButtonTitle" = "검색하기";
+
+// 통계
+// - 요일수
+"Mon" = "월";
+"Tue" = "화";
+"Wed" = "수";
+"Thu" = "목";
+"Fri" = "금";
+"Sat" = "토";
+"Sun" = "일";
+"DaysOfTheWeek" = "요일";
+"theMostWatched" = "📆 극을 제일 많이 본 요일은\n%@요일로 ";
+"NumberOftheWatched" = "총 %d번 관극하였습니다.";
+
+// - 리뷰수
+"theMostReviewedIs" = "✍️ 리뷰를 제일 많이 쓴 극은\n%@(으)로 ";
+"NumberOfReviews" = "리뷰 수";
+"NumberOfReviewsWritten" = "총 %d개의 리뷰를 썼습니다.";

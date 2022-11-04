@@ -63,3 +63,21 @@
 "searchWatchedAlertMessage" = "You can search by title, place, review content, and  cast";
 "searchWatchedAlertTextFieldPlaceHolder" = "Type here";
 "searchButtonTitle" = "Search";
+
+// 통계
+// - 요일수
+"Mon" = "Mon";
+"Tue" = "Tue";
+"Wed" = "Wed";
+"Thu" = "Thu";
+"Fri" = "Fri";
+"Sat" = "Sat";
+"Sun" = "Sun";
+"DaysOfTheWeek" = "Days of the week";
+"theMostWatched" = "📆 You saw the most shows on %@";
+"NumberOftheWatched" = ", %d times";
+
+// - 리뷰수
+"theMostReviewedIs" = "✍️ The show with the most reviews was %@";
+"NumberOfReviews" = "Number of reviews";
+"NumberOfReviewsWritten" = ", with a total of %d reviews.";

@@ -19,7 +19,8 @@ class AddWatchedView: BaseView {
     
     override func setConstraints() {
         tableView.snp.makeConstraints { make in
-            make.edges.equalTo(self.safeAreaLayoutGuide)
+            make.top.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
+            make.bottom.equalToSuperview()
         }
     }
 }

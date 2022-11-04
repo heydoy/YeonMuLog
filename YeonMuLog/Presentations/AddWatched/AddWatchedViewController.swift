@@ -22,15 +22,15 @@ enum AddWatchedItem: Int {
         case .posterGenreTitle:
             return ""
         case .date:
-            return "관람일자"
+            return "addWatchedDate".localized
         case .place:
-            return "장소"
+            return "addWatchedPlace".localized
         case .cast:
-            return "캐스팅"
+            return "addWatchedCasts".localized
         case .seat:
-            return "좌석"
+            return "addWatchedSeat".localized
         case .ticketPrice:
-            return "가격"
+            return "addWatchedPrice".localized
         }
     }
 }
@@ -62,12 +62,15 @@ class AddWatchedViewController: BaseViewController {
     // MARK: - Actions
     @objc func finishButtonTapped(_ sender: UIBarButtonItem) {
         if castSelectedData.isEmpty {
-            let ok = UIAlertAction(title: "확인", style: .default)
-            showAlert(title: "캐스팅을 선택해주세요", message: nil, actions: ok)
+            let ok = UIAlertAction(title: "ok".localized, style: .default)
+            showAlert(title: "selectCastingPlease".localized, message: nil, actions: ok)
         } else {
             self.navigationController?.navigationBar.isUserInteractionEnabled = false
             self.mainView.isUserInteractionEnabled = false
-            showFinishToast(title: "관람기록 추가 성공", message: "관람기록이 성공적으로 저장되었습니다.", imageName: "character-pencil-finished") { _ in
+            showFinishToast(
+                title: "addWatchedSuccess".localized,
+                message: "addWatchedSuccessfully".localized,
+                imageName: "character-pencil-finished") { _ in
                 
                 self.saveUserPlayInfo()
                 self.navigationController?.popToRootViewController(animated: true)
@@ -106,7 +109,7 @@ class AddWatchedViewController: BaseViewController {
             if let price = Int(text) {
                 ticketPrice = price
             } else {
-                self.mainView.makeToast("숫자만 입력해주세요")
+                self.mainView.makeToast("onlyNumberPlease".localized)
                 sender.text = nil
             }
         }
@@ -120,7 +123,7 @@ class AddWatchedViewController: BaseViewController {
         
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alert.view.addSubview(datePicker)
-        let ok = UIAlertAction(title: "확인", style: .default) { _ in
+        let ok = UIAlertAction(title: "ok".localized, style: .default) { _ in
             print(datePicker.date)
             self.watchedDate = datePicker.date
             self.mainView.tableView.reloadRows(at: [IndexPath(row: AddWatchedItem.date.rawValue, section: 0)], with: .none)
@@ -161,7 +164,7 @@ class AddWatchedViewController: BaseViewController {
         
         navigationItem.title = "AddWatchedNavigationTitle".localized
         let finish = UIBarButtonItem(
-            title: "완료",
+            title: "addWatchedSave".localized,
             style: .plain,
             target: self,
             action: #selector(finishButtonTapped))
@@ -219,7 +222,7 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.setData(
                     title: AddWatchedItem.place.getTitle(),
                     textFieldText: play.place,
-                    placeHolder: "관람한 장소를 입력해주세요")
+                    placeHolder: "placePlease".localized)
             }
             
             cell.userTextField.isEnabled = false
@@ -240,7 +243,7 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
             cell.setData(
                 title: AddWatchedItem.seat.getTitle(),
                 textFieldText: "",
-                placeHolder: "좌석위치를 입력해주세요")
+                placeHolder: "seatLocationPlease".localized)
             
             cell.userTextField.addTarget(self, action: #selector(seatValueChanged), for: .valueChanged)
             cell.userTextField.isEnabled = true
@@ -257,7 +260,7 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
             cell.setData(
                 title: AddWatchedItem.ticketPrice.getTitle(),
                 textFieldText: "",
-                placeHolder: "티켓금액을 입력해주세요")
+                placeHolder: "ticketPriceHerePlease".localized)
             
             cell.userTextField.keyboardType = .numberPad
             cell.userTextField.isEnabled = true
@@ -294,14 +297,14 @@ extension AddWatchedViewController: UITextFieldDelegate {
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        if let text = textField.text, !text.isEmpty{
+        if let text = textField.text, !text.isEmpty {
             if textField.tag == AddWatchedItem.seat.rawValue {
                 seat = text
             } else if textField.tag == AddWatchedItem.ticketPrice.rawValue {
                 if let price = Int(text) {
                     ticketPrice = price
                 } else {
-                    self.mainView.makeToast("숫자만 입력해주세요.")
+                    self.mainView.makeToast("onlyNumberPlease".localized)
                     textField.text = ""
                 }
             }
@@ -324,7 +327,7 @@ extension AddWatchedViewController: UICollectionViewDelegateFlowLayout, UICollec
             }
             return castArray.count
         } else {
-            let noCast = ["정보 없음"]
+            let noCast = ["noCast".localized]
             castArray = noCast
             castSelectedData = noCast
             castSelectedIndex.append(0)

@@ -51,7 +51,8 @@ final class WatchedPosterGenreTitleTableViewCell: UITableViewCell {
         titleLabel.text = data.title
         let url = URL(string: data.poster)
         posterImageView.kf.setImage(with: url)
-        genreLabel.text = "  \(data.genre)  "
+        let genre = data.genre == "뮤지컬" ? "tagMusical".localized : "tagPlay".localized
+        genreLabel.text = "  \(genre)  "
         genreLabel.backgroundColor = data.genre == "뮤지컬" ? .CustomColor.musicalTagColor : .CustomColor.playTagColor
     }
     

@@ -94,7 +94,8 @@ final class SearchPlayResultTableViewCell: UITableViewCell {
         dateLabel.text = "\(data.startDate) ~ \(data.endDate)"
         castLabel.text = data.cast
         placeLabel.text = data.place
-        genreLabel.text = "  \(data.genre)  "
+        let genre = data.genre == "뮤지컬" ? "tagMusical".localized : "tagPlay".localized
+        genreLabel.text = "  \(genre)  "
         genreLabel.backgroundColor = data.genre == "뮤지컬" ? .CustomColor.musicalTagColor : .CustomColor.playTagColor
     }
     

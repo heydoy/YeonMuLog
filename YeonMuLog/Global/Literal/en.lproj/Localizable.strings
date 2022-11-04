@@ -81,3 +81,24 @@
 "theMostReviewedIs" = "✍️ The show with the most reviews was %@";
 "NumberOfReviews" = "Number of reviews";
 "NumberOfReviewsWritten" = ", with a total of %d reviews.";
+
+// 극 검색
+"tagMusical" = "MUSICAL";
+"tagPlay" = "PLAY";
+
+// 관람기록 추가하기
+"addWatchedDate" = "Date and Time";
+"addWatchedPlace" = "Place";
+"addWatchedCasts" = "Casts";
+"addWatchedSeat" = "Seat";
+"addWatchedPrice" = "Ticket Price";
+"addWatchedSave" = "Save";
+"noCast" = "No Cast Info";
+"onlyNumberPlease" = "Please enter the ticket price only in numbers";
+"ticketPriceHerePlease" = "Ticket price here";
+"seatLocationPlease" = "Seat info here";
+"placePlease" = "Place you watched";
+"selectCastingPlease" = "Select at least one cast please";
+"ok" = "OK";
+"addWatchedSuccess" = "Success!";
+"addWatchedSuccessfully" = "Your viewing history is successfully added.";

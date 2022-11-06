@@ -92,7 +92,7 @@ final class SearchPlayResultTableViewCell: UITableViewCell {
         let url = URL(string: data.poster)
         posterImageView.kf.setImage(with: url)
         dateLabel.text = "\(data.startDate) ~ \(data.endDate)"
-        castLabel.text = data.cast
+        castLabel.text = data.cast.trimmingCharacters(in: .whitespaces).isEmpty ? "정보 없음" : data.cast
         placeLabel.text = data.place
         let genre = data.genre == "뮤지컬" ? "tagMusical".localized : "tagPlay".localized
         genreLabel.text = "  \(genre)  "

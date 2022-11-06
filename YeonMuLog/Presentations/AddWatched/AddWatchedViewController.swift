@@ -41,7 +41,11 @@ class AddWatchedViewController: BaseViewController {
     let mainView = AddWatchedView()
     let repository = UserPlayRepository.shared
     var playInfo: Play? 
-    var castArray: [String] = []
+    var castArray: [String] = [] {
+        didSet {
+            mainView.tableView.reloadData()
+        }
+    }
     var castSelectedIndex: [Int] = []
     var castSelectedData: [String] = []
         
@@ -178,6 +182,8 @@ class AddWatchedViewController: BaseViewController {
     }
     
     override func configure() {
+        calculateCastInfo()
+        
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
         
@@ -186,6 +192,22 @@ class AddWatchedViewController: BaseViewController {
         mainView.tableView.register(WatchedTextFieldTableViewCell.self, forCellReuseIdentifier: String(describing: WatchedTextFieldTableViewCell.self))
         
         mainView.tableView.register(WatchedTagsTableViewCell.self, forCellReuseIdentifier: String(describing: WatchedTagsTableViewCell.self))
+    }
+    /// 캐스팅 정보 문자열을 가져와 배우별로 잘라서 배열에 넣는 메서드
+    func calculateCastInfo() {
+        guard let play = playInfo else { return }
+        
+        if  !play.cast.trimmingCharacters(in: .whitespaces).isEmpty {
+            castArray = play.cast.components(separatedBy: ", ")
+            castArray = castArray.map {
+               $0.replacingOccurrences(of: " 등", with: "")
+            }
+        } else {
+            let noCast = ["noCast".localized]
+            castArray = noCast
+            castSelectedData = noCast
+            castSelectedIndex.append(0)
+       }
     }
 }
 
@@ -281,7 +303,7 @@ extension AddWatchedViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.row == 3 ? 140 : UITableView.automaticDimension
+       return indexPath.row == 3 ? (castArray.count > 4 ? 140 : 90) : UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -324,21 +346,7 @@ extension AddWatchedViewController: UICollectionViewDelegateFlowLayout, UICollec
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        guard let play = playInfo else { return 0 }
-        
-        if  !play.cast.trimmingCharacters(in: .whitespaces).isEmpty {
-            castArray = play.cast.components(separatedBy: ", ")
-            castArray = castArray.map {
-               $0.replacingOccurrences(of: " 등", with: "")
-            }
-            return castArray.count
-        } else {
-            let noCast = ["noCast".localized]
-            castArray = noCast
-            castSelectedData = noCast
-            castSelectedIndex.append(0)
-            return castArray.count
-        }
+        return castArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

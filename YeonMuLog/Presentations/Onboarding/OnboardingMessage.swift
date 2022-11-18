@@ -23,7 +23,6 @@ extension OnboardingMessage {
                           subtitle: "SecondOnboardingSubtitle".localized),
         OnboardingMessage(imageName: "onboarding-3",
                           title: "ThirdOnboardingTitle".localized,
-                          subtitle: "ThirdOnboardingSubtitle".localized),
+                          subtitle: "ThirdOnboardingSubtitle".localized)
     ]
-    
 }

@@ -40,7 +40,7 @@ class AddReviewViewController: BaseViewController {
         super.viewDidLoad()
         self.setTabBarSwipe(enabled: false)
         
-        //imagePickerConfigure()
+        // imagePickerConfigure()
     }
     
     // MARK: - Actions
@@ -154,8 +154,8 @@ extension AddReviewViewController: UITextViewDelegate {
     }
 }
 
-//// MARK: - 음성메모를 전달받기 위한 프로토콜 상속
-//extension AddReviewViewController: recordVoiceMemoDelegate {
+// MARK: - 음성메모를 전달받기 위한 프로토콜 상속
+// extension AddReviewViewController: recordVoiceMemoDelegate {
 //    /// 음성메모를 presenting vc에 보내는 메서드
 //    func sendVoiceMemo(url: String) {
 //        voiceMemo = url
@@ -165,4 +165,4 @@ extension AddReviewViewController: UITextViewDelegate {
 //
 //        }
 //    }
-//}
+// }

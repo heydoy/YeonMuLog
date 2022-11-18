@@ -61,7 +61,6 @@ class TagCollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 12
     }
     
-    
     // MARK: - Actions
     func toggleTag(_ tapped: Bool) {
         if tapped {

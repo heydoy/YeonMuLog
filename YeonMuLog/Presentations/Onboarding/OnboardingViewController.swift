@@ -89,7 +89,6 @@ extension OnboardingViewController: UIScrollViewDelegate {
         let index = Int(scrollView.contentOffset.x/scrollView.bounds.width)
         currentPage = index
         
-        
     }
 }
 

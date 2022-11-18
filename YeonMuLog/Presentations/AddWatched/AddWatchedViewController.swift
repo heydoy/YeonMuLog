@@ -60,14 +60,12 @@ class AddWatchedViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print(playInfo)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setTabBarSwipe(enabled: false)
     }
-    
     
     // MARK: - Actions
     @objc func finishButtonTapped(_ sender: UIBarButtonItem) {
@@ -89,7 +87,6 @@ class AddWatchedViewController: BaseViewController {
                     self.mainView.isUserInteractionEnabled = true
                 }
             }
-            
         }
     }
     
@@ -104,7 +101,6 @@ class AddWatchedViewController: BaseViewController {
         style.titleFont = .appleSDGothicNeo(of: .subTitle, weight: .medium)
         style.messageFont = .appleSDGothicNeo(of: .content, weight: .regular)
         self.mainView.makeToast(message, duration: 0.8, position: .center, title: title, image: UIImage(named: imageName), style: style, completion: completion)
-        
     }
     
     @objc func seatValueChanged(_ sender: UITextField) {
@@ -361,7 +357,6 @@ extension AddWatchedViewController: UICollectionViewDelegateFlowLayout, UICollec
             cell.defaultDesign()
         }
                 
-
         return cell
     }
     
@@ -383,7 +378,7 @@ extension AddWatchedViewController: UICollectionViewDelegateFlowLayout, UICollec
         
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
  
-        let width: CGFloat = castArray[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16)]).width + 25
+        let width: CGFloat = castArray[indexPath.item].size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)]).width + 25
         let height: CGFloat = 40
         
         return CGSize(width: width, height: height)

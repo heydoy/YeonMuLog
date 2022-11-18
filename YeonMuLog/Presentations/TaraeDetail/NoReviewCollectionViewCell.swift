@@ -36,13 +36,11 @@ class NoReviewCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     // MARK: - UI
     private func configure() {
         contentView.addSubview(guideLabel)
         contentView.addSubview(characterImageView)
     }
-    
     
     private func setConstraints() {
         guideLabel.snp.makeConstraints { make in

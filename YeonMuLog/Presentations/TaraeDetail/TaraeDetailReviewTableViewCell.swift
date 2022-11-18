@@ -9,7 +9,6 @@ import UIKit
 
 class TaraeDetailReviewTableViewCell: UITableViewCell {
     // MARK: - Properties
-    //let flowLayout = ReviewCollectionViewLayout()
     var collectionView: UICollectionView!
     
     // MARK: - Inintialisation
@@ -26,9 +25,7 @@ class TaraeDetailReviewTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setData(data: UserReview) {
-    
-    }
+    func setData(data: UserReview) {}
     
     // MARK: - UI
     func configure() {
@@ -50,7 +47,6 @@ class TaraeDetailReviewTableViewCell: UITableViewCell {
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
     }
     func setUI() {
         backgroundColor = UIColor(red: 240/255, green: 235/255, blue: 243/255, alpha: 1)

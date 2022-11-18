@@ -13,7 +13,6 @@ final class VoiceMemoView: BaseView {
         $0.image = UIImage(named: "character-mic-recording")
     }
     
-
     let playButton = UIButton().then {
         $0.setImage(UIImage(systemName: "play.fill"), for: .normal)
         $0.setPreferredSymbolConfiguration(.init(pointSize: 50), forImageIn: .normal)

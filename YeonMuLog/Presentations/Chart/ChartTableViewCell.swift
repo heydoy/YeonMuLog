@@ -68,8 +68,6 @@ class ChartTableViewCell: UITableViewCell {
     }
     
     func setData(data: BarChartDataSet, title: String) {
-        
-
         // 타이틀
         titleLabel.text = title
 

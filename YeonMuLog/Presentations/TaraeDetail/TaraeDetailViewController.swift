@@ -12,8 +12,7 @@ import SwipeableTabBarController
 
 enum TaraeDetailSection: Int {
     case playInfo = 0
-    case review = 1
-    
+    case review
 }
 
 protocol sendReviewDelegate {
@@ -30,9 +29,6 @@ class TaraeDetailViewController: BaseViewController {
     var playInfo: UserPlayInfo? {
         didSet {
             mainView.tableView.reloadData()
-            for cell in mainView.tableView.visibleCells {
-                (cell as? TaraeDetailReviewTableViewCell)?.collectionView.reloadData()
-            }
         }
     }
     
@@ -44,7 +40,6 @@ class TaraeDetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +61,10 @@ class TaraeDetailViewController: BaseViewController {
         vc.modalTransitionStyle = .crossDissolve
         vc.delegate = self
         present(vc, animated: true)
+    }
+    
+    @objc func goUpButtonTapped(_ sender: UIButton) {
+        mainView.tableView.scrollToRow(at: IndexPath(row: 0, section: TaraeDetailSection.playInfo.rawValue), at: .bottom, animated: false)
     }
     
     // MARK: - Helpers
@@ -110,7 +109,10 @@ class TaraeDetailViewController: BaseViewController {
         
         mainView.tableView.register(TaraeDetailReviewTableViewCell.self, forCellReuseIdentifier: String(describing: TaraeDetailReviewTableViewCell.self))
         
+        mainView.tableView.register(NoReviewInRecordTableViewCell.self, forCellReuseIdentifier: String(describing: NoReviewInRecordTableViewCell.self))
+        
         mainView.addReviewButton.addTarget(self, action: #selector(addReviewButtonTapped), for: .touchUpInside)
+        mainView.goUpbutton.addTarget(self, action: #selector(goUpButtonTapped), for: .touchUpInside)
     }
 }
 extension TaraeDetailViewController: UITableViewDelegate, UITableViewDataSource {
@@ -122,7 +124,7 @@ extension TaraeDetailViewController: UITableViewDelegate, UITableViewDataSource 
         if section == TaraeDetailSection.playInfo.rawValue {
             return 1
         } else if section == TaraeDetailSection.review.rawValue {
-            return 1 
+            return playInfo?.userReview.count != 0 ? playInfo!.userReview.count : 1
         } else {
             return 0
         }
@@ -140,58 +142,23 @@ extension TaraeDetailViewController: UITableViewDelegate, UITableViewDataSource 
             return cell
             
         } else if indexPath.section == TaraeDetailSection.review.rawValue {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TaraeDetailReviewTableViewCell.self)) as? TaraeDetailReviewTableViewCell else { return UITableViewCell() }
-
-            if let data = playInfo?.userReview.first {
-                cell.setData(data: data)
+            if playInfo?.userReview.count != 0 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TaraeDetailReviewTableViewCell.self)) as? TaraeDetailReviewTableViewCell else { return UITableViewCell() }
+                
+                cell.setData(review: playInfo!.userReview[indexPath.item])
+                return cell
+            } else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: NoReviewInRecordTableViewCell.self), for: indexPath) as? NoReviewInRecordTableViewCell else { return UITableViewCell() }
+                
+                return cell
             }
-            
-            //cell.flowLayout.delegate = self
-            
-            cell.collectionView.delegate = self
-            cell.collectionView.dataSource = self
-            return cell
         } else {
             return UITableViewCell()
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.section == TaraeDetailSection.playInfo.rawValue ? UITableView.automaticDimension : UITableView.automaticDimension < 300 ? 300 : UITableView.automaticDimension
+        return UITableView.automaticDimension
     }
-}
-
-extension TaraeDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return playInfo?.userReview.count != 0 ? playInfo!.userReview.count : 1
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        if playInfo?.userReview.count != 0 {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ReviewCollectionViewCell.self), for: indexPath) as? ReviewCollectionViewCell else { return UICollectionViewCell() }
-            cell.setData(review: playInfo!.userReview[indexPath.item])
-            return cell
-        } else {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: NoReviewCollectionViewCell.self), for: indexPath) as? NoReviewCollectionViewCell else { return UICollectionViewCell() }
-            
-            return cell
-        }
-        
-    }
-}
-
-extension TaraeDetailViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width: CGFloat = UIScreen.main.bounds.width
-        let height: CGFloat = collectionView.intrinsicContentSize.height + 60
-        print("#높이", height)
-
-        return CGSize(width: width, height: height )
-        
-    }
-    
 }
 
 extension TaraeDetailViewController: sendReviewDelegate {
@@ -199,7 +166,8 @@ extension TaraeDetailViewController: sendReviewDelegate {
         if let playInfo = playInfo {
             let newPlayInfo = repository.localRealm.object(ofType: UserPlayInfo.self, forPrimaryKey: playInfo.id)
             self.playInfo = newPlayInfo
-            
+            mainView.tableView.reloadData()
+            mainView.tableView.scrollToRow(at: IndexPath(row: playInfo.userReview.count - 1, section: TaraeDetailSection.review.rawValue), at: .bottom, animated: false)
         }
     }
 }

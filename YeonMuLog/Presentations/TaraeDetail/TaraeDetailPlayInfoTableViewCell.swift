@@ -154,8 +154,7 @@ class TaraeDetailPlayInfoTableViewCell: UITableViewCell {
         reviewBackgroundView.snp.makeConstraints { make in
             make.trailing.bottom.equalTo(posterImageView).offset(-8)
             make.height.equalTo(30)
-            make.width.equalTo(64)
-            
+            make.width.equalTo(72)
         }
         reviewIconImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
@@ -209,7 +208,7 @@ class TaraeDetailPlayInfoTableViewCell: UITableViewCell {
         seatAndTicketLabel.snp.makeConstraints { make in
             make.top.equalTo(seatAndTicketImageView)
             make.leading.equalTo(seatAndTicketImageView.snp.trailing).offset(4)
-            make.bottom.equalToSuperview().inset(36)
+            make.bottom.equalToSuperview().inset(16)
         }
         
     }

@@ -7,45 +7,62 @@
 
 import UIKit
 
-class TaraeDetailReviewTableViewCell: UITableViewCell {
+final class TaraeDetailReviewTableViewCell: UITableViewCell {
     // MARK: - Properties
-    var collectionView: UICollectionView!
-    
+    let dateLabel = UILabel().then {
+        $0.font = .appleSDGothicNeo(of: .content, weight: .regular)
+        $0.textColor = .darkGray
+        $0.textAlignment = .left
+    }
+    let chatLabel = UILabel().then {
+        $0.font = .appleSDGothicNeo(of: .subTitle, weight: .medium)
+        $0.textColor = .black
+        $0.textAlignment = .left
+        $0.numberOfLines = 0
+    }
+    let bubbleBackgroundView = UIView().then {
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 12
+        $0.backgroundColor = .white
+    }
     // MARK: - Inintialisation
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         configure()
         setConstraints()
         setUI()
         selectionStyle = .none
     }
-    
+    func setData(review: UserReview) {
+        chatLabel.text = review.text
+        dateLabel.text = review.date.reviewDateString()
+    }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setData(data: UserReview) {}
-    
     // MARK: - UI
     func configure() {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .vertical
-        flowLayout.minimumLineSpacing = 12
-        flowLayout.minimumInteritemSpacing = 12
-        flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        collectionView.isScrollEnabled = true
-        collectionView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 50, right: 0)
-        collectionView.backgroundColor = .clear
-        collectionView.register(ReviewCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: ReviewCollectionViewCell.self))
-        collectionView.register(NoReviewCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: NoReviewCollectionViewCell.self))
-                
-        self.contentView.addSubview(collectionView)
+        contentView.addSubview(bubbleBackgroundView)
+        contentView.addSubview(dateLabel)
+        contentView.addSubview(chatLabel)
     }
+    
     func setConstraints() {
-        collectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        dateLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(22)
+            make.leading.equalToSuperview().inset(12)
+            make.width.equalTo(80)
+        }
+        chatLabel.snp.makeConstraints { make in
+            make.top.equalTo(dateLabel).offset(4)
+            make.leading.equalTo(dateLabel.snp.trailing).offset(8)
+            make.width.lessThanOrEqualToSuperview().multipliedBy(0.58)
+            make.bottom.equalToSuperview()
+        }
+        bubbleBackgroundView.snp.makeConstraints { make in
+            make.trailing.bottom.equalTo(chatLabel).offset(8)
+            make.top.leading.equalTo(chatLabel).offset(-8)
         }
     }
     func setUI() {

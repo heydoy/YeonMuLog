@@ -9,12 +9,20 @@ import UIKit
 import Then
 import SnapKit
 
-class TaraeDetailView: BaseView {
+final class TaraeDetailView: BaseView {
     lazy var tableView = UITableView().then {
-        $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
         $0.separatorColor = .clear
         $0.backgroundColor = UIColor(red: 240/255, green: 235/255, blue: 243/255, alpha: 1)
         $0.bounces = false        
+    }
+    
+    let goUpbutton = UIButton().then {
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 24
+        $0.backgroundColor = .CustomColor.purple80
+        $0.setImage(UIImage(systemName: "arrow.up"), for: .normal)
+        $0.tintColor = .white
     }
     
     let addReviewButton = UIButton().then {
@@ -26,9 +34,10 @@ class TaraeDetailView: BaseView {
     }
 
     override func setupUI() {
-        self.addSubview(tableView)
-        self.addSubview(addReviewButton)
-        self.backgroundColor = .white
+        addSubview(tableView)
+        addSubview(addReviewButton)
+        addSubview(goUpbutton)
+        backgroundColor = .white
     }
     
     override func setConstraints() {
@@ -41,6 +50,12 @@ class TaraeDetailView: BaseView {
             make.width.height.equalTo(48)
             make.trailing.equalToSuperview().inset(20)
             make.bottom.equalTo(self.safeAreaLayoutGuide)
+        }
+        
+        goUpbutton.snp.makeConstraints { make in
+            make.width.height.equalTo(48)
+            make.trailing.equalToSuperview().inset(20)
+            make.bottom.equalTo(addReviewButton.snp.top).offset(-8)
         }
     }
 

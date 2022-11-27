@@ -10,6 +10,7 @@ import UIKit
 extension UIColor {
     struct CustomColor {
         static let purple30 = #colorLiteral(red: 0.9764705882, green: 0.9529411765, blue: 0.9921568627, alpha: 1)
+        static let purple80 = #colorLiteral(red: 0.8823381066, green: 0.7915145755, blue: 1, alpha: 1)
         static let purple100 = #colorLiteral(red: 0.7803921569, green: 0.6117647059, blue: 1, alpha: 1)
         static let purple200 = #colorLiteral(red: 0.7098039216, green: 0.4862745098, blue: 1, alpha: 1)
         static let purple300 = #colorLiteral(red: 0.6509803922, green: 0.3803921569, blue: 1, alpha: 1)

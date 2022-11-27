@@ -13,7 +13,7 @@
 		A20E104128EA4B51000AB31B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104028EA4B51000AB31B /* UIViewController+Extension.swift */; };
 		A20E104428EA8051000AB31B /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = A20E104328EA8051000AB31B /* Toast */; };
 		A20E104628EAB9AE000AB31B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104528EAB9AE000AB31B /* Date+Extension.swift */; };
-		A20E104828EAEFDB000AB31B /* NoReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104728EAEFDB000AB31B /* NoReviewCollectionViewCell.swift */; };
+		A20E104828EAEFDB000AB31B /* NoReviewInRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104728EAEFDB000AB31B /* NoReviewInRecordTableViewCell.swift */; };
 		A20E104B28EB0A12000AB31B /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104A28EB0A11000AB31B /* CustomTabBarViewController.swift */; };
 		A20E104E28EB213D000AB31B /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104D28EB213D000AB31B /* ChartViewController.swift */; };
 		A20E105028EB214D000AB31B /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E104F28EB214D000AB31B /* ChartView.swift */; };
@@ -35,9 +35,6 @@
 		A23716CD28E0A193004E9FE6 /* TaraeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23716CC28E0A193004E9FE6 /* TaraeDetailView.swift */; };
 		A237170F28E1D35C004E9FE6 /* TaraeDetailPlayInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A237170E28E1D35C004E9FE6 /* TaraeDetailPlayInfoTableViewCell.swift */; };
 		A237171128E1D36B004E9FE6 /* TaraeDetailReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A237171028E1D36B004E9FE6 /* TaraeDetailReviewTableViewCell.swift */; };
-		A237171328E1D828004E9FE6 /* ReviewCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A237171228E1D828004E9FE6 /* ReviewCollectionViewLayout.swift */; };
-		A237171528E1DBAE004E9FE6 /* ReviewCollectionViewLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A237171428E1DBAE004E9FE6 /* ReviewCollectionViewLayoutDelegate.swift */; };
-		A237171728E1DD8D004E9FE6 /* ReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A237171628E1DD8D004E9FE6 /* ReviewCollectionViewCell.swift */; };
 		A23F25FA28FBE5A3002E1732 /* yeonmulog-loading-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = A23F25F928FBE5A2002E1732 /* yeonmulog-loading-animation.json */; };
 		A26097AE28F44BF40051BA41 /* setColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26097AD28F44BF40051BA41 /* setColor.swift */; };
 		A289FCA628D8CE26008046D1 /* UserPlayRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289FCA528D8CE26008046D1 /* UserPlayRepository.swift */; };
@@ -104,7 +101,7 @@
 		A20E103E28E9B88A000AB31B /* VoiceMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemoViewController.swift; sourceTree = "<group>"; };
 		A20E104028EA4B51000AB31B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		A20E104528EAB9AE000AB31B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
-		A20E104728EAEFDB000AB31B /* NoReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoReviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		A20E104728EAEFDB000AB31B /* NoReviewInRecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoReviewInRecordTableViewCell.swift; sourceTree = "<group>"; };
 		A20E104A28EB0A11000AB31B /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		A20E104D28EB213D000AB31B /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		A20E104F28EB214D000AB31B /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
@@ -124,9 +121,6 @@
 		A23716CC28E0A193004E9FE6 /* TaraeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaraeDetailView.swift; sourceTree = "<group>"; };
 		A237170E28E1D35C004E9FE6 /* TaraeDetailPlayInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaraeDetailPlayInfoTableViewCell.swift; sourceTree = "<group>"; };
 		A237171028E1D36B004E9FE6 /* TaraeDetailReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaraeDetailReviewTableViewCell.swift; sourceTree = "<group>"; };
-		A237171228E1D828004E9FE6 /* ReviewCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewLayout.swift; sourceTree = "<group>"; };
-		A237171428E1DBAE004E9FE6 /* ReviewCollectionViewLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewLayoutDelegate.swift; sourceTree = "<group>"; };
-		A237171628E1DD8D004E9FE6 /* ReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		A23F25F928FBE5A2002E1732 /* yeonmulog-loading-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "yeonmulog-loading-animation.json"; sourceTree = "<group>"; };
 		A26097AD28F44BF40051BA41 /* setColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setColor.swift; sourceTree = "<group>"; };
 		A289FCA528D8CE26008046D1 /* UserPlayRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlayRepository.swift; sourceTree = "<group>"; };
@@ -335,11 +329,8 @@
 				A23716CA28E0A144004E9FE6 /* TaraeDetailViewController.swift */,
 				A23716CC28E0A193004E9FE6 /* TaraeDetailView.swift */,
 				A237170E28E1D35C004E9FE6 /* TaraeDetailPlayInfoTableViewCell.swift */,
+				A20E104728EAEFDB000AB31B /* NoReviewInRecordTableViewCell.swift */,
 				A237171028E1D36B004E9FE6 /* TaraeDetailReviewTableViewCell.swift */,
-				A237171228E1D828004E9FE6 /* ReviewCollectionViewLayout.swift */,
-				A237171428E1DBAE004E9FE6 /* ReviewCollectionViewLayoutDelegate.swift */,
-				A237171628E1DD8D004E9FE6 /* ReviewCollectionViewCell.swift */,
-				A20E104728EAEFDB000AB31B /* NoReviewCollectionViewCell.swift */,
 			);
 			path = TaraeDetail;
 			sourceTree = "<group>";
@@ -732,15 +723,13 @@
 				A237171128E1D36B004E9FE6 /* TaraeDetailReviewTableViewCell.swift in Sources */,
 				A2B0343928D6FC1E0066AE2D /* EndPoints.swift in Sources */,
 				A20E105028EB214D000AB31B /* ChartView.swift in Sources */,
-				A237171728E1DD8D004E9FE6 /* ReviewCollectionViewCell.swift in Sources */,
 				A2C2638928DD73AD00DCF778 /* OnboardingMessage.swift in Sources */,
-				A20E104828EAEFDB000AB31B /* NoReviewCollectionViewCell.swift in Sources */,
+				A20E104828EAEFDB000AB31B /* NoReviewInRecordTableViewCell.swift in Sources */,
 				A289FCA628D8CE26008046D1 /* UserPlayRepository.swift in Sources */,
 				A2B0343728D6FBDA0066AE2D /* Keys.swift in Sources */,
 				A2C2636E28DD018900DCF778 /* AddWatchedView.swift in Sources */,
 				A2C2636528DCC9EB00DCF778 /* FirstSearchPlayTableViewCell.swift in Sources */,
 				A2C2638528DD6B0800DCF778 /* OnboardingView.swift in Sources */,
-				A237171528E1DBAE004E9FE6 /* ReviewCollectionViewLayoutDelegate.swift in Sources */,
 				A20E104628EAB9AE000AB31B /* Date+Extension.swift in Sources */,
 				A289FCB928DB5E7E008046D1 /* BaseView.swift in Sources */,
 				A2C2637928DD2EB700DCF778 /* TaraeViewController.swift in Sources */,
@@ -755,7 +744,6 @@
 				A237170F28E1D35C004E9FE6 /* TaraeDetailPlayInfoTableViewCell.swift in Sources */,
 				A2C2636C28DD017700DCF778 /* AddWatchedViewController.swift in Sources */,
 				A289FCC128DB65ED008046D1 /* SearchPlayView.swift in Sources */,
-				A237171328E1D828004E9FE6 /* ReviewCollectionViewLayout.swift in Sources */,
 				A23716CB28E0A144004E9FE6 /* TaraeDetailViewController.swift in Sources */,
 				A289FCBE28DB65D4008046D1 /* SearchPlayViewController.swift in Sources */,
 				A2C2637B28DD2ECB00DCF778 /* TaraeView.swift in Sources */,

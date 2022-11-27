@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NoReviewCollectionViewCell: UICollectionViewCell {
+class NoReviewInRecordTableViewCell: UITableViewCell {
     // MARK: - Properties
     private let guideLabel = UILabel().then {
         $0.font = .appleSDGothicNeo(of: .subTitle, weight: .regular)
@@ -23,9 +23,8 @@ class NoReviewCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Initialise
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
             
         configure()
         setConstraints()

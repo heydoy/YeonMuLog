@@ -68,14 +68,7 @@ class AddReviewView: BaseView {
         backgroundColor = .clear
         
         self.addSubview(backgroundView)
-        //stackView.addSubview(photoCollectionView)
-        //stackView.addSubview(userTextView)
-        
-        //backgroundView.addSubview(stackView)
         backgroundView.addSubview(userTextView)
-        
-        //backgroundView.addSubview(addGalleryButton)
-        //backgroundView.addSubview(addVoiceButton)
         backgroundView.addSubview(cancelButton)
         backgroundView.addSubview(finishReviewButton)
         
@@ -87,26 +80,11 @@ class AddReviewView: BaseView {
             make.height.equalTo(160)
             
         }
-
         userTextView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(16)
             make.top.equalToSuperview().inset(12)
             make.height.equalTo(userTextView.snp.height)
         }
-        
-//        addGalleryButton.snp.makeConstraints { make in
-//            make.width.height.equalTo(30)
-//            make.leading.equalToSuperview().inset(20)
-//            make.top.equalTo(userTextView.snp.bottom).offset(12)
-//            make.bottom.equalToSuperview().inset(40)
-//        }
-//
-//        addVoiceButton.snp.makeConstraints { make in
-//            make.width.height.equalTo(30)
-//            make.leading.equalTo(addGalleryButton.snp.trailing).offset(20)
-//            make.centerY.bottom.equalTo(addGalleryButton)
-//
-//        }
         
         finishReviewButton.snp.makeConstraints { make in
             make.top.equalTo(userTextView.snp.bottom).offset(12)

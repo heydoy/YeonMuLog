@@ -40,38 +40,9 @@ class AddReviewViewController: BaseViewController {
         super.viewDidLoad()
         self.setTabBarSwipe(enabled: false)
         
-        // imagePickerConfigure()
     }
     
     // MARK: - Actions
-
-//    @objc func addGalleryButtonTapped(_ sender: UIButton) {
-//        print("사진추가")
-//
-//        picker.didFinishPicking { [unowned picker] items, _ in
-//
-//            for item in items {
-//                switch item {
-//                case .photo(p: let photo):
-//                    if let photoUrl = photo.url {
-//                        print(photoUrl, photo.originalImage )
-//                        self.image.append("\(photoUrl)")
-//                    }
-//                default:
-//                    print("이미지만 첨부할 수 있습니다.")
-//                }
-//            }
-//            picker.dismiss(animated: true, completion: nil)
-//        }
-//        self.present(picker, animated: true, completion: nil)
-//    }
-    
-//    @objc func addVoiceButtonTapped(_ sender: UIButton) {
-//        print("음성메모")
-//        let vc = VoiceMemoViewController()
-//        vc.delegate = self
-//        present(vc, animated: true)
-//    }
     
     @objc func cancelButtonTapped(_ sender: UIButton) {
         dismiss(animated: true)
@@ -136,9 +107,6 @@ class AddReviewViewController: BaseViewController {
         mainView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
         
         mainView.userTextView.delegate = self
-            
-//        mainView.addGalleryButton.addTarget(self, action: #selector(addGalleryButtonTapped), for: .touchUpInside)
-//        mainView.addVoiceButton.addTarget(self, action: #selector(addVoiceButtonTapped), for: .touchUpInside)
         mainView.cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
         mainView.finishReviewButton.addTarget(self, action: #selector(finishReviewButtonTapped), for: .touchUpInside)
     }
@@ -153,16 +121,3 @@ extension AddReviewViewController: UITextViewDelegate {
         }
     }
 }
-
-// MARK: - 음성메모를 전달받기 위한 프로토콜 상속
-// extension AddReviewViewController: recordVoiceMemoDelegate {
-//    /// 음성메모를 presenting vc에 보내는 메서드
-//    func sendVoiceMemo(url: String) {
-//        voiceMemo = url
-//        print(url, voiceMemo)
-//        if !voiceMemo.isEmpty {
-//            // 아이콘 디자인 변경
-//
-//        }
-//    }
-// }

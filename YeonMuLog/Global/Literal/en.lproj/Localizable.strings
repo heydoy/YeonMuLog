@@ -102,3 +102,7 @@
 "ok" = "OK";
 "addWatchedSuccess" = "Success!";
 "addWatchedSuccessfully" = "Your viewing history is successfully added.";
+
+// 리뷰 추가하기
+"addReviewSuccess" = "Success!";
+"addReviewSuccessfully" = "Your review is successfully added.";

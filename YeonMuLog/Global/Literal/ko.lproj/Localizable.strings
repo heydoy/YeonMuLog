@@ -101,3 +101,7 @@
 "ok" = "확인";
 "addWatchedSuccess" = "관람기록 추가 성공";
 "addWatchedSuccessfully" = "관람기록이 성공적으로 저장되었습니다.";
+
+// 리뷰 추가하기
+"addReviewSuccess" = "리뷰 추가 성공!";
+"addReviewSuccessfully" = "리뷰가 성공적으로 저장되었습니다.";

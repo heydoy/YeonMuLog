@@ -37,6 +37,8 @@ class NoReviewInRecordTableViewCell: UITableViewCell {
     
     // MARK: - UI
     private func configure() {
+        selectionStyle = .none
+        
         contentView.addSubview(guideLabel)
         contentView.addSubview(characterImageView)
     }

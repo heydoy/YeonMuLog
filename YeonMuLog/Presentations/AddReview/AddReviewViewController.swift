@@ -65,7 +65,7 @@ class AddReviewViewController: BaseViewController {
             repository.updateReview(playInfo!, review: review)
             
             // 완료 토스트
-            showFinishToast(title: "리뷰 추가 성공!", message: "리뷰가 성공적으로 저장되었습니다.", imageName: "character-pencil-finished") { _ in
+            showFinishToast(title: "addReviewSuccess".localized, message: "addReviewSuccessfully".localized, imageName: "character-pencil-finished") { _ in
                 self.delegate?.reviewDataReload()
                 self.dismiss(animated: true)
                 

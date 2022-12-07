@@ -57,7 +57,7 @@ final class TaraeDetailReviewTableViewCell: UITableViewCell {
         chatLabel.snp.makeConstraints { make in
             make.top.equalTo(dateLabel).offset(4)
             make.leading.equalTo(dateLabel.snp.trailing).offset(8)
-            make.width.lessThanOrEqualToSuperview().multipliedBy(0.58)
+            make.trailing.lessThanOrEqualToSuperview().inset(72)
             make.bottom.equalToSuperview()
         }
         bubbleBackgroundView.snp.makeConstraints { make in

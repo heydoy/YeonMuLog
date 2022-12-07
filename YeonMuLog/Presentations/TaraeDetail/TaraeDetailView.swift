@@ -42,19 +42,19 @@ final class TaraeDetailView: BaseView {
     
     override func setConstraints() {
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(self.safeAreaLayoutGuide)
+            make.top.equalTo(safeAreaLayoutGuide)
             make.leading.trailing.bottom.equalToSuperview()
         }
         
         addReviewButton.snp.makeConstraints { make in
             make.width.height.equalTo(48)
-            make.trailing.equalToSuperview().inset(20)
-            make.bottom.equalTo(self.safeAreaLayoutGuide)
+            make.trailing.equalTo(safeAreaLayoutGuide).inset(10)
+            make.bottom.equalTo(safeAreaLayoutGuide).inset(10)
         }
         
         goUpbutton.snp.makeConstraints { make in
             make.width.height.equalTo(48)
-            make.trailing.equalToSuperview().inset(20)
+            make.trailing.equalTo(addReviewButton)
             make.bottom.equalTo(addReviewButton.snp.top).offset(-8)
         }
     }

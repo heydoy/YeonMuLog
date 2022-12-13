@@ -16,7 +16,7 @@ enum TaraeDetailSection: Int, CaseIterable {
 }
 
 protocol sendReviewDelegate: AnyObject {
-    func reviewDataReload()
+    func reviewDataReload(_ reviewMode: ReviewMode)
     func editReview(reviewID: ObjectId, userReview: UserReview)
 }
 
@@ -218,12 +218,15 @@ extension TaraeDetailViewController: sendReviewDelegate {
         repository.editReview(playInfo!, reviewID: reviewID, userReview: userReview)
     }
     
-    func reviewDataReload() {
+    func reviewDataReload(_ reviewMode: ReviewMode) {
         if let playInfo = playInfo {
             let newPlayInfo = repository.localRealm.object(ofType: UserPlayInfo.self, forPrimaryKey: playInfo.id)
             self.playInfo = newPlayInfo
             mainView.tableView.reloadData()
-            mainView.tableView.scrollToRow(at: IndexPath(row: playInfo.userReview.count - 1, section: TaraeDetailSection.review.rawValue), at: .bottom, animated: false)
+            if reviewMode == .create {
+                mainView.tableView.scrollToRow(at: IndexPath(row: playInfo.userReview.count - 1, section: TaraeDetailSection.review.rawValue), at: .bottom, animated: false)
+                
+            }
         }
     }
 }

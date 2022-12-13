@@ -29,6 +29,7 @@ class AddReviewViewController: BaseViewController {
     
     var delegate: sendReviewDelegate?
     var reviewMode: ReviewMode?
+    var reviewIndex: Int?
     
     var voiceMemo: String = ""
     var text: String = ""
@@ -63,7 +64,7 @@ class AddReviewViewController: BaseViewController {
             self.mainView.isUserInteractionEnabled = false
             
             switch reviewMode {
-            case .create :
+            case .create:
                 // 저장
                 let review = UserReview()
                 review.text = mainView.userTextView.text
@@ -75,26 +76,26 @@ class AddReviewViewController: BaseViewController {
                 repository.updateReview(playInfo!, review: review)
                 
                 // 완료 토스트
-                showFinishToast(title: "addReviewSuccess".localized, message: "addReviewSuccessfully".localized, imageName: "character-pencil-finished") { _ in
-                    self.delegate?.reviewDataReload()
-                    self.dismiss(animated: true)
+                showFinishToast(title: "addReviewSuccess".localized, message: "addReviewSuccessfully".localized, imageName: "character-pencil-finished") { [weak self]  _ in
+                    self?.delegate?.reviewDataReload(.create)
+                    self?.dismiss(animated: true)
                     
                     // 사용자 인터랙션 재활성화
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        self.mainView.isUserInteractionEnabled = true
+                        self?.mainView.isUserInteractionEnabled = true
                     }
                 }
             case .edit:
-                guard let review = self.review else { return }
+                guard let review = review else { return }
                 let userReview = UserReview()
                 userReview.text = mainView.userTextView.text
                 userReview.voice = voiceMemo
-                self.delegate?.editReview(reviewID: review.id, userReview: userReview)
-                self.delegate?.reviewDataReload()
+                delegate?.editReview(reviewID: review.id, userReview: userReview)
+                delegate?.reviewDataReload(.edit)
                 dismiss(animated: true)
                 // 사용자 인터랙션 재활성화
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self.mainView.isUserInteractionEnabled = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+                    self?.mainView.isUserInteractionEnabled = true
                 }
                 
             case .none:

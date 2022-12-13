@@ -53,7 +53,6 @@ class AddReviewView: BaseView {
         $0.setTitle("cancelButton".localized, for: .normal)
         $0.titleLabel?.font = .appleSDGothicNeo(of: .content, weight: .medium)
         $0.setTitleColor(.systemGray3, for: .normal)
-        
     }
     
     let finishReviewButton = UIButton().then {

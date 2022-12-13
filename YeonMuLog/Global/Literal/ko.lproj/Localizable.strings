@@ -105,3 +105,16 @@
 // 리뷰 추가하기
 "addReviewSuccess" = "리뷰 추가 성공!";
 "addReviewSuccessfully" = "리뷰가 성공적으로 저장되었습니다.";
+
+// 리뷰 삭제하기
+"removeReview"  = "리뷰가 삭제되었습니다.";
+
+// 극 상세정보스레드
+"detailPlayInfoThread" = "스레드";
+"Remove" = "삭제";
+"recordRemoved" = "관극기록이 삭제되었습니다.";
+"doYouRemoveRecord" = "관극기록을 삭제하시겠습니까?";
+"itWouldAlsoRemoveReview" = "삭제하시면 연결된 리뷰도 전부 삭제됩니다";
+
+// 에러
+"redoPlease" = "다시 실행해주세요";

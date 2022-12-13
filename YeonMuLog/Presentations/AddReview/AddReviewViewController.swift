@@ -16,6 +16,11 @@ protocol recordVoiceMemoDelegate: AnyObject {
     func sendVoiceMemo(url: String)
 }
 
+enum ReviewMode {
+    case create
+    case edit
+}
+
 class AddReviewViewController: BaseViewController {
     // MARK: - Properties
     let mainView = AddReviewView()
@@ -23,13 +28,15 @@ class AddReviewViewController: BaseViewController {
     lazy var picker = YPImagePicker(configuration: config)
     
     var delegate: sendReviewDelegate?
+    var reviewMode: ReviewMode?
+    var reviewIndex: Int?
     
     var voiceMemo: String = ""
     var text: String = ""
     var image: [String] = []
     
     var playInfo: UserPlayInfo?
-    
+    var review: UserReview?
     let repository = UserPlayRepository.shared
     
     // MARK: - Lifecycle
@@ -38,8 +45,10 @@ class AddReviewViewController: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setTabBarSwipe(enabled: false)
-        
+        setTabBarSwipe(enabled: false)
+        if reviewMode == .edit {
+            mainView.userTextView.text = review?.text
+        }
     }
     
     // MARK: - Actions
@@ -54,30 +63,49 @@ class AddReviewViewController: BaseViewController {
             // 사용자 인터랙션 비활성화
             self.mainView.isUserInteractionEnabled = false
             
-            // 저장
-            let review = UserReview()
-            review.text = mainView.userTextView.text
-            review.voice = voiceMemo
-            review.date = Date()
-            if !image.isEmpty {
-                review.image.append(objectsIn: image)
-            }
-            repository.updateReview(playInfo!, review: review)
-            
-            // 완료 토스트
-            showFinishToast(title: "addReviewSuccess".localized, message: "addReviewSuccessfully".localized, imageName: "character-pencil-finished") { _ in
-                self.delegate?.reviewDataReload()
-                self.dismiss(animated: true)
-                
-                // 사용자 인터랙션 재활성화
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self.mainView.isUserInteractionEnabled = true
+            switch reviewMode {
+            case .create:
+                // 저장
+                let review = UserReview()
+                review.text = mainView.userTextView.text
+                review.voice = voiceMemo
+                review.date = Date()
+                if !image.isEmpty {
+                    review.image.append(objectsIn: image)
                 }
+                repository.updateReview(playInfo!, review: review)
+                
+                // 완료 토스트
+                showFinishToast(title: "addReviewSuccess".localized, message: "addReviewSuccessfully".localized, imageName: "character-pencil-finished") { [weak self]  _ in
+                    self?.delegate?.reviewDataReload(.create)
+                    self?.dismiss(animated: true)
+                    
+                    // 사용자 인터랙션 재활성화
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self?.mainView.isUserInteractionEnabled = true
+                    }
+                }
+            case .edit:
+                guard let review = review else { return }
+                let userReview = UserReview()
+                userReview.text = mainView.userTextView.text
+                userReview.voice = voiceMemo
+                delegate?.editReview(reviewID: review.id, userReview: userReview)
+                delegate?.reviewDataReload(.edit)
+                dismiss(animated: true)
+                // 사용자 인터랙션 재활성화
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+                    self?.mainView.isUserInteractionEnabled = true
+                }
+                
+            case .none:
+                print("저장할 수 없습니다.")
+                mainView.makeToast("저장할 수 없습니다.")
             }
-            
+          
         } else {
             print("저장할 수 없습니다.")
-            self.mainView.makeToast("내용이 없어 저장할 수 없습니다.")
+            mainView.makeToast("내용이 없어 저장할 수 없습니다.")
         }
         
     }

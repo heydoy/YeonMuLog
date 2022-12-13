@@ -78,7 +78,7 @@ class TaraeDetailViewController: BaseViewController {
             vc.delegate = self
             present(vc, animated: true)
         } else {
-            mainView.makeToast("다시 실행해주세요")
+            mainView.makeToast("redoPlease".localized)
         }
     }
     
@@ -86,7 +86,7 @@ class TaraeDetailViewController: BaseViewController {
         if let review = playInfo?.userReview[reviewIndex] {
             
             repository.removeReview(review)
-            mainView.makeToast("리뷰가 삭제되었습니다.", duration: 1.0, position: .bottom, title: nil, image: nil, style: ToastStyle(), completion: nil)
+            mainView.makeToast("removeReview".localized, duration: 1.0, position: .bottom, title: nil, image: nil, style: ToastStyle(), completion: nil)
             if let item = repository.fetchById(playInfo!.id) {
                 playInfo = item
             }
@@ -102,24 +102,24 @@ class TaraeDetailViewController: BaseViewController {
     override func setNavigationBar() {
         super.setNavigationBar()
         
-        navigationItem.title = "스레드"
+        navigationItem.title = "detailPlayInfoThread".localized
         
         let menuItems = [
             
             UIAction(title: "RemoveUserPlay".localized, image: UIImage(systemName: "trash"), attributes: .destructive, handler: { [weak self] _ in
                 
-                let remove = UIAlertAction(title: "삭제", style: .destructive) { _ in
+                let remove = UIAlertAction(title: "Remove".localized, style: .destructive) { _ in
                     if let playInfo = self?.playInfo {
                         self?.repository.deletePlay(playInfo)
-                        self?.mainView.makeToast("삭제되었습니다.", duration: 1.0, position: .top, title: nil, image: nil, style: ToastStyle()) { didTap in
+                        self?.mainView.makeToast("recordRemoved".localized, duration: 1.0, position: .top, title: nil, image: nil, style: ToastStyle()) { didTap in
                             self?.navigationController?.popViewController(animated: true)
                         }
                         
                     }
                 }
-                let cancel = UIAlertAction(title: "취소", style: .cancel)
+                let cancel = UIAlertAction(title: "cancelButton".localized, style: .cancel)
                 
-                self?.showAlert(title: "리뷰를 삭제하시겠습니까?", message: "삭제하시면 리뷰도 전부 삭제됩니다", actions: remove, cancel)
+                self?.showAlert(title: "doYouRemoveRecord".localized, message: "itWouldAlsoRemoveReview".localized, actions: remove, cancel)
                 
             })
         ]

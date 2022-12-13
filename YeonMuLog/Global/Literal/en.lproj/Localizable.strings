@@ -106,3 +106,16 @@
 // 리뷰 추가하기
 "addReviewSuccess" = "Success!";
 "addReviewSuccessfully" = "Your review is successfully added.";
+
+// 리뷰 삭제하기
+"removeReview"  = "Review is removed";
+
+// 극 상세정보스레드
+"detailPlayInfoThread" = "Thread";
+"Remove" = "Remove";
+"recordRemoved" = "Record is removed";
+"doYouRemoveRecord" = "Are you sure you want to delete the record?";
+"itWouldAlsoRemoveReview" = "All linked reviews will also be deleted.";
+
+// 에러
+"redoPlease" = "Please redo";

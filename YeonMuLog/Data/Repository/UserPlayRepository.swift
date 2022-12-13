@@ -16,12 +16,15 @@ enum SortOption: String {
 
 fileprivate protocol UserPlayRepositoryType: AnyObject {
     func fetch() -> Results<UserPlayInfo>
+    func fetchById(_ id: String) -> UserPlayInfo?
     func fetchWith(sort: SortOption, option: Bool) -> Results<UserPlayInfo>
     func fetchFilter(_ query: String) -> Results<UserPlayInfo>
     func createPlay(_ item: UserPlayInfo)
     func updatePlay(_ item: UserPlayInfo)
     func deletePlay(_ item: UserPlayInfo)
     func updateReview(_ item: UserPlayInfo)
+    func editReview(_ review: UserReview)
+    func removeReview(_ review: UserReview)
 }
 
 class UserPlayRepository {
@@ -31,6 +34,10 @@ class UserPlayRepository {
     
     func fetch() -> Results<UserPlayInfo> {
         return localRealm.objects(UserPlayInfo.self).sorted(byKeyPath: "date", ascending: false) // 최신 순서
+    }
+    func fetchById(_ id: ObjectId) -> UserPlayInfo? {
+        let item = localRealm.objects(UserPlayInfo.self).filter("id == %@", id)
+        return item.first
     }
     
     func fetchWith(sort: SortOption, option: Bool) -> Results<UserPlayInfo> {
@@ -88,7 +95,35 @@ class UserPlayRepository {
             try self.localRealm.write {
                 item.userReview.append(review)
                 localRealm.add(item, update: .modified)
-                
+            }
+            
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    func editReview(_ item: UserPlayInfo, reviewID: ObjectId, userReview: UserReview) {
+        let task = localRealm.objects(UserPlayInfo.self)
+        if let result = task.where({$0.id == item.id}).first {
+            if let review = result.userReview.where({$0.id == reviewID}).first {
+                do {
+                    try localRealm.write {
+                        review.image = userReview.image
+                        review.text = userReview.text
+                        review.voice = userReview.voice
+                    }
+                    
+                } catch let error {
+                    print(error)
+                }
+            }
+        }
+    }
+    
+    func removeReview(_ review: UserReview) {
+        do {
+            try localRealm.write {
+                localRealm.delete(review)
             }
             
         } catch let error {
